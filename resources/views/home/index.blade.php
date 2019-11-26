@@ -140,7 +140,7 @@
 								<div class="col-sm-6 left padding-left-right-0-m">
 								<div class="card">
 									<div class="card-cover relative lazyload-hot-event" data-src="{{ asset('images/demo/1.png') }}" style="background-image: url({{ asset('images/demo/1.jpg') }});">
-										<a data-opm="0" href="" class="cover-img w-100 event-item-link" data-event-id="77908"></a>
+										<a data-opm="0" href="{{ route('get.detail.article',['hi',2]) }}" class="cover-img w-100 event-item-link" data-event-id="77908"></a>
 									</div>
 									<div class="card-body relative">
 										<div class="padding-10">

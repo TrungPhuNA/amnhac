@@ -33,6 +33,7 @@ class ArticleController extends FrontendController
 
 	public function getDetailArticle(Request $request)
 	{
+		return view('event.detail');
 		$arrayUrl = (preg_split("/(-)/i",$request->segment(2)));
 		
 		$id = array_pop($arrayUrl);
