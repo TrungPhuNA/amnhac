@@ -28,6 +28,12 @@ class CreateProductsTable extends Migration
 			$table->string('pro_avatar')->nullable();
 			$table->string('pro_description_seo')->nullable();
 			$table->string('pro_keyword_seo')->nullable();
+            $table->string('pro_title_seo')->nullable();
+            $table->longText('pro_content')->nullable();
+            $table->tinyInteger('pro_pay')->default(0);
+            $table->tinyInteger('pro_number')->default(0);
+            $table->integer('pro_total_rating')->default(0)->comment('Tổng số đánh gia');
+            $table->integer('pro_total_number')->default(0)->comment('tổng số điểm đánh giá');
             $table->timestamps();
         });
     }

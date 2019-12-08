@@ -542,6 +542,9 @@ span.amount {
     color: #c3a577;
     margin-bottom: 0;
 }
+.icons-margin {
+    margin: 0px 8px;
+}
 .hm-1 .slider-content h3{
 	font-size: 90px;
     color: #000;

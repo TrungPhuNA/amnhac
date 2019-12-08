@@ -22,9 +22,9 @@
 			<div class="location-selector pull-left">
 				<div class="btn-group">
 					<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-						<span class="location-icon ello-location-1"></span>
-						<span class="location-name hidden-xs">Chọn địa điểm</span>
-						<span class="down-icon ello-angle-down hidden-xs"></span>
+						<span class="icons-margin" style="margin: 0px 8px;"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+						<span class="location-name hidden-xs"> Chọn địa điểm </span>
+						<span class="icons-margin" style="margin: 0px 8px;"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
 						<span class="down-icon caret hidden-sm hidden-md hidden-lg"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">

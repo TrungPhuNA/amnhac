@@ -25,6 +25,8 @@ class CreateArticleTable extends Migration
 			$table->string('a_title_seo')->nullable();
 			$table->string('a_avatar')->nullable();
 			$table->integer('a_view')->default(0);
+            $table->tinyInteger('a_hot')->default(0)->index();
+
             $table->timestamps();
         });
     }

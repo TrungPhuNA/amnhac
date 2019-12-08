@@ -46,6 +46,7 @@
                     <a href="{{ route('admin.home') }}">Trang Tổng Quan</a>
                 </li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Danh mục</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Tours</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.supplier' ? 'active' : '' }}"><a href="{{ route('admin.get.list.supplier') }}">Nhà cung cấp</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.product' ? 'active' : '' }}"><a href="{{ route('admin.get.list.product') }}">Sản phẩm</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}"><a href="{{ route('admin.get.list.menu') }}">Menu bài viết</a></li>

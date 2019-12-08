@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterColumnTrTypeInTableTransactions extends Migration
+class CreateTablePriceTours extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AlterColumnTrTypeInTableTransactions extends Migration
      */
     public function up()
     {
-		Schema::table('transactions',function (Blueprint $table){
-			$table->tinyInteger('tr_type')->default(1);
-		});
+        Schema::create('price_tours', function (Blueprint $table) {
+            $table->increments('id');
+            $table->tinyInteger('pt_tour_id')->unique();
+            $table->tinyInteger('pt_kind_price')->unique();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,8 +28,6 @@ class AlterColumnTrTypeInTableTransactions extends Migration
      */
     public function down()
     {
-		Schema::table('transactions',function (Blueprint $table){
-			$table->dropColumn('tr_type');
-		});
+        Schema::dropIfExists('price_tours');
     }
 }
