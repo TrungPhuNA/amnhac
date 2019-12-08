@@ -2,10 +2,10 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use App\Http\Requests\RequestProduct;
+use App\Http\Requests\Requesttour;
 use App\Models\Category;
-use App\Models\Product;
-use App\Models\ProductImage;
+use App\Models\tour;
+use App\Models\tourImage;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -14,21 +14,21 @@ class AdminProductController extends Controller
 {
     public function index(Request $request)
 	{
-		$products = Product::with('category:id,c_name');
+		$tours = tour::with('category:id,c_name');
 
-		if ($request->name)  $products->where('pro_name','like','%'.$request->name.'%');
-		if ($request->cate)  $products->where('pro_category_id',$request->cate) ;
+		if ($request->name)  $tours->where('pro_name','like','%'.$request->name.'%');
+		if ($request->cate)  $tours->where('pro_category_id',$request->cate) ;
 
-		$products = $products->orderByDesc('id')->paginate(10);
+		$tours = $tours->orderByDesc('id')->paginate(10);
 
 		$categories = $this->getCategories();
 
 		$viewData = [
-			'products'   => $products,
+			'tours'   => $tours,
 			'categories' => $categories
 		];
 
-		return view('admin::product.index',$viewData);
+		return view('admin::tour.index',$viewData);
 	}
 
 	public function create()
@@ -36,29 +36,29 @@ class AdminProductController extends Controller
 		$categories = $this->getCategories();
 		$suppliers  = $this->getSupplier();
 
-		return view('admin::product.create',compact('categories','suppliers'));
+		return view('admin::tour.create',compact('categories','suppliers'));
 	}
 
-	public function store(RequestProduct $requestProduct)
+	public function store(Requesttour $requesttour)
 	{
-	     $this->insertOrUpdate($requestProduct);
+	     $this->insertOrUpdate($requesttour);
 
 	     return redirect()->back()->with('success','Thêm mới thành công');
 	}
 
 	public function edit($id)
 	{
-		$product    = Product::find($id);
+		$tour    = tour::find($id);
 		$categories = $this->getCategories();
         $suppliers  = $this->getSupplier();
-        $images     = ProductImage::where('pi_product_id', $id)->get();
+        $images     = tourImage::where('pi_tour_id', $id)->get();
 
-		return view('admin::product.update',compact('product','categories','suppliers','images'));
+		return view('admin::tour.update',compact('tour','categories','suppliers','images'));
 	}
 
-	public function update(RequestProduct $requestProduct,$id)
+	public function update(Requesttour $requesttour,$id)
 	{
-		$this->insertOrUpdate($requestProduct,$id);
+		$this->insertOrUpdate($requesttour,$id);
 
 		return redirect()->back()->with('success','Cập nhật thành công ');
 	}
@@ -73,48 +73,48 @@ class AdminProductController extends Controller
         return Supplier::select('id','s_name')->orderByDesc('id')->get();
     }
 
-	public function insertOrUpdate($requestProduct,$id='')
+	public function insertOrUpdate($requesttour,$id='')
 	{
-		$product = new Product();
+		$tour = new tour();
 
-		if ($id) $product = Product::find($id);
+		if ($id) $tour = tour::find($id);
 
-        $product->pro_name            = $requestProduct->pro_name;
-        $product->pro_slug            = str_slug($requestProduct->pro_name);
-        $product->pro_category_id     = $requestProduct->pro_category_id;
-        $product->pro_price           = $requestProduct->pro_price;
-        $product->pro_sale            = $requestProduct->pro_sale;
-        $product->pro_number          = $requestProduct->pro_number;
-        $product->pro_description     = $requestProduct->pro_description;
-        $product->pro_content         = $requestProduct->pro_content;
-        $product->pro_title_seo       = $requestProduct->pro_title_seo ? $requestProduct->pro_title_seo : $requestProduct->pro_name;
-        $product->pro_description_seo = $requestProduct->pro_description_seo ? $requestProduct->pro_description_seo : $requestProduct->pro_description_seo;
-        $product->s_supplier_id       = $requestProduct->s_supplier_id;
-        $product->pro_author_id       = get_data_user('admins');
+        $tour->pro_name            = $requesttour->pro_name;
+        $tour->pro_slug            = str_slug($requesttour->pro_name);
+        $tour->pro_category_id     = $requesttour->pro_category_id;
+        $tour->pro_price           = $requesttour->pro_price;
+        $tour->pro_sale            = $requesttour->pro_sale;
+        $tour->pro_number          = $requesttour->pro_number;
+        $tour->pro_description     = $requesttour->pro_description;
+        $tour->pro_content         = $requesttour->pro_content;
+        $tour->pro_title_seo       = $requesttour->pro_title_seo ? $requesttour->pro_title_seo : $requesttour->pro_name;
+        $tour->pro_description_seo = $requesttour->pro_description_seo ? $requesttour->pro_description_seo : $requesttour->pro_description_seo;
+        $tour->s_supplier_id       = $requesttour->s_supplier_id;
+        $tour->pro_author_id       = get_data_user('admins');
 
-        if ($requestProduct->pro_warranty) {
-		    $product->pro_warranty = $requestProduct->pro_warranty;
+        if ($requesttour->pro_warranty) {
+		    $tour->pro_warranty = $requesttour->pro_warranty;
         }
-		if ( $requestProduct->hasFile('avatar'))
+		if ( $requesttour->hasFile('avatar'))
 		{
 			$file = upload_image('avatar');
 
 			if (isset($file['name']))
 			{
-				$product->pro_avatar = $file['name'];
+				$tour->pro_avatar = $file['name'];
 			}
 		}
 
-		$product->save();
+		$tour->save();
 
-		if ($product->id && $requestProduct->hasFile('album')) {
-            $this->uploadAlbumImage($requestProduct->file('album'), $id);
+		if ($tour->id && $requesttour->hasFile('album')) {
+            $this->uploadAlbumImage($requesttour->file('album'), $id);
         }
 	}
 
-	public function uploadAlbumImage($files, $product_id)
+	public function uploadAlbumImage($files, $tour_id)
     {
-        ProductImage::where('pi_product_id', $product_id)->delete();
+        tourImage::where('pi_tour_id', $tour_id)->delete();
         foreach ($files as $fileKey => $fileImage ) {
             $ext = $fileImage->getClientOriginalExtension();
 
@@ -135,23 +135,23 @@ class AdminProductController extends Controller
 
             // di chuyen file vao thu muc uploads
             $fileImage->move($path,$filename);
-            $productImage = new ProductImage();
-            $productImage->pi_name = $fileImage->getClientOriginalName();
-            $productImage->pi_slug = $filename;
-            $productImage->pi_product_id = $product_id;
-            $productImage->save();
+            $tourImage = new tourImage();
+            $tourImage->pi_name = $fileImage->getClientOriginalName();
+            $tourImage->pi_slug = $filename;
+            $tourImage->pi_tour_id = $tour_id;
+            $tourImage->save();
         }
     }
 
 	public function delete($id)
 	{
-		\DB::table('products')->where('id',$id)->delete();
+		\DB::table('tours')->where('id',$id)->delete();
 		return redirect()->back();
 	}
 
 	public function deleteImage($id)
     {
-        ProductImage::where('id', $id)->delete();
+        tourImage::where('id', $id)->delete();
         return redirect()->back()->with('success','Xoá thành công');
     }
 
@@ -159,23 +159,23 @@ class AdminProductController extends Controller
 	{
 		if ($action)
 		{
-			$product = Product::find($id);
+			$tour = tour::find($id);
 			switch ($action)
 			{
 				case 'delete':
-					$product->delete();
+					$tour->delete();
 					break;
 
 				case 'active':
-					$product->pro_active =  $product->pro_active ? 0 : 1;
+					$tour->pro_active =  $tour->pro_active ? 0 : 1;
 					break;
 
 				case 'hot':
-					$product->pro_hot =  $product->pro_hot ? 0 : 1 ;
+					$tour->pro_hot =  $tour->pro_hot ? 0 : 1 ;
 					break;
 			}
 
-			$product->save();
+			$tour->save();
 		}
 
 		return redirect()->back();

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestPassword;
-use App\Models\Product;
+use App\Models\tour;
 use App\Models\Transaction;
 use App\User;
 use Illuminate\Http\Request;
@@ -69,15 +69,15 @@ class UserController extends FrontendController
         return redirect()->back()->with('danger', 'Mật khẩu cũ không đúng');
     }
 
-    public function getProductPay()
+    public function gettourPay()
     {
-        $products = Product::orderBy('pro_pay', 'DESC')->limit(10)->get();
-        return view('user.product', compact('products'));
+        $tours = tour::orderBy('pro_pay', 'DESC')->limit(10)->get();
+        return view('user.tour', compact('tours'));
     }
 
-    public function getProductWishlist()
+    public function gettourWishlist()
     {
-        return view('user.product_care');
+        return view('user.tour_care');
     }
 
     public function getTransaction()

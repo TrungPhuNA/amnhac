@@ -14,18 +14,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                @if (isset($products))
-                    @foreach($products as $product)
+                @if (isset($tours))
+                    @foreach($tours as $tour)
                         <tr>
-                            <td>#{{ $product->id }}</td>
+                            <td>#{{ $tour->id }}</td>
                             <td>
-                                <a href="{{ route('get.detail.product',[$product->pro_slug,$product->id]) }}" target="_blank">{{ $product->pro_name }}</a>
+                                <a href="{{ route('get.detail.tour',[$tour->pro_slug,$tour->id]) }}" target="_blank">{{ $tour->pro_name }}</a>
                             </td>
                             <td>
-                                <img src="{{ pare_url_file($product->pro_avatar) }}" alt="" style="width: 80px;height: 80px;">
+                                <img src="{{ pare_url_file($tour->pro_avatar) }}" alt="" style="width: 80px;height: 80px;">
                             </td>
-                            <td>{{ number_format($product->pro_price,0,',','.') }} VNĐ</td>
-                            <td>{{ $product->pro_pay }}</td>
+                            <td>{{ number_format($tour->pro_price,0,',','.') }} VNĐ</td>
+                            <td>{{ $tour->pro_pay }}</td>
                         </tr>
                     @endforeach
                 @endif

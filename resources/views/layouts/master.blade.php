@@ -126,7 +126,7 @@
                         @if (isset($categories))
                             @foreach($categories as $category)
                                 <li>
-                                    <a href="{{ route('get.list.product', [$category->c_slug, $category->id]) }}"
+                                    <a href="{{ route('get.list.tour', [$category->c_slug, $category->id]) }}"
                                        title="{{ $category->c_name }}">
                                         {{ $category->c_name }}
                                     </a>
@@ -134,7 +134,7 @@
                                         <ul>
                                             @foreach($submenus as $sub)
                                                 <li>
-                                                    <a href="{{ route('get.list.product', [$sub->c_slug, $sub->id]) }}"
+                                                    <a href="{{ route('get.list.tour', [$sub->c_slug, $sub->id]) }}"
                                                        title="{{ $sub->c_name }}">
                                                         {{ $sub->c_name }}
                                                     </a>
@@ -193,7 +193,7 @@
                         <ul class="footer-links">
                             @foreach($categoriesHot as $cateHot)
                             <li>
-                                <a href="{{ route('get.list.product', [$cateHot->c_slug, $cateHot->id]) }}">{{ $cateHot->c_name }}</a>
+                                <a href="{{ route('get.list.tour', [$cateHot->c_slug, $cateHot->id]) }}">{{ $cateHot->c_name }}</a>
                             </li>
                             @endforeach
                         </ul>
@@ -217,7 +217,7 @@
                         <ul class="footer-links">
                             <li><a href="{{ route('user.update.info') }}">Thông tin tài khoản</a></li>
                             <li><a href="{{ route('get.transaction.history') }}">Lịch sử giao dịch</a></li>
-                            <li><a href="{{ route('user.list.product_wishlist') }}">Sản phẩm yêu thích</a></li>
+                            <li><a href="{{ route('user.list.tour_wishlist') }}">Sản phẩm yêu thích</a></li>
                         </ul>
                     </div>
                 </div>

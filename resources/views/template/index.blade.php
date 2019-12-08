@@ -15,22 +15,22 @@
 @section('content')
     <section>
         <div class="tp_container">
-            <div class="product_list">
+            <div class="tour_list">
                 <div class="title_heading">
                     <h2><img src="{{ asset('images/new.png') }}" style="width: 40px;height: 40px" alt="">Sản phẩm mới</h2>
                 </div>
                 <div class="width-100 flex" style="flex-wrap: wrap;">
                     @for($i = 1; $i <= 10 ; $i ++)
-                        <div class="product_item">
-                            <a href="{{ route('demo.detail') }}" class="product_item_img">
+                        <div class="tour_item">
+                            <a href="{{ route('demo.detail') }}" class="tour_item_img">
                                 <img src="{{ asset('images/giay_demo.png') }}" alt="">
                             </a>
-                            <h3 class="product_item_name"><a href="">Giày thể thao </a></h3>
-                            <p class="product_item_description">Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321 Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321</p>
-                            <div class="product_price">
-                                <span class="product_price-new">210.000đ</span>
-                                <span class="product_price-old">290.000đ</span>
-                                <span class="product_price-sale">(4%)</span>
+                            <h3 class="tour_item_name"><a href="">Giày thể thao </a></h3>
+                            <p class="tour_item_description">Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321 Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321</p>
+                            <div class="tour_price">
+                                <span class="tour_price-new">210.000đ</span>
+                                <span class="tour_price-old">290.000đ</span>
+                                <span class="tour_price-sale">(4%)</span>
                             </div>
                         </div>
                     @endfor
@@ -41,9 +41,9 @@
     </section>
     
     <section>
-        <div class="tp_container box_about_product">
+        <div class="tp_container box_about_tour">
             <h2>MUA SẢN PHẨM SKF TẠI SAO NÊN CHỌN NGỌC ANH</h2>
-            <div class="about_product width-100 flex" style="flex-wrap: wrap;">
+            <div class="about_tour width-100 flex" style="flex-wrap: wrap;">
                 @php
                     $arrayAbout = [
                         'Cung cấp sỉ và lẻ',
@@ -55,11 +55,11 @@
                     ]
                 @endphp
                 @for($i = 0; $i<= 5; $i ++)
-                    <div class="about_product_item flex">
-                         <div class="about_product_icon">
+                    <div class="about_tour_item flex">
+                         <div class="about_tour_icon">
 
                          </div>
-                         <div class="about_product_content">
+                         <div class="about_tour_content">
                              <h6>{{ $arrayAbout[$i] }}</h6>
                              <p>Sản phẩm SKF do chúng tôi bán ra đều được bảo hành chính hãng SKF, Cơ chế bảo hành đổi mới linh hoạt. Hỗ trợ tối đa lợi ích của Khách hàng</p>
                          </div>

@@ -21,7 +21,7 @@
 		2.5  search area
 		2.6  dropdown menu
 	3. slider area
-	4. our product area
+	4. our tour area
 	5. banner area
 	6. latest post area
 	7. block category area
@@ -37,7 +37,7 @@
 	15. Home 7 area
 	16. Home 8 area
 	17. Shop page area
-	18. Product details area
+	18. tour details area
 	19. Checkout Page area
 	20. Wishlist page area
 	21. Shoping-cart area
@@ -331,7 +331,7 @@ ul.restrain.language {
 /*  2.4  addcart area
 /*----------------------------------------*/
 .disflow{display: inline-block}
-a.sm-cart-product {
+a.sm-cart-tour {
     float: left;
     width: 50px;
     margin-right: 5px;
@@ -462,7 +462,7 @@ span.amount {
     position: relative;
 	cursor: pointer;
 }
-.product-search.restrain {
+.tour-search.restrain {
     position: absolute;
     top: 100%;
     background: #3f3f3f;
@@ -470,7 +470,7 @@ span.amount {
     text-align: left;
 	right: 0;
 }
-.product-search input.form-control {
+.tour-search input.form-control {
     background-color: #3f3f3f;
     border: none;
 	outline: none;
@@ -584,7 +584,7 @@ span.amount {
 	border-color: #ffffff;
 }
 /* ---------------------------------------
-  4. our product area
+  4. our tour area
 /*----------------------------------------*/
 .area-title {
 	text-align: center;
@@ -664,28 +664,28 @@ span.amount {
 	border: 1px solid #c2a476;
 	color: #c2a476;
 }
-.single-product{
+.single-tour{
 	overflow: hidden;
 	position:relative
 }
-.product-img{
+.tour-img{
 	position:relative;
 	display:block;
 	margin-bottom: 20px;
 }
-.product-content{
+.tour-content{
 	padding: 0 5px;
     text-align: center;
     position: relative;
     background: #fff;
 }
-.product-img a{display: block}
-.product-img a img{
+.tour-img a{display: block}
+.tour-img a img{
 	transition: all 0.3s ease 0s;
 	width: 100%;
 }
-.product-img a img.primary-image{}
-.product-img a img.secondary-image{
+.tour-img a img.primary-image{}
+.tour-img a img.secondary-image{
 	left: 0;
 	opacity: 0;
 	position: absolute;
@@ -700,7 +700,7 @@ span.amount {
 	opacity:0;
 	transition: all 0.3s ease 0s;
 }
-.single-product:hover .actions{
+.single-tour:hover .actions{
 	opacity:1;
 	top:80%;
 	z-index:9
@@ -713,7 +713,7 @@ span.amount {
 	opacity:0;
 	transition: all 0.3s ease 0s;
 }
-.single-product:hover .action-zoom{
+.single-tour:hover .action-zoom{
 	opacity:1;
 	top:50%;
 	z-index:9
@@ -754,8 +754,8 @@ span.amount {
 .action-zoom a{
 	background: 
 }
-.single-product:hover .product-img a img.secondary-image{opacity:1}
-.product-img>a:before{ 
+.single-tour:hover .tour-img a img.secondary-image{opacity:1}
+.tour-img>a:before{
 	background-color: #000;
 	content: "";
 	height: 100%;
@@ -766,11 +766,11 @@ span.amount {
 	transition: all 0.3s ease 0s;
 	width: 100%;
 }
-.single-product:hover .product-img a:before{
+.single-tour:hover .tour-img a:before{
 	opacity:.2;
 	z-index:9
 }
-.product-content p{
+.tour-content p{
 	font-size: 13px;
 	color: #6d6d6d;
 	letter-spacing: 1.1px;
@@ -784,19 +784,19 @@ span.amount {
 	-webkit-line-clamp: 2!important;
 	-webkit-box-orient: vertical;
 }
-h2.product-name {
+h2.tour-name {
 	margin: 0 0 5px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 }
-h2.product-name a{
+h2.tour-name a{
 	font-size: 12px;
 	font-weight: 700;
 	font-family: Montserrat;
 	color: #3f3f3f;
 }
-h2.product-name a:hover{color: #c2a476}
+h2.tour-name a:hover{color: #c2a476}
 span.old-price{
 	color: #909295;
 	font-size: 15px;
@@ -821,7 +821,7 @@ span.sale-text{
     top: 5%;
     z-index: 10;
 }
-.single-product .price-box {
+.single-tour .price-box {
     text-align: center;
     left: 0;
     right: 0;
@@ -829,7 +829,7 @@ span.sale-text{
     bottom: 20px;
     position: absolute;
 }
-.single-product .price-box .new-price{
+.single-tour .price-box .new-price{
 	margin: 0;
 	background: #fff;
     padding: 10px 15px;
@@ -840,19 +840,19 @@ span.sale-text{
     font-family: Montserrat;
     font-weight: 700;
 }
-.single-product:hover .add-to-wishlist a{
+.single-tour:hover .add-to-wishlist a{
     -webkit-animation: zoomIn 300ms ease-in-out;
     -moz-animation: zoomIn 300ms ease-in-out;
     -ms-animation: zoomIn 300ms ease-in-out;
     animation: zoomIn 300ms ease-in-out;
 }
-.single-product:hover .compare-button a{
+.single-tour:hover .compare-button a{
     -webkit-animation: zoomIn 500ms ease-in-out;
     -moz-animation: zoomIn 500ms ease-in-out;
     -ms-animation: zoomIn 500ms ease-in-out;
     animation: zoomIn 500ms ease-in-out;
 }
-.single-product:hover .quickviewbtn a{
+.single-tour:hover .quickviewbtn a{
     -webkit-animation: zoomIn 700ms ease-in-out;
     -moz-animation: zoomIn 700ms ease-in-out;
     -ms-animation: zoomIn 700ms ease-in-out;
@@ -862,7 +862,7 @@ span.sale-text{
     margin-bottom: 40px;
 	margin-top: 40px;
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons{
+.our-tour-area .owl-theme .owl-controls .owl-buttons{
 	text-align: center;
 	width: 54px;
 	top: -20px;
@@ -873,9 +873,9 @@ span.sale-text{
 	margin: 0 auto;
 	opacity: 1;
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-prev{ font-size: 0; color: transparent; background: none;  width: 26px;  float: left; position: relative;}
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-next{ font-size: 0; color: transparent; background: none; width: 26px; float: right;} 
-.our-product-area .owl-theme .owl-controls .owl-buttons div{
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-prev{ font-size: 0; color: transparent; background: none;  width: 26px;  float: left; position: relative;}
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-next{ font-size: 0; color: transparent; background: none; width: 26px; float: right;}
+.our-tour-area .owl-theme .owl-controls .owl-buttons div{
     margin: 0;
     padding: 0;
     -webkit-border-radius: 0;
@@ -885,7 +885,7 @@ span.sale-text{
     filter: Alpha(Opacity=50);
     opacity: 1;
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons >div:before{ 
+.our-tour-area .owl-theme .owl-controls .owl-buttons >div:before{
 	content: "\f104";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
@@ -897,10 +897,10 @@ span.sale-text{
 	float: left;
 	width: 100%;
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-next:before{ 
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-next:before{
 	content: "\f105";
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-prev:after{
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-prev:after{
 	content: "";
 	height: 15px;
 	border-left: 1px solid #c2c2c2;
@@ -908,8 +908,8 @@ span.sale-text{
 	top: 2px; 
 	right: -1px;
 }
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-prev:hover:before,
-.our-product-area .owl-theme .owl-controls .owl-buttons .owl-next:hover:before{ color: #00a9e0;}
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-prev:hover:before,
+.our-tour-area .owl-theme .owl-controls .owl-buttons .owl-next:hover:before{ color: #00a9e0;}
 /* ---------------------------------------
  5. banner area
 /*----------------------------------------*/
@@ -1350,7 +1350,7 @@ span.old-price {
 	background: none;
 	margin-top: 40px;
 }
-.main-area .product-content p{letter-spacing:0.6px}
+.main-area .tour-content p{letter-spacing:0.6px}
 .info-footer{border-bottom: 1px solid #4c4b4b}
 .home-three .brand-area{margin-top: 0}
 /*----------------------------------------*/
@@ -1366,8 +1366,8 @@ span.old-price {
 .header-four .mainmenu ul li a{color: #fff;}
 .header-four .cart-toggler i{color: #fff;}
 .shopping-carts{position: relative;}
-.header-four .product-search.restrain{background: #ccc}
-.header-four .product-search input.form-control{
+.header-four .tour-search.restrain{background: #ccc}
+.header-four .tour-search input.form-control{
 	background: #ccc; 
 	color: #3f3f3f
 }
@@ -1382,7 +1382,7 @@ span.old-price {
 .main-area .left-category-menu{
 	margin-top:0px;
 }
-.left-product-cat{}
+.left-tour-cat{}
 .category-heading{}
 .category-heading h2{
 	background: #c2a476;
@@ -1576,7 +1576,7 @@ span.old-price {
 .home-five .cart-toggler i{color: #fff;}
 .home-five .search-icon.fa.fa-search{color: #fff;}
 .home-five .dropps-menu a{color: #fff;}
-.home-five .our-product-area {margin-bottom: 60px;}
+.home-five .our-tour-area {margin-bottom: 60px;}
 /*----------------------------------------*/
 /*  14. Home 6 area
 /*----------------------------------------*/
@@ -1668,8 +1668,8 @@ span.old-price {
 	background: #c2a476 none repeat scroll 0 0;
 }
 .home-seven .block-category .block-title{margin-top: 0;}
-.product-search.restrain .container {width: 1050px;}
-.product-search.restrain .container {width: 1050px;}
+.tour-search.restrain .container {width: 1050px;}
+.tour-search.restrain .container {width: 1050px;}
 /*----------------------------------------*/
 /*  16. Home 8 area
 /*----------------------------------------*/
@@ -1901,15 +1901,15 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
 	color: #fff;
 	background-color: #c2a476;
 }
-.product-list-wrapper h2.product-name a {
+.tour-list-wrapper h2.tour-name a {
     font-size: 18px;
     letter-spacing: 1.5px;
     font-weight: 400;
 	color: #000000;
 }
-.product-list-wrapper h2.product-name a:hover {color: #c2a476;}
-.product-list-wrapper .product-content{text-align: left;}
-.product-list-wrapper h2.product-name {
+.tour-list-wrapper h2.tour-name a:hover {color: #c2a476;}
+.tour-list-wrapper .tour-content{text-align: left;}
+.tour-list-wrapper h2.tour-name {
     margin: 20px 0 5px;
     line-height: 15px;
 }
@@ -1930,7 +1930,7 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     font-weight: 700;
     color: #3f3f3f;
 }
-.product-desc p {
+.tour-desc p {
     clear: both;
     line-height: 26px;
     color: #868686;
@@ -1938,16 +1938,16 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     font-size: 14px;
 	letter-spacing: inherit;
 }
-.product-list-wrapper .actions {
+.tour-list-wrapper .actions {
     position: inherit;
     text-align: left;
     opacity: 1;
     transition: all 0.3s ease 0s;
 	margin-top: 30px;
 }
-.product-list-wrapper .add-to-links{margin: 0 0 0 10px;}
-.product-list-wrapper .add-to-links a{margin: 0;}
-.product-list-wrapper .add-to-links i{
+.tour-list-wrapper .add-to-links{margin: 0 0 0 10px;}
+.tour-list-wrapper .add-to-links a{margin: 0;}
+.tour-list-wrapper .add-to-links i{
 	border: 1px solid #3f3f3f;
 	background: #fff;
     color: #3f3f3f;
@@ -1958,11 +1958,11 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     transition: all 0.3s ease 0s;
     width: 38px;
 }
-.product-list-wrapper .add-to-cart {
+.tour-list-wrapper .add-to-cart {
     display: inline;
     margin-bottom: 0;
 }
-.product-list-wrapper .add-to-cart a{
+.tour-list-wrapper .add-to-cart a{
 	font-size: 13px;
     letter-spacing: 1.2px;
     padding: 9px 18px;
@@ -1972,34 +1972,34 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     background: #3f3f3f;
 	margin: 0;
 }
-.product-list-wrapper .add-to-cart a:hover{color: #c2a476;}
-.product-list-wrapper .single-product:hover .add-to-wishlist a {
+.tour-list-wrapper .add-to-cart a:hover{color: #c2a476;}
+.tour-list-wrapper .single-tour:hover .add-to-wishlist a {
     -webkit-animation: inherit;
     -moz-animation: inherit;
     -ms-animation: inherit;
     animation: inherit;
 }
-.product-list-wrapper .single-product:hover .compare-button a {
+.tour-list-wrapper .single-tour:hover .compare-button a {
     -webkit-animation: inherit;
     -moz-animation: inherit;
     -ms-animation: inherit;
     animation: inherit;
 }
 /*----------------------------------------*/
-/*  18. Product details area
+/*  18. tour details area
 /*----------------------------------------*/
-.product-details-area .inputx-content {
+.tour-details-area .inputx-content {
     float: left;
     margin-right: 10px;
 }
-.product-details-area .add-to-cart label {
+.tour-details-area .add-to-cart label {
     float: left;
     margin-right: 10px;
     font-weight: normal;
     padding: 8px 0 0;
     font-size: 14px;
 }
-.product-details-area .qty {
+.tour-details-area .qty {
     text-align: center;
     min-width: 40px !important;
     background: #fff;
@@ -2013,7 +2013,7 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     border-radius: 3px;
 	width: 16px;
 }
-.product-details-area p.availability.in-stock {
+.tour-details-area p.availability.in-stock {
     float: left;
     width: 100%;
     margin: 20px 0;
@@ -2021,12 +2021,12 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     font-size: 13px;
 	letter-spacing: 0;
 }
-.product-details-area .availability.in-stock span {
+.tour-details-area .availability.in-stock span {
     color: #c2a476;
     margin-left: 5px;
 }
-.product-details-area .singl-share {margin: 23px 0;}
-.product-details-area .product-list-wrapper .add-to-links i:hover{background-color: #3f3f3f; color: #fff;}
+.tour-details-area .singl-share {margin: 23px 0;}
+.tour-details-area .tour-list-wrapper .add-to-links i:hover{background-color: #3f3f3f; color: #fff;}
 /* Single-zoom */
 .single-zoom-thumb .bx-wrapper .bx-controls-direction a.bx-prev {
     bottom: -100%;
@@ -2105,12 +2105,12 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
 	margin: 20px 0;
 }
 .bx-wrapper {max-width: 100%}
-.single-product-tab .details-tab  {
+.single-tour-tab .details-tab  {
     margin-bottom: 10px;
     background: #ebebeb;
     margin-top: 30px;
 }
-.single-product-tab .details-tab li a {
+.single-tour-tab .details-tab li a {
     display: block;
     position: relative;
     padding: 15px 10px;
@@ -2122,7 +2122,7 @@ aside.sidebar-content ul li a:hover{color: #c2a476;}
     border-bottom: none;
     font-family: Montserrat;
 }
-.single-product-tab .details-tab li a:hover{color: #c2a476}
+.single-tour-tab .details-tab li a:hover{color: #c2a476}
 ul.details-tab li {
     display: inline-block;
 }
@@ -2233,7 +2233,7 @@ margin-bottom: 10px;}
 article.blog-post-wrapper.item-post .player {
     margin: 50px 0 0 0;
 }
-.product-tab-content p {
+.tour-tab-content p {
     clear: both;
     line-height: 26px;
     color: #868686;

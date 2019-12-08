@@ -221,12 +221,12 @@
                                 <td class="no">{{ $key + 1 }}</td>
                                 <td class="text-left">
                                     <h3>
-                                        <a target="_blank" href="">{{ isset($item->product->pro_name) ? $item->product->pro_name  : "[N\A]" }}</a>
+                                        <a target="_blank" href="">{{ isset($item->tour->pro_name) ? $item->tour->pro_name  : "[N\A]" }}</a>
                                     </h3>
                                     <p>{{ $item->pro_description }}</p>
                                 </td>
                                 <td>
-                                    <img src="{{ asset(isset($item->product->pro_avatar) ? pare_url_file($item->product->pro_avatar)  : "[N\A]") }}" style="width: 60px;height: 60px" alt="">
+                                    <img src="{{ asset(isset($item->tour->pro_avatar) ? pare_url_file($item->tour->pro_avatar)  : "[N\A]") }}" style="width: 60px;height: 60px" alt="">
                                 </td>
                                 <td class="unit">{{ number_format($item->or_price,0,',','.') }} VNĐ</td>
                                 <td class="qty">{{ $item->or_qty }}</td>

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class tour extends Model
 {
 	const STATUS_PUBLIC = 1;
 	const STATUS_PRIVATE = 0;

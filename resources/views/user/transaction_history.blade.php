@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <div class="our-product-area new-product">
+    <div class="our-tour-area new-tour">
         <div class="container">
             <div class="area-title">
                 <h2 style="margin-top: 20px">Lịch sử giao dịch</h2>
