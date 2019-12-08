@@ -8,10 +8,6 @@
 			<a class="tkb-brand navbar-brand" href="/" data-opm="logo">
 				<img class="tkb-logo" src="{{ asset('images/logo.png') }}">
 			</a>
-
-
-
-
 			<div class="searcher pull-left">
 				<span class="search-btn-m smooth-trans hidden color-white"><span class="ello-search smooth-trans"></span></span>
 				<div class="input-group rounded search-form smooth-trans hid">
