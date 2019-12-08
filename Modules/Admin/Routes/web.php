@@ -52,6 +52,17 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
 		Route::get('/{action}/{id}','AdminProductController@action')->name('admin.get.action.product');
 	});
 
+    Route::group(['prefix' => 'tour'], function(){
+        Route::get('/','AdminTourController@index')->name('admin.get.list.tour');
+        Route::get('/create','AdminTourController@create')->name('admin.get.create.tour');
+        Route::post('/create','AdminTourController@store');
+        Route::get('/update/{id}','AdminTourController@edit')->name('admin.get.edit.tour');
+        Route::post('/update/{id}','AdminTourController@update');
+        Route::get('delete/{id}','AdminTourController@delete')->name('admin.get.delete.tour');
+        Route::get('delete-image/{id}','AdminTourController@deleteImage')->name('admin.get.delete_image.tour');
+        Route::get('/{action}/{id}','AdminTourController@action')->name('admin.get.action.tour');
+    });
+
 	// menu bai viet
 
     Route::group(['prefix' => 'menu'], function(){

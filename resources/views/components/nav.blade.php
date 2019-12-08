@@ -8,6 +8,10 @@
 			<a class="tkb-brand navbar-brand" href="/" data-opm="logo">
 				<img class="tkb-logo" src="{{ asset('images/logo.png') }}">
 			</a>
+
+
+
+
 			<div class="searcher pull-left">
 				<span class="search-btn-m smooth-trans hidden color-white"><span class="ello-search smooth-trans"></span></span>
 				<div class="input-group rounded search-form smooth-trans hid">
@@ -22,9 +26,9 @@
 			<div class="location-selector pull-left">
 				<div class="btn-group">
 					<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-						<span class="location-icon ello-location-1"></span>
-						<span class="location-name hidden-xs">Chọn địa điểm</span>
-						<span class="down-icon ello-angle-down hidden-xs"></span>
+						<span class="icons-margin" style="margin: 0px 8px;"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+						<span class="location-name hidden-xs"> Chọn địa điểm </span>
+						<span class="icons-margin" style="margin: 0px 8px;"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
 						<span class="down-icon caret hidden-sm hidden-md hidden-lg"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">

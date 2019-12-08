@@ -8,8 +8,11 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, user-scalable=0, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+	<link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css')}}">
 </head>
 <body id="page-top" data-spy="scroll">
 
@@ -136,10 +139,10 @@
 					<div class="container section-container">
 
 						<div id="home-event-container" data-opm="hot">
-							@for( $i = 1 ; $i <= 10 ; $i ++)
+							@for( $i = 1 ; $i <= 2 ; $i ++)
 								<div class="col-sm-6 left padding-left-right-0-m">
 								<div class="card">
-									<div class="card-cover relative lazyload-hot-event" data-src="{{ asset('images/demo/1.png') }}" style="background-image: url({{ asset('images/demo/1.jpg') }});">
+									<div class="card-cover relcomative lazyload-hot-event" data-src="{{ asset('images/demo/1.png') }}" style="background-image: url({{ asset('images/demo/1.jpg') }});">
 										<a data-opm="0" href="{{ route('get.detail.article',['hi',2]) }}" class="cover-img w-100 event-item-link" data-event-id="77908"></a>
 									</div>
 									<div class="card-body relative">
@@ -245,8 +248,196 @@
 					</div>
 				</section>
 			</section>
-			<script type="text/javascript" src="https://static.ticketbox.vn/site/global/scripts/jquery-3.1.1.min.js"></script>
-			<script type="text/javascript" src="https://static.ticketbox.vn/site/global/scripts/slick.min.js"></script>
+			<form modal="signin-modal" class="signinup mover-actor modal fade dl-one in" role="dialog" novalidate="novalidate" style="padding-left: 17px;" aria-hidden="false"><div class="modal-backdrop fade in" style="height: 477px;"></div>
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content rounded color-6">
+						<button type="button" class="close dl-close hidden-xs" data-dismiss="modal">
+							<span class=""><i class="fa fa-window-close-o" aria-hidden="true"></i></span>
+						</button>
+						<div class="modal-header dl-one-header">
+							<div class="modal-hl">
+								<h4 class="modal-title font-bold">Đăng nhập</h4>
+							</div>
+							<div class="modal-hr">
+								<span class="color-6">Cần tạo tài khoản?</span> <a data-toggle="modal" data-target="[modal='signup-modal']" data-dismiss="modal" class="tkb-color underline">Đăng ký</a>
+							</div>
+						</div>
+						<div class="modal-body mover-up-actions">
+							<div class="dl-row mover-up-el">
+								<div class="signin-fb">
+									<a href="javascript:void(0)" class="input-group fb-bg-color rounded fb-login-btn">
+										<span class="fb-bg-color input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+										<span class="fb-bg-color form-control text-center font-bold">Đăng nhập bằng Facebook</span>
+									</a>
+								</div>
+
+							</div>
+							<div class="dl-row mover-up-el">
+								<table class="w-100 a-row">
+									<tbody><tr>
+										<td>
+											<div class="line w-100"></div>
+										</td>
+										<td width="50" class="text-center color-6 font-085">
+											<i>hoặc</i>
+										</td>
+										<td>
+											<div class="line w-100"></div>
+										</td>
+									</tr>
+									</tbody></table>
+							</div>
+							<div data-err="alerter" class="dl-er-message hide">
+								<div class="alert alert-warning" role="alert">
+									<span data-err="message">Oops!</span>
+								</div>
+							</div>
+							<div class="dl-row mover-up-el">
+								<div class="cs1-inp-group dl-input-groups">
+									<div class="dl-input-row input-group">
+										<span class="input-group-addon"><span class="color-c"><i class="fa fa-envelope-o" aria-hidden="true"></i></span></span>
+										<input required="true" name="email" type="email" class="form-control padding-left-0" placeholder="Email" tabindex="100" aria-required="true">
+									</div>
+									<div class="dl-input-row input-group">
+										<span class="input-group-addon"><span class="color-c"><i class="fa fa-briefcase" aria-hidden="true"></i>
+</span></span>
+										<input required="true" name="password" type="password" class="form-control padding-left-0" placeholder="Mật khẩu" tabindex="101" aria-required="true">
+									</div>
+								</div>
+							</div>
+							<div class="dl-row mover-up-el">
+								<table class="w-100 a-row">
+									<tbody><tr>
+										<td class="text-left">
+											<input type="checkbox" name="remember" class="material-cb">
+											Ghi nhớ
+										</td>
+										<td class="text-right">
+											<a class="color-6" data-toggle="modal" data-target="[modal='resetpwd-modal']" data-dismiss="modal">Quên mật khẩu</a>
+										</td>
+									</tr>
+									</tbody></table>
+							</div>
+						</div>
+						<div class="modal-footer padding-top-0">
+							<button data-style="zoom-out" type="submit" class="ladda-button btn tkb-bg-color rounded w-100 font-bold" tabindex="102">
+								<span class="ladda-label">Đăng nhập</span>
+								<span class="ladda-spinner"></span></button>
+						</div>
+					</div>
+					<div class="modal-under-footer text-center">
+						<a class="underline padding-20 visible-xs color-white" data-dismiss="modal">Đóng</a>
+					</div>
+				</div>
+			</form>
+			<form modal="signup-modal" class="signinup mover-actor modal fade dl-one in" role="dialog" novalidate="novalidate" style="padding-left: 17px;" aria-hidden="false"><div class="modal-backdrop fade in" style="height: 539px;"></div>
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content rounded color-6">
+						<!-- dl close btn -->
+						<button type="button" class="close dl-close hidden-xs" data-dismiss="modal">
+							<span class=""><i class="fa fa-window-close-o" aria-hidden="true"></i></span>
+						</button>						<!-- dl body -->
+						<div class="w-100">
+							<div class="modal-header dl-one-header">
+								<div class="modal-hl">
+									<h4 class="modal-title font-bold">Đăng ký</h4>
+								</div>
+								<div class="modal-hr">
+									<span class="color-6">Bạn đã có tài khoản?</span> <a data-toggle="modal" data-target="[modal='signin-modal']" data-dismiss="modal" class="tkb-color underline">Đăng nhập</a>
+								</div>
+							</div>
+							<div class="modal-body mover-up-actions">
+								<div class="dl-row mover-up-el">
+									<div class="signin-fb">
+										<a href="javascript:void(0)" class="input-group fb-bg-color rounded fb-login-btn">
+											<span class="fb-bg-color input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+											<span class="fb-bg-color form-control text-center font-bold">Đăng ký bằng Facebook</span>
+										</a>
+									</div>
+
+								</div>
+								<div class="dl-row mover-up-el">
+									<table class="w-100 a-row">
+										<tbody><tr>
+											<td>
+												<div class="line w-100"></div>
+											</td>
+											<td width="220" class="text-center color-6 font-085">
+												<i> Hoặc đăng ký tài khoản trên TicketBox</i>
+											</td>
+											<td>
+												<div class="line w-100"></div>
+											</td>
+										</tr>
+										</tbody></table>
+								</div>
+								<div data-err="alerter" class="dl-er-message hide">
+									<div class="alert alert-warning" role="alert">
+										<span data-err="message">Opps!</span>
+									</div>
+								</div>
+								<div class="dl-row mover-up-el">
+									<div class="dl-input-groups cs1-inp-group overflow-hidden">
+										<div class="dl-input-row pull-left w-100 cs1-inp-pair">
+											<div class="w-50 cs1-inp pull-left">
+												<div class="input-group">
+													<span class="input-group-addon"><span class="color-c"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span></span>
+													<input required="true" name="firstname" type="text" class="form-control padding-left-0" placeholder="Tên" tabindex="103" aria-required="true">
+												</div>
+											</div>
+											<div class="w-50 cs1-inp pull-left">
+												<div class="input-group">
+													<input required="true" name="lastname" type="text" class="form-control" placeholder="Họ" tabindex="104" aria-required="true">
+												</div>
+											</div>
+										</div>
+										<div class="dl-input-row input-group">
+											<span class="input-group-addon"><span class="color-c"><i class="fa fa-envelope-o" aria-hidden="true"></i></span></span>
+											<input required="true" name="email" type="email" class="form-control padding-left-0" placeholder="Email" tabindex="105" aria-required="true">
+										</div>
+										<div class="dl-input-row input-group">
+											<span class="input-group-addon"><span class="color-c"><i class="fa fa-briefcase" aria-hidden="true"></i></span></span>
+											<input required="true" name="password" type="password" class="form-control padding-left-0" placeholder="Mật khẩu" tabindex="106" aria-required="true">
+										</div>
+									</div>
+								</div>
+								<div class="dl-row mover-up-el text-center text-wrap">
+									<small>Bằng việc đăng ký và sử dụng trang web, bạn đã đồng ý với các <a href="/term-and-policy" target="_blank">Điều khoản &amp; Quy chế</a></small>
+								</div>
+							</div>
+							<div class="modal-footer padding-top-0">
+								<button data-style="zoom-out" type="submit" class="ladda-button btn tkb-bg-color rounded w-100 font-bold" tabindex="107"><span class="ladda-label">Hoàn tất</span><span class="ladda-spinner"></span></button>
+							</div>
+						</div>
+						<!-- dl success -->
+						<div class="dl-success-container w-100 h-100 bg-white text-center rounded">
+							<div class="modal-header tkb-bg-color">
+								<div class="modal-hl">
+									<h4 class="modal-title font-bold">Cám ơn bạn đã đăng ký!</h4>
+								</div>
+							</div>
+							<div class="modal-body">
+								<div>
+									<div class="dl-row">Cám ơn bạn đã đăng ký tài khoản trên TicketBox!</div>
+									<div class="dl-row">
+										<span class="ello-ok-circled-2" style="color: #ddd; font-size: 80px;"></span>
+									</div>
+									<div class="dl-row">Chúng tôi đã gửi email xác nhận đến địa chỉ email <span data-text="email-addr"></span></div>
+								</div>
+							</div>
+							<div class="dl-success-footer modal-footer padding-top-0">
+								<button data-toggle="modal" data-target="[modal='signin-modal']" data-dismiss="modal" class="btn tkb-bg-color rounded w-100 font-bold">Quay lại Đăng nhập</button>
+							</div>
+						</div>
+					</div>
+					<!-- modal under -->
+					<div class="modal-under-footer text-center">
+						<a class="underline padding-20 visible-xs color-white" data-dismiss="modal">Đóng</a>
+					</div>
+				</div>
+			</form>
 
 
 			<section class="clearfix">
@@ -294,13 +485,13 @@
 </style>
 
 <script>
-	$(document).ready(function () {
-
-		$(".close-btn").click(function () {
-			$(".zalora-link").css("display", "none");
-			$(".zalora-link-lg").attr("href", "javascript:void(0)");
-		});
-	});
+	// $(document).ready(function () {
+	//
+	// 	$(".close-btn").click(function () {
+	// 		$(".zalora-link").css("display", "none");
+	// 		$(".zalora-link-lg").attr("href", "javascript:void(0)");
+	// 	});
+	// });
 </script>
 
 </body>

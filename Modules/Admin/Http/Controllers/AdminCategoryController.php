@@ -16,8 +16,6 @@ class AdminCategoryController extends Controller
 			'categories' => $categories
 		];
 
-
-		
 		return view('admin::category.index',$viewData);
 	}
 	
@@ -58,9 +56,7 @@ class AdminCategoryController extends Controller
 			}
 			$category->c_name            = $requestCategory->name;
 			$category->c_slug            = str_slug($requestCategory->name);
-			$category->c_parent_id       = $requestCategory->c_parent_id;
 			$category->c_icon            = str_slug($requestCategory->icon);
-			$category->c_author_id       = get_data_user('admins');
 			$category->save();
 		}catch (\Exception $exception)
 		{

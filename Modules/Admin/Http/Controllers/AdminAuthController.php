@@ -17,7 +17,6 @@ class AdminAuthController extends Controller
 	public function postLogin(Request $request)
 	{
 		$data = $request->only('email', 'password');
-		
 		if (Auth::guard('admins')->attempt($data)) {
 			return redirect()->route('admin.home');
 		}
