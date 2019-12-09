@@ -11,7 +11,6 @@
                     </span>
                 @endif
             </div>
-
             <div class="form-group">
                 <label for="name">Mô tả:</label>
                 <textarea name="t_description" class="form-control" id="" cols="30" rows="3" placeholder="Mô tả ngắn sản phẩm">{{ old('t_description',isset($tour->t_description) ? $tour->t_description : '') }}</textarea>
