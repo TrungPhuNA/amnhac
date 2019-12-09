@@ -96,7 +96,7 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
+        if (! app()->environment('tourion')) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }
     }

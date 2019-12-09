@@ -15,7 +15,7 @@ class AdminRatingController extends Controller
      */
     public function index()
     {
-    	$ratings = Rating::with('user:id,name','product:id,pro_name')->paginate(10);
+    	$ratings = Rating::with('user:id,name','tour:id,pro_name')->paginate(10);
     	
     	$viewData = [
     		'ratings' => $ratings

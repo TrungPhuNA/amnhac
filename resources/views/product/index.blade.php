@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title_page',$cateProduct->c_name ?? "Tìm Kiếm")
+@section('title_page',$catetour->c_name ?? "Tìm Kiếm")
 @section('content')
     <div class="section">
         <!-- container -->
@@ -17,22 +17,22 @@
                 <!-- STORE -->
                 <div id="store" class="col-md-9">
 
-                    <!-- store products -->
+                    <!-- store tours -->
                     <div class="row">
-                        @if (isset($cateProduct))
-                            <h1 style="font-size: 20px;margin-top: 10px">{{ $cateProduct->c_name }}</h1>
+                        @if (isset($catetour))
+                            <h1 style="font-size: 20px;margin-top: 10px">{{ $catetour->c_name }}</h1>
                         @endif
-                        @foreach($products as $product)
+                        @foreach($tours as $tour)
                             <div class="col-md-4 col-xs-6">
-                                @include('components.product_item_v1',['product' => $product])
+                                @include('components.tour_item_v1',['tour' => $tour])
                             </div>
                         @endforeach
                     </div>
-                    <!-- /store products -->
+                    <!-- /store tours -->
 
                     <!-- store bottom filter -->
                     <div class="store-filter clearfix">
-                        {!! $products->appends($query)->links() !!}
+                        {!! $tours->appends($query)->links() !!}
                     </div>
                     <!-- /store bottom filter -->
                 </div>

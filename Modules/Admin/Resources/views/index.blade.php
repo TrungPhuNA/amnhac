@@ -13,7 +13,7 @@
         </div>
         <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countProduct }} sản phẩm</h4>
+            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $counttour }} sản phẩm</h4>
         </div>
         <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -118,7 +118,7 @@
                         <tr>
                             <td>{{ $rating->id }}</td>
                             <td>{{ isset($rating->user->name) ? $rating->user->name : '[N\A]' }}</td>
-                            <td><a href="">{{ isset($rating->product->pro_name) ? $rating->product->pro_name : '[N\A]' }}</a></td>
+                            <td><a href="">{{ isset($rating->tour->pro_name) ? $rating->tour->pro_name : '[N\A]' }}</a></td>
                             <td>{{ $rating->ra_number }}</td>
                         </tr>
                     @endforeach

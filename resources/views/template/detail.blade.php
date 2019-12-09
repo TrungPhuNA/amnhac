@@ -1,7 +1,7 @@
 @extends('template.layout')
 @section('content')
     <section>
-        <div class="tp_container product_detail">
+        <div class="tp_container tour_detail">
             <div class="width-100 flex" style="flex-flow: wrap">
                 <div class="breadcrumb">
                     <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
@@ -26,32 +26,32 @@
                     <div class="clearfloat"></div>
                 </div>
             </div>
-            <div class="width-100 flex product_detail-column">
-                <div class="width-35 product_detail_left" style="margin-right: 20px">
+            <div class="width-100 flex tour_detail-column">
+                <div class="width-35 tour_detail_left" style="margin-right: 20px">
                     <a href="">
                         <img src="{{ asset('images/detail.jpg') }}" style="max-width: 100%" alt="">
                     </a>
                 </div>
-                <div class="width-65 product_detail_right" >
+                <div class="width-65 tour_detail_right" >
                     <div class="title_heading">
                         <h1>Bộ vest truyền thống đen May's House 410208232800</h1>
                     </div>
-                    <div class="product_info">
-                        <div class="product_info_item">
+                    <div class="tour_info">
+                        <div class="tour_info_item">
                             <p class="flex"><span class="width-15">Mã sản phẩm </span><a href="">#1</a></p>
                             <p class="flex"><span class="width-15">Hãng </span><a href="">Cty ABC</a></p>
                         </div>
-                        <div class="width-100 flex product_detail-column">
+                        <div class="width-100 flex tour_detail-column">
                             <div class="width-70 width-mb-100">
-                                <div class="product_info_description">
+                                <div class="tour_info_description">
                                     - Chất liệu cao cấp, đường may sắc nét tinh tế.<br>-
                                     Thiết kế thời trang trẻ trung, xử lý form dáng chuẩn.<br>-
                                     Màu sắc trang nhã tinh tế, dễ kết hợp trang phục và phụ kiện.<br>
                                 </div>
-                                <div class="product_info_price">
+                                <div class="tour_info_price">
                                     <p><span class="price_sale">2.000.000 đ</span> <span class="price_old">1.000.000 đ</span></p>
                                 </div>
-                                <div class="product_info_shopping">
+                                <div class="tour_info_shopping">
                                     <a href=""><i class="fas fa-shopping-bag"></i> Thêm giỏ hàng</a>
                                     <a href=""><i class="fas fa-heart"></i> Yêu thích</a>
                                 </div>
@@ -72,13 +72,13 @@
                 </div>
             </div>
 
-            <div class="width-100 flex product_detail-column" style="margin-top: 20px">
+            <div class="width-100 flex tour_detail-column" style="margin-top: 20px">
                 <div class="width-75 width-mb-100">
                     <div class="title_heading">
                         <h3>Thông tin chi tiết sản phẩm</h3>
                     </div>
 
-                    <div class="product_content">
+                    <div class="tour_content">
                         <div class="full left tr-prd-info-content collapse">
 
                             <h2 style="font-size:15px;margin-bottom:10px;text-align:left;font-family:RobotoRegular;line-height:1.5;">

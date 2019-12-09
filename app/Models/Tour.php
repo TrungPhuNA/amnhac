@@ -30,6 +30,6 @@ class Tour extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'t_categories');
+        return $this->belongsTo(Category::class,'t_category_id');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\Product;
+use App\Models\tour;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,19 +20,19 @@ class ShoppingCartController extends FrontendController
 	 * @param $id
 	 * thêm giỏ hàng
 	 */
-    public function addProduct(Request $request,$id)
+    public function addtour(Request $request,$id)
 	{
-	    $product = Product::select('pro_name','id','pro_price','pro_sale','pro_avatar','pro_number')->find($id);
+	    $tour = tour::select('pro_name','id','pro_price','pro_sale','pro_avatar','pro_number')->find($id);
 
-	    if (!$product) return redirect('/');
+	    if (!$tour) return redirect('/');
 
-	    $price = $product->pro_price;
-	    if ($product->pro_sale)
+	    $price = $tour->pro_price;
+	    if ($tour->pro_sale)
 		{
-			$price =  $price * (100 - $product->pro_sale)/ 100;
+			$price =  $price * (100 - $tour->pro_sale)/ 100;
 		}
 
-		if ($product->pro_number == 0 )
+		if ($tour->pro_number == 0 )
 		{
 			return redirect()->back()->with('warning','Sản phẩm đã hết hàng');
 		}
@@ -41,20 +41,20 @@ class ShoppingCartController extends FrontendController
 
 		\Cart::instance('cart')->add([
 			'id'      => $id,
-			'name'    => $product->pro_name,
+			'name'    => $tour->pro_name,
 			'qty'     => $qty,
 			'price'   => $price,
 			'options' => [
-				'avatar' => $product->pro_avatar,
-				'sale'   => $product->pro_sale,
-				'price_old' => $product->pro_price
+				'avatar' => $tour->pro_avatar,
+				'sale'   => $tour->pro_sale,
+				'price_old' => $tour->pro_price
 			],
 		]);
 
 		return redirect()->back()->with('success','Mua hàng thành công');
 	}
 
-	public function deleteProductItem($key)
+	public function deletetourItem($key)
 	{
 		\Cart::instance('cart')->remove($key);
 		return redirect()->back();
@@ -66,8 +66,8 @@ class ShoppingCartController extends FrontendController
 	 */
 	public function getListShoppingCart()
 	{
-		$products = \Cart::instance('cart')->content();
-		return view('shopping.index',compact('products'));
+		$tours = \Cart::instance('cart')->content();
+		return view('shopping.index',compact('tours'));
 	}
 
 	/**
@@ -75,8 +75,8 @@ class ShoppingCartController extends FrontendController
 	 */
 	public function getFormPay()
 	{
-		$products = \Cart::instance('cart')->content();
-		return view('shopping.pay',compact('products'));
+		$tours = \Cart::instance('cart')->content();
+		return view('shopping.pay',compact('tours'));
 	}
 
 	/**
@@ -97,16 +97,16 @@ class ShoppingCartController extends FrontendController
 
 		if ($transactionId)
 		{
-			$products = \Cart::instance('cart')->content();
-			foreach ($products as $product)
+			$tours = \Cart::instance('cart')->content();
+			foreach ($tours as $tour)
 			{
 				Order::insert([
 					'or_transaction_id'	  => $transactionId,
-					'or_product_id'         => $product->id,
+					'or_tour_id'         => $tour->id,
 					'or_user_id'           => get_data_user('web'),
-					'or_qty'                => $product->qty,
-					'or_price'              => $product->options->price_old,
-					'or_sale'               => $product->options->sale,
+					'or_qty'                => $tour->qty,
+					'or_price'              => $tour->options->price_old,
+					'or_sale'               => $tour->options->sale,
                     'created_at'            => Carbon::now(),
                     'updated_at'            => Carbon::now(),
 				]);
@@ -149,8 +149,8 @@ class ShoppingCartController extends FrontendController
 
 		}
 
-		$products = \Cart::instance('cart')->content();
-		return view('shopping.pay_online',compact('products'));
+		$tours = \Cart::instance('cart')->content();
+		return view('shopping.pay_online',compact('tours'));
 	}
 
 	/**
@@ -172,15 +172,15 @@ class ShoppingCartController extends FrontendController
 
 		if ($transactionId)
 		{
-			$products = \Cart::content();
-			foreach ($products as $product)
+			$tours = \Cart::content();
+			foreach ($tours as $tour)
 			{
 				Order::insert([
 					'or_transaction_id'	 => $transactionId,
-					'or_product_id'         => $product->id,
-					'or_qty'                => $product->qty,
-					'or_price'              => $product->options->price_old,
-					'or_sale'               => $product->options->sale,
+					'or_tour_id'         => $tour->id,
+					'or_qty'                => $tour->qty,
+					'or_price'              => $tour->options->price_old,
+					'or_sale'               => $tour->options->sale,
 				]);
 			}
 		}
@@ -240,7 +240,7 @@ class ShoppingCartController extends FrontendController
 	public function getInvoice($id)
 	{
 		$transaction = Transaction::find($id);
-		$orders = Order::with('product')
+		$orders = Order::with('tour')
 			->where('or_transaction_id',$id)->get();
 
 		return view('shopping.invoice',compact('transaction','orders'));

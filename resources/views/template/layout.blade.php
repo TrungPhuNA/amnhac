@@ -202,16 +202,16 @@
 
 		// show sidebar-left
 		$(".box_nav_mb").click(function(){
-			let productCategories = $(".product_categories_left");
-			 if ($(".product_categories_left").hasClass('active_mb'))
+			let tourCategories = $(".tour_categories_left");
+			 if ($(".tour_categories_left").hasClass('active_mb'))
              {
-				 productCategories.css('left','-300px');
-				 productCategories.removeClass('active_mb')
+				 tourCategories.css('left','-300px');
+				 tourCategories.removeClass('active_mb')
 				 $(".opacity").hide();
              }else
              {
-				 productCategories.css('left','0');
-				 productCategories.addClass('active_mb')
+				 tourCategories.css('left','0');
+				 tourCategories.addClass('active_mb')
 				 $(".opacity").show();
              }
 		});

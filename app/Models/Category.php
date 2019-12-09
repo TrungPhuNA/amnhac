@@ -62,9 +62,9 @@ class Category extends Model
 		return array_get($this->home,$this->c_home,'[N\A]');
 	}
 	
-	public function products()
+	public function tours()
 	{
-		return $this->hasMany(Product::class,'pro_category_id');
+		return $this->hasMany(tour::class,'pro_category_id');
 	}
 
 	public function children()

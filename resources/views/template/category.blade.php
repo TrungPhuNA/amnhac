@@ -1,9 +1,9 @@
 @extends('template.layout')
 @section('content')
     <section>
-        <div class="tp_container product_categories">
+        <div class="tp_container tour_categories">
             <div class="width-100 flex" style="flex-flow: wrap">
-                <div class="width-20 product_categories_left">
+                <div class="width-20 tour_categories_left">
                     <a href="javascript::void(0)" class="close_sidebar_mb"><i class="far fa-times-circle"></i></a>
                     <div class="sidebar_left" style="background: #eee;margin-right: 20px;margin-bottom: 20px;padding: 10px;margin-top: 10px;">
                         <div class="sidebar_title">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="width-80 product_categories_right">
+                <div class="width-80 tour_categories_right">
                     <div class="breadcrumb">
                         <ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
                             <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
@@ -80,7 +80,7 @@
                         </ul>
                         <div class="clearfloat"></div>
                     </div>
-                    <div class="product_list">
+                    <div class="tour_list">
                         <div class="title_heading">
                             <h1>Thời trang nam</h1>
                         </div>
@@ -102,16 +102,16 @@
                         </div>
                         <div class="width-100 flex" style="flex-wrap: wrap;">
                             @for($i = 1; $i <= 10 ; $i ++)
-                                <div class="product_item product_item-4">
-                                    <a href="{{ route('demo.detail') }}" class="product_item_img">
+                                <div class="tour_item tour_item-4">
+                                    <a href="{{ route('demo.detail') }}" class="tour_item_img">
                                         <img src="{{ asset('images/giay_demo.png') }}" alt="">
                                     </a>
-                                    <h3 class="product_item_name"><a href="">Giày thể thao </a></h3>
-                                    <p class="product_item_description">Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321 Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321</p>
-                                    <div class="product_price">
-                                        <span class="product_price-new">210.000đ</span>
-                                        <span class="product_price-old">290.000đ</span>
-                                        <span class="product_price-sale">(4%)</span>
+                                    <h3 class="tour_item_name"><a href="">Giày thể thao </a></h3>
+                                    <p class="tour_item_description">Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321 Nồi thủy tinh Luminarc Amberline Trianon Eclipse 1.5L C2321</p>
+                                    <div class="tour_price">
+                                        <span class="tour_price-new">210.000đ</span>
+                                        <span class="tour_price-old">290.000đ</span>
+                                        <span class="tour_price-sale">(4%)</span>
                                     </div>
                                 </div>
                             @endfor

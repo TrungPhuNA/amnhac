@@ -22,6 +22,6 @@ mix.options({
 		jquery: ['$', 'window.jQuery', 'jQuery'],
 	});
 
-if (mix.inProduction()) {
+if (mix.intourion()) {
 	mix.version();
 }

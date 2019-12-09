@@ -27,19 +27,19 @@
                          @endif
                     </select>
                 </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                <button type="submit"  class="btn btn-default"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
+        <h2>Quản lý tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><span class="glyphicon glyphicon-ok"></span></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Tên tours</th>
                     <th>Category</th>
-                    <th>Hình ảnh</th>
+                    <th>Avatar</th>
                     <th>Trạng thái</th>
                     <th>Địa chỉ</th>
                     <th>Nổi bật</th>
@@ -49,47 +49,23 @@
             <tbody>
                  @if (isset($tours))
                      @foreach($tours as $tour)
-                         <?php
-                            $age = 0;
-
-                            if ($tour->pro_total_rating)
-                            {
-								$age  =  round($product->pro_total_number / $product->pro_total_rating,2);
-                            }
-                         ?>
                          <tr>
-                             <td>{{ $product->id }}</td>
+                            <td>{{ $tour->id }}</td>
+                            <td>{{ $tour->t_title }}</td>
+                            <td>{{ $tour->category->c_name }}</td>
+                            <td>
+                                <img src="{{ pare_url_file($tour->t_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;">
+                            </td>
+                            <td>{{ $tour->t_status }}</td>
+                            <td>{{ $tour->t_address }}</td>
+                            <td>
+                              {{ $tour->t_hot }}
+                            </td>
+
+
                              <td>
-                                 <div style="width: 300px">
-                                     {{ $product->pro_name }}
-                                 </div>
-                                 <ul style="padding-left: 15px;">
-                                     <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ number_format($product->pro_price,0,',','.') }} (đ)</span></li>
-                                     <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ $product->pro_sale }} (%)</span></li>
-                                     <li><span>Đánh giá : </span>
-                                         <span class="rating">
-                                             @for($i = 1 ; $i <= 5 ; $i ++)
-                                                 <i class="fa fa-star {{ $i <= $age ? 'active' : '' }}" style="color: #999"></i>
-                                             @endfor
-                                         </span>
-                                         <span>{{ $age }}</span>
-                                     </li>
-                                     <li><span>Số lượng </span> <span>{{ $product->pro_number }}</span></li>
-                                 </ul>
-                             </td>
-                             <td>{{ isset($product->category->c_name) ? $product->category->c_name  : '[N\A]' }}</td>
-                             <td>
-                                 <img src="{{ pare_url_file($product->pro_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;">
-                             </td>
-                             <td>
-                                 <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }}">{{ $product->getStatus($product->pro_active)['name'] }}</a>
-                             </td>
-                             <td>
-                                 <a href="{{ route('admin.get.action.product',['hot',$product->id]) }}" class="label {{ $product->getHot($product->pro_hot)['class'] }}">{{ $product->getHot($product->pro_hot)['name'] }}</a>
-                             </td>
-                             <td>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.product',$product->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.product',$product->id) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.tour',$tour->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.tour',$tour->id) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
                              </td>
                          </tr>
                      @endforeach

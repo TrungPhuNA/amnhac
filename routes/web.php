@@ -36,9 +36,9 @@ Route::group(['namespace' => 'Auth'],function(){
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('search','SearchController@index')->name("get.search");
-Route::get('danh-muc/{slug}-{id}','CategoryController@getListProduct')->name('get.list.product');
-Route::get('san-pham','CategoryController@getListProduct')->name('get.product.list');
-Route::get('san-pham/{slug}-{id}','ProductDetailController@productDetail')->name('get.detail.product');
+Route::get('danh-muc/{slug}-{id}','CategoryController@getListtour')->name('get.list.tour');
+Route::get('san-pham','CategoryController@getListtour')->name('get.tour.list');
+Route::get('san-pham/{slug}-{id}','tourDetailController@tourDetail')->name('get.detail.tour');
 
 
 // bai viet
@@ -48,8 +48,8 @@ Route::get('bai-viet/{slug}-{id}','ArticleController@getDetailArticle')->name('g
 
 Route::prefix('shopping')->group(function () {
     Route::get('/gio-hang.html','ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
-	Route::get('/add/{id}','ShoppingCartController@addProduct')->name('add.shopping.cart');
-	Route::get('/delete/{id}','ShoppingCartController@deleteProductItem')->name('delete.shopping.cart');
+	Route::get('/add/{id}','ShoppingCartController@addtour')->name('add.shopping.cart');
+	Route::get('/delete/{id}','ShoppingCartController@deletetourItem')->name('delete.shopping.cart');
 	Route::get('/update/{id}','ShoppingCartController@updateShoppingCart')->name('updateShoppingCart');
 });
 
@@ -64,11 +64,11 @@ Route::group(['prefix' => 'gio-hang','middleware' => 'CheckLoginUser'],function(
 });
 
 Route::group(['prefix' => 'ajax','middleware' => 'CheckLoginUser'],function(){
-	Route::post('/danh-gia/{id}','RatingController@saveRating')->name('post.rating.product');
+	Route::post('/danh-gia/{id}','RatingController@saveRating')->name('post.rating.tour');
 });
 
 Route::group(['prefix' => 'ajax'],function(){
-	Route::post('/view-product','HomeController@renderProductView')->name('post.product.view');
+	Route::post('/view-tour','HomeController@rendertourView')->name('post.tour.view');
 });
 
 
@@ -86,8 +86,8 @@ Route::group(['prefix' => 'user','middleware' => 'CheckLoginUser'],function(){
 	Route::post('/password','UserController@saveUpdatePassword');
 
 	Route::get('giao-dich','UserController@getTransaction')->name('get.transaction.history');
-	Route::get('/san-pham-yeu-thich','UserController@getProductWishlist')->name('user.list.product_wishlist');
-	Route::get('/san-pham-ban-chay','UserController@getProductPay')->name('user.list.product');
+	Route::get('/san-pham-yeu-thich','UserController@gettourWishlist')->name('user.list.tour_wishlist');
+	Route::get('/san-pham-ban-chay','UserController@gettourPay')->name('user.list.tour');
 });
 
 include 'route_test.php';

@@ -12,9 +12,9 @@ class Rating extends Model
 		return $this->belongsTo(User::class,'ra_user_id');
 	}
 	
-	public function product()
+	public function tour()
 	{
-		return $this->belongsTo(Product::class,'ra_product_id');
+		return $this->belongsTo(tour::class,'ra_tour_id');
 	}
 	
 }
