@@ -27,7 +27,7 @@
                          @endif
                     </select>
                 </div>
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                <button type="submit"  class="btn btn-default"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
