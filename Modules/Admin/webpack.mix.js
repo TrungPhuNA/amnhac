@@ -6,6 +6,6 @@ mix.setPublicPath('../../public').mergeManifest();
 mix.js(__dirname + '/Resources/assets/js/app.js', 'js/admin.js')
     .sass( __dirname + '/Resources/assets/sass/app.scss', 'css/admin.css');
 
-if (mix.inProduction()) {
+if (mix.intourion()) {
     mix.version();
 }

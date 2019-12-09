@@ -20,11 +20,10 @@ class RequestTour extends FormRequest
     {
         return [
             't_title'           => 'required|unique:tours,t_title,' . $this->id,
-            't_categories'      => 'required',
+            't_category_id'      => 'required',
             't_description'     => 'required',
-//            's_supplier_id'     => 'required',
             't_content'         => 'required',
-            't_time_start'      => 'required',
+            't_time_start'     => 'required',
             't_city'            => 'required',
         ];
     }

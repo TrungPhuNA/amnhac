@@ -1,4 +1,4 @@
-.box_about_product
+.box_about_tour
 {
     h2 {
         text-align: center;
@@ -17,7 +17,7 @@
             height: 20px;
         }
     }
-    .about_product
+    .about_tour
     {
         &_item{
             width: calc(100% / 3 - 20px);

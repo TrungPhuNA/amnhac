@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestProduct extends FormRequest
+class Requesttour extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,7 +19,7 @@ class RequestProduct extends FormRequest
 	public function rules()
 	{
 		return [
-            'pro_name'        => 'required|unique:products,pro_name,' . $this->id,
+            'pro_name'        => 'required|unique:tours,pro_name,' . $this->id,
             'pro_category_id' => 'required',
             'pro_price'       => 'required',
             's_supplier_id'   => 'required',

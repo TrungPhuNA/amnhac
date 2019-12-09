@@ -33,17 +33,17 @@
                                 Danh sách sản phẩm <div class="pull-right"><small><a class="afix-1" href="{{ route('get.list.shopping.cart') }}">Cập nhật</a></small></div>
                             </div>
                             <div class="panel-body">
-                                @foreach($products as $product)
+                                @foreach($tours as $tour)
                                     <div class="form-group">
                                         <div class="col-sm-3 col-xs-3">
-                                            <img class="img-responsive" style="width: 100px;height: 70px" src="{{ pare_url_file($product->options->avatar) }}" />
+                                            <img class="img-responsive" style="width: 100px;height: 70px" src="{{ pare_url_file($tour->options->avatar) }}" />
                                         </div>
                                         <div class="col-sm-6 col-xs-6">
-                                            <div class="col-xs-12">{{ $product->name }}</div>
-                                            <div class="col-xs-12"><small>Số lượng x <span>{{ $product->qty }}</span></small></div>
+                                            <div class="col-xs-12">{{ $tour->name }}</div>
+                                            <div class="col-xs-12"><small>Số lượng x <span>{{ $tour->qty }}</span></small></div>
                                         </div>
                                         <div class="col-sm-3 col-xs-3 text-right">
-                                            <h6>{{ number_format($product->price,0,',','.') }} <span>VNĐ</span></h6>
+                                            <h6>{{ number_format($tour->price,0,',','.') }} <span>VNĐ</span></h6>
                                         </div>
                                     </div>
                                     <div class="form-group"><hr /></div>

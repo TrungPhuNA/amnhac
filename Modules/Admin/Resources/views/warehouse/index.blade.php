@@ -50,23 +50,23 @@
             </tr>
             </thead>
             <tbody>
-            @if (isset($products))
-                @foreach($products as $product)
+            @if (isset($tours))
+                @foreach($tours as $tour)
 					<?php
 					$age = 0;
 
-					if ($product->pro_total_rating)
+					if ($tour->pro_total_rating)
 					{
-						$age  =  round($product->pro_total_number / $product->pro_total_rating,2);
+						$age  =  round($tour->pro_total_number / $tour->pro_total_rating,2);
 					}
 					?>
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <td>{{ $tour->id }}</td>
                         <td>
-                            {{ $product->pro_name }}
+                            {{ $tour->pro_name }}
                             <ul style="padding-left: 15px;">
-                                <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ number_format($product->pro_price,0,',','.') }} (đ)</span></li>
-                                <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ $product->pro_sale }} (%)</span></li>
+                                <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ number_format($tour->pro_price,0,',','.') }} (đ)</span></li>
+                                <li><span style="width: 20px;margin-right: 10px"><i class="fas fa-dollar-sign" style="font-size: 11px"></i></span><span>{{ $tour->pro_sale }} (%)</span></li>
                                 <li><span>Đánh giá : </span>
                                     <span class="rating">
                                              @for($i = 1 ; $i <= 5 ; $i ++)
@@ -75,23 +75,23 @@
                                          </span>
                                     <span>{{ $age }}</span>
                                 </li>
-                                <li><span>Số lượng </span> <span>{{ $product->pro_number }}</span></li>
-                                <li><span>Số lần bán </span> <span>{{ $product->pro_pay }}</span></li>
+                                <li><span>Số lượng </span> <span>{{ $tour->pro_number }}</span></li>
+                                <li><span>Số lần bán </span> <span>{{ $tour->pro_pay }}</span></li>
                             </ul>
                         </td>
-                        <td>{{ isset($product->category->c_name) ? $product->category->c_name  : '[N\A]' }}</td>
+                        <td>{{ isset($tour->category->c_name) ? $tour->category->c_name  : '[N\A]' }}</td>
                         <td>
-                            <img src="{{ pare_url_file($product->pro_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;">
+                            <img src="{{ pare_url_file($tour->pro_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;">
                         </td>
                         <td>
-                            <a href="{{ route('admin.get.action.product',['active',$product->id]) }}" class="label {{ $product->getStatus($product->pro_active)['class'] }}">{{ $product->getStatus($product->pro_active)['name'] }}</a>
+                            <a href="{{ route('admin.get.action.tour',['active',$tour->id]) }}" class="label {{ $tour->getStatus($tour->pro_active)['class'] }}">{{ $tour->getStatus($tour->pro_active)['name'] }}</a>
                         </td>
                         <td>
-                            <a href="{{ route('admin.get.action.product',['hot',$product->id]) }}" class="label {{ $product->getHot($product->pro_hot)['class'] }}">{{ $product->getHot($product->pro_hot)['name'] }}</a>
+                            <a href="{{ route('admin.get.action.tour',['hot',$tour->id]) }}" class="label {{ $tour->getHot($tour->pro_hot)['class'] }}">{{ $tour->getHot($tour->pro_hot)['name'] }}</a>
                         </td>
                         <td>
-                            <a class="btn_customer_action" href="{{ route('admin.get.edit.product',$product->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
-                            <a class="btn_customer_action" href="{{ route('admin.get.action.product',['delete',$product->id]) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
+                            <a class="btn_customer_action" href="{{ route('admin.get.edit.tour',$tour->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
+                            <a class="btn_customer_action" href="{{ route('admin.get.action.tour',['delete',$tour->id]) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
                         </td>
                     </tr>
                 @endforeach

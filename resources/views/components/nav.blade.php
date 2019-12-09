@@ -66,6 +66,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right hidden-xs">
+				@if (!get_data_user('web'))
 				<li>
 					<a data-toggle="modal" data-target="[modal='signin-modal']">Đăng nhập</a>
 				</li>
@@ -75,6 +76,11 @@
 				<li>
 					<a data-toggle="modal" data-target="[modal='signup-modal']">Đăng ký</a>
 				</li>
+				@else
+					<li>
+						<a href="{{ route('get.logout.user') }}">Xin Chào {{ get_data_user('web','name') }} - Đăng xuất</a>
+					</li>
+				@endif
 			</ul>
 		</div>
 	</nav>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title_page',$productDetail->pro_name)
+@section('title_page',$tourDetail->pro_name)
 @section('content')
     <div id="breadcrumb" class="section">
         <!-- container -->
@@ -10,8 +10,8 @@
                     <ul class="breadcrumb-tree">
                         <li><a href="#">Trang chủ</a></li>
                         <li><a href="#">Sản phẩm</a></li>
-                        <li><a href="#">{{ $cateProduct->c_name }}</a></li>
-                        <li class="active">{{ $productDetail->pro_name }}</li>
+                        <li><a href="#">{{ $catetour->c_name }}</a></li>
+                        <li class="active">{{ $tourDetail->pro_name }}</li>
                     </ul>
                 </div>
             </div>
@@ -25,47 +25,47 @@
         <div class="container">
             <!-- row -->
             <div class="row">
-                <!-- Product main img -->
+                <!-- tour main img -->
                 <div class="col-md-5 col-md-push-2">
-                    <div id="product-main-img">
+                    <div id="tour-main-img">
                         @foreach($images as $image)
-                        <div class="product-preview">
+                        <div class="tour-preview">
                             <img src="{{ pare_url_file($image->pi_slug) }}" alt="" style="height: 360px">
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <!-- /Product main img -->
-                <!-- Product thumb imgs -->
+                <!-- /tour main img -->
+                <!-- tour thumb imgs -->
                 <div class="col-md-2  col-md-pull-5">
-                    <div id="product-imgs">
+                    <div id="tour-imgs">
                         @foreach($images as $image)
-                            <div class="product-preview">
+                            <div class="tour-preview">
                                 <img src="{{ pare_url_file($image->pi_slug) }}" alt="" style="height: 120px">
                             </div>
                         @endforeach
                         {{----}}
-                        {{--<div class="product-preview">--}}
-                            {{--<img src="{{ asset('img/product01.png') }}" alt="">--}}
+                        {{--<div class="tour-preview">--}}
+                            {{--<img src="{{ asset('img/tour01.png') }}" alt="">--}}
                         {{--</div>--}}
-                        {{--<div class="product-preview">--}}
-                            {{--<img src="{{ asset('img/product03.png') }}" alt="">--}}
+                        {{--<div class="tour-preview">--}}
+                            {{--<img src="{{ asset('img/tour03.png') }}" alt="">--}}
                         {{--</div>--}}
-                        {{--<div class="product-preview">--}}
-                            {{--<img src="{{ asset('img/product06.png') }}" alt="">--}}
+                        {{--<div class="tour-preview">--}}
+                            {{--<img src="{{ asset('img/tour06.png') }}" alt="">--}}
                         {{--</div>--}}
-                        {{--<div class="product-preview">--}}
-                            {{--<img src="{{ asset('img/product08.png') }}" alt="">--}}
+                        {{--<div class="tour-preview">--}}
+                            {{--<img src="{{ asset('img/tour08.png') }}" alt="">--}}
                         {{--</div>--}}
                     </div>
                 </div>
-                <!-- /Product thumb imgs -->
-                <!-- Product details -->
+                <!-- /tour thumb imgs -->
+                <!-- tour details -->
                 <div class="col-md-5">
-                    <div class="product-details">
-                        <h2 class="product-name">{{ $productDetail->pro_name }}</h2>
+                    <div class="tour-details">
+                        <h2 class="tour-name">{{ $tourDetail->pro_name }}</h2>
                         <div>
-                            <div class="product-rating">
+                            <div class="tour-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -75,19 +75,19 @@
                             {{--<a class="review-link" href="#">10 Review(s) | Add your review</a>--}}
                         </div>
                         <div>
-                            <h3 class="product-price">
-                                @if ($productDetail->pro_sale)
-                                    {{ number_format($productDetail->pro_price * (100 - $productDetail->pro_sale) / 100,0,',','.') }} VNĐ
-                                    <del class="product-old-price">{{ number_format($productDetail->pro_price,0,',','.') }}</del> VNĐ</h4>
+                            <h3 class="tour-price">
+                                @if ($tourDetail->pro_sale)
+                                    {{ number_format($tourDetail->pro_price * (100 - $tourDetail->pro_sale) / 100,0,',','.') }} VNĐ
+                                    <del class="tour-old-price">{{ number_format($tourDetail->pro_price,0,',','.') }}</del> VNĐ</h4>
                                 @else
-                                    {{ number_format($productDetail->pro_price,0,',','.') }} VNĐ
+                                    {{ number_format($tourDetail->pro_price,0,',','.') }} VNĐ
                                 @endif
                             </h3>
-                            <span class="product-available">{{ $productDetail->supplier->s_name ?? "[N\A]" }}</span>
+                            <span class="tour-available">{{ $tourDetail->supplier->s_name ?? "[N\A]" }}</span>
                         </div>
-                        <p>{{ $productDetail->pro_description }}</p>
+                        <p>{{ $tourDetail->pro_description }}</p>
                         <div class="add-to-cart">
-                            <form action="{{ route('add.shopping.cart', $productDetail->id) }}" method="GET">
+                            <form action="{{ route('add.shopping.cart', $tourDetail->id) }}" method="GET">
                                 <div class="qty-label">
                                     Qty
                                     <div class="input-number">
@@ -98,7 +98,7 @@
                             </form>
                         </div>
 
-                        <ul class="product-links">
+                        <ul class="tour-links">
                             <li>Chia sẻ:</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -107,23 +107,23 @@
                         </ul>
                     </div>
                 </div>
-                <!-- /Product details -->
-                <!-- Product tab -->
+                <!-- /tour details -->
+                <!-- tour tab -->
                 <div class="col-md-12">
-                    <div id="product-tab">
-                        <!-- product tab nav -->
+                    <div id="tour-tab">
+                        <!-- tour tab nav -->
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Mô tả sản phẩm</a></li>
                             {{--<li><a data-toggle="tab" href="#tab3">Đánh giá sản phẩm</a></li>--}}
                         </ul>
-                        <!-- /product tab nav -->
-                        <!-- product tab content -->
+                        <!-- /tour tab nav -->
+                        <!-- tour tab content -->
                         <div class="tab-content">
                             <!-- tab1  -->
                             <div id="tab1" class="tab-pane fade in active">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {!! $productDetail->pro_content !!}
+                                        {!! $tourDetail->pro_content !!}
                                     </div>
                                 </div>
                             </div>
@@ -303,10 +303,10 @@
                             </div>
                             <!-- /tab3  -->
                         </div>
-                        <!-- /product tab content  -->
+                        <!-- /tour tab content  -->
                     </div>
                 </div>
-                <!-- /product tab -->
+                <!-- /tour tab -->
             </div>
             <!-- /row -->
         </div>
@@ -314,7 +314,7 @@
     </div>
     <!-- /SECTION -->
     <!-- Section -->
-    @if (isset($productSuggest))
+    @if (isset($tourSuggest))
     <div class="section">
         <!-- container -->
         <div class="container">
@@ -325,29 +325,29 @@
                         <h3 class="title">Sản phẩm liên quan</h3>
                     </div>
                 </div>
-                @foreach($productSuggest as $product)
-                <!-- product -->
+                @foreach($tourSuggest as $tour)
+                <!-- tour -->
                     <div class="col-md-3 col-xs-6">
-                    <div class="product">
-                        <div class="product-img">
-                            <img src="{{ pare_url_file($product->pro_avatar) }}" alt="{{ $product->pro_name }}" style="width: 263px;height: 263px">
-                            <div class="product-label">
-                                @if ($product->pro_sale)
-                                    <span class="sale">-{{ $product->pro_sale }}%</span>
+                    <div class="tour">
+                        <div class="tour-img">
+                            <img src="{{ pare_url_file($tour->pro_avatar) }}" alt="{{ $tour->pro_name }}" style="width: 263px;height: 263px">
+                            <div class="tour-label">
+                                @if ($tour->pro_sale)
+                                    <span class="sale">-{{ $tour->pro_sale }}%</span>
                                 @endif
                             </div>
                         </div>
-                        <div class="product-body">
-                            <p class="product-category">Category</p>
-                            <h3 class="product-name"><a href="#">{{ $product->pro_name }}</a></h3>
-                            <h4 class="product-price">
-                                @if ($product->pro_sale)
-                                    {{ number_format($product->pro_price * (100 - $product->pro_sale) / 100,0,',','.') }} VNĐ
-                                    <del class="product-old-price">{{ number_format($product->pro_price,0,',','.') }}</del> VNĐ</h4>
+                        <div class="tour-body">
+                            <p class="tour-category">Category</p>
+                            <h3 class="tour-name"><a href="#">{{ $tour->pro_name }}</a></h3>
+                            <h4 class="tour-price">
+                                @if ($tour->pro_sale)
+                                    {{ number_format($tour->pro_price * (100 - $tour->pro_sale) / 100,0,',','.') }} VNĐ
+                                    <del class="tour-old-price">{{ number_format($tour->pro_price,0,',','.') }}</del> VNĐ</h4>
                                 @else
-                                    {{ number_format($product->pro_price,0,',','.') }} VNĐ
+                                    {{ number_format($tour->pro_price,0,',','.') }} VNĐ
                                 @endif
-                            <div class="product-btns">
+                            <div class="tour-btns">
                                 <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Thêm vào yêu thích</span></button>
                                 <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Thêm vào giỏ hàng</span></button>
                                 <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Xem</span></button>
@@ -358,7 +358,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /product -->
+                <!-- /tour -->
                 @endforeach
             </div>
             <!-- /row -->

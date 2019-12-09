@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Product;
-use App\Models\ProductImage;
+use App\Models\tour;
+use App\Models\tourImage;
 use Illuminate\Http\Request;
 
-class ProductDetailController extends FrontendController
+class tourDetailController extends FrontendController
 {
 	public function __construct()
 	{
 		parent::__construct();
 	}
 	
-	public function productDetail(Request $request)
+	public function tourDetail(Request $request)
 	{
 		$url = $request->segment(2);
 		$url = preg_split('/(-)/i',$url);
@@ -22,31 +22,31 @@ class ProductDetailController extends FrontendController
 		if ($id = array_pop($url))
 		{
 		    // Chi tiết sản phẩm
-			$productDetail = Product::with('supplier:id,s_name')
-                    ->where('pro_active',Product::STATUS_PUBLIC)
+			$tourDetail = tour::with('supplier:id,s_name')
+                    ->where('pro_active',tour::STATUS_PUBLIC)
                     ->findOrFail($id);
 
 			// Ảnh sản phẩm
-            $images = ProductImage::where('pi_product_id', $id)->get();
+            $images = tourImage::where('pi_tour_id', $id)->get();
 
 			// Danh mục sản phẩm đó
-			$cateProduct = Category::find($productDetail->pro_category_id);
+			$catetour = Category::find($tourDetail->pro_category_id);
 
 			// Sản phẩm liên quan
-            $productSuggest = Product::where('pro_active',Product::STATUS_PUBLIC)
-                            ->where('pro_category_id', $cateProduct->id)
+            $tourSuggest = tour::where('pro_active',tour::STATUS_PUBLIC)
+                            ->where('pro_category_id', $catetour->id)
                             ->orderByDesc('id')
                             ->limit(8)
                             ->get();
 
 			$viewData = [
-                'productDetail'  => $productDetail,
-                'cateProduct'    => $cateProduct,
-                'productSuggest' => $productSuggest,
+                'tourDetail'  => $tourDetail,
+                'catetour'    => $catetour,
+                'tourSuggest' => $tourSuggest,
                 'images'         => $images
 			];
 			
-			return view('product.detail',$viewData);
+			return view('tour.detail',$viewData);
 		}
 
 		return redirect()->to('/');

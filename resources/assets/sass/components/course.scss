@@ -26,9 +26,9 @@
 }
 
 @media only screen and (max-width: 576px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: 100%;
             margin-left: 0;
@@ -40,9 +40,9 @@
 }
 
 @media only screen and (min-width: 768px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: calc(100% / 3 - 10px);
             margin-left: 10px;
@@ -63,9 +63,9 @@
 }
 
 @media only screen and (min-width: 992px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: calc(100% / 3 - 20px);
             margin-left: 20px;

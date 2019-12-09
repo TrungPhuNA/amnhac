@@ -16,14 +16,14 @@
         @foreach($orders as  $key => $order)
             <tr>
                 <td>#{{ $i }}</td>
-                <td><a href="{{ route('get.detail.product',[str_slug($order->product->pro_name),$order->or_product_id]) }}" target="_blank">{{ isset($order->product->pro_name) ? $order->product->pro_name : '' }}</a></td>
+                <td><a href="{{ route('get.detail.tour',[str_slug($order->tour->pro_name),$order->or_tour_id]) }}" target="_blank">{{ isset($order->tour->pro_name) ? $order->tour->pro_name : '' }}</a></td>
                 <td>
-                    <img style="width: 80px;height: 60px" src="{{ isset($order->product->pro_avatar) ? pare_url_file($order->product->pro_avatar) : ''}}" alt="">
+                    <img style="width: 80px;height: 60px" src="{{ isset($order->tour->pro_avatar) ? pare_url_file($order->tour->pro_avatar) : ''}}" alt="">
                 </td>
                 <td>{{ number_format($order->or_price,0,',','.') }}đ x {{ $order->or_qty }}</td>
                 <td>
                     @php
-                        $dateAfter = $order->created_at->addDays($order->product->pro_warranty);
+                        $dateAfter = $order->created_at->addDays($order->tour->pro_warranty);
                     @endphp
 
                     @php

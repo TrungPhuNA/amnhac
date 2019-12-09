@@ -63,7 +63,7 @@
                     <div class="title_heading">
                         <h1>Bài viết nổi bật</h1>
                     </div>
-                    <div class="product_info">
+                    <div class="tour_info">
                         
                     </div>
                     @for($i = 1 ; $i <= 10 ; $i ++)

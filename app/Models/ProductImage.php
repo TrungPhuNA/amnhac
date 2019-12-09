@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductImage extends Model
+class tourImage extends Model
 {
-    protected $table = 'product_images';
+    protected $table = 'tour_images';
     protected $guarded = ['*'];
 }

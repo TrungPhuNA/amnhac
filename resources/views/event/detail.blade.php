@@ -21,12 +21,6 @@
 			<div class="menu-header table-row">
 				<!-- if not logedin -->
 				<div class="sign-block padding-5 text-center">
-					<div class="signin-fb">
-						<a class="input-group fb-bg-color rounded" href="/user/login-facebook">
-							<span class="input-group-addon"><span class="ello-facebook"></span></span>
-							<span class="form-control">Đăng nhập bằng Facebook</span>
-						</a>
-					</div>
 					<div class="sign-tkb">
 						<div class="table valign-middle uppercase font-085">
 							<div class="signin-tkb table-cell w-50">

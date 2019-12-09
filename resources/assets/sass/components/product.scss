@@ -1,7 +1,7 @@
-.product_list
+.tour_list
 {
     margin: 10px 0;
-    .product_item
+    .tour_item
     {
         width: calc(100% / 5 - 20px) !important;
         margin-left: 20px;
@@ -33,7 +33,7 @@
             -webkit-box-orient: vertical;
         }
 
-        .product_price
+        .tour_price
         {
             &-old {
                 font-size: 13px;
@@ -55,16 +55,16 @@
         }
     }
 
-    .product_item-4 {
+    .tour_item-4 {
         width: calc(100% / 4 - 20px);
     }
 }
 
 
 @media only screen and (max-width: 576px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: 100%;
             margin-left: 0;
@@ -73,9 +73,9 @@
 }
 
 @media only screen and (min-width: 768px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: calc(100% / 3 - 10px);
             margin-left: 10px;
@@ -84,9 +84,9 @@
 }
 
 @media only screen and (min-width: 992px){
-    .product_list
+    .tour_list
     {
-        .product_item
+        .tour_item
         {
             width: calc(100% / 4 - 10px);
             margin-left: 10px;

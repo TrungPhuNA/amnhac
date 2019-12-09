@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\tour;
 use App\Models\Rating;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class RatingController extends Controller
 	   	if ($request->ajax())
 	   	{
 			Rating::insert([
-				'ra_product_id' => $id,
+				'ra_tour_id' => $id,
 				'ra_number'     => $request->number,
 				'ra_content'    => $request->r_content,
 				'ra_user_id'    => get_data_user('web'),
@@ -23,11 +23,11 @@ class RatingController extends Controller
 				'updated_at'    => Carbon::now()
 			]);
 		 
-			$product = Product::find($id);
+			$tour = tour::find($id);
 			
-			$product->pro_total_number += $request->number;
-			$product->pro_total_rating += 1;
-			$product->save();
+			$tour->pro_total_number += $request->number;
+			$tour->pro_total_rating += 1;
+			$tour->save();
 			
 			return response()->json(['code' => '1']);
 	   	}

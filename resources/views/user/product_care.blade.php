@@ -1,7 +1,7 @@
 @extends('user.layout')
 @section('content')
     <style>
-        .product-img img
+        .tour-img img
         {
             max-width: 100%;
         }
@@ -15,7 +15,7 @@
     </style>
     <div class="row">
         <div class="col-sm-12">
-            <div id="product_view"></div>
+            <div id="tour_view"></div>
         </div>
     </div>
 @stop
@@ -28,20 +28,20 @@
 			}
 		});
 		
-		let routeRenderProduct  = '{{ route('post.product.view') }}';
+		let routeRendertour  = '{{ route('post.tour.view') }}';
 
-        let products = localStorage.getItem('products');
-        products = $.parseJSON(products)
+        let tours = localStorage.getItem('tours');
+        tours = $.parseJSON(tours)
 
-        if (products.length > 0 )
+        if (tours.length > 0 )
         {
             $.ajax({
-                url : routeRenderProduct,
+                url : routeRendertour,
                 method : "POST",
-                data  : { id : products},
+                data  : { id : tours},
                 success : function(result)
                 {
-                    $("#product_view").html('').append(result.data)
+                    $("#tour_view").html('').append(result.data)
                 }
             });
         }

@@ -3,7 +3,7 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\Product;
+use App\Models\tour;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -52,7 +52,7 @@ class AdminTransactionController extends Controller
 	{
 //		 if ($request->ajax())
 //		 {
-		 	$orders = Order::with('product:id,pro_name,pro_avatar,pro_warranty')
+		 	$orders = Order::with('tour:id,pro_name,pro_avatar,pro_warranty')
 				->where('or_transaction_id',$id)->get();
 
 		 	$html = view('admin::components.order',compact('orders'))->render();
@@ -80,10 +80,10 @@ class AdminTransactionController extends Controller
 			// tang bien pay san pham
 			foreach ($orders as $order)
 			{
-				$product = Product::find($order->or_product_id);
-				$product->pro_number = $product->pro_number - $product->or_qty;
-				$product->pro_pay ++;
-				$product->save();
+				$tour = tour::find($order->or_tour_id);
+				$tour->pro_number = $tour->pro_number - $tour->or_qty;
+				$tour->pro_pay ++;
+				$tour->save();
 			}
 		}
 

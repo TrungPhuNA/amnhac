@@ -9,8 +9,8 @@ class Order extends Model
     protected $table = 'orders';
     protected $guarded = ['*'];
     
-    public function product()
+    public function tour()
 	{
-		return $this->belongsTo(Product::class,'or_product_id');
+		return $this->belongsTo(tour::class,'or_tour_id');
 	}
 }

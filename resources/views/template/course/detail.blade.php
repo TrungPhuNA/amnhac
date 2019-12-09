@@ -5,7 +5,7 @@
             'https://rautrangteam.net/wp-content/uploads/avatars/1/5c384a4ea3577-bpfull.png',
             'https://rautrangteam.net/wp-content/uploads/2019/01/VSL-EP-Tile-360x250.png',
             'https://rautrangteam.net/wp-content/uploads/2019/01/rautrangteam1-360x250.png',
-            'https://rautrangteam.net/wp-content/uploads/2019/01/ProductPageEPTile600-360x250.png'
+            'https://rautrangteam.net/wp-content/uploads/2019/01/tourPageEPTile600-360x250.png'
         ]
     @endphp
     <section>
@@ -57,7 +57,7 @@
                         <div class="title_heading">
                             <h3>Bài viết nổi bật</h3>
                         </div>
-                        <div class="product_info">
+                        <div class="tour_info">
 
                         </div>
                         @for($i = 1 ; $i <= 5 ; $i ++)

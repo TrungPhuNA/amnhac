@@ -246,10 +246,10 @@ function trim(str) {
  *  typeof document -> undefined
  *
  * react-native:
- *  navigator.product -> 'ReactNative'
+ *  navigator.tour -> 'ReactNative'
  */
 function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+  if (typeof navigator !== 'undefined' && navigator.tour === 'ReactNative') {
     return false;
   }
   return (
@@ -7703,7 +7703,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		while ( maxIterations-- ) {
 
 			// Evaluate and update our best guess (doubling guesses that zero out).
-			// Finish if the scale equals or crosses 1 (making the old*new product non-positive).
+			// Finish if the scale equals or crosses 1 (making the old*new tour non-positive).
 			jQuery.style( elem, prop, initialInUnit + unit );
 			if ( ( 1 - scale ) * ( 1 - ( scale = currentValue() / initial || 0.5 ) ) <= 0 ) {
 				maxIterations = 0;
@@ -29097,7 +29097,7 @@ if (token) {
         }
         index = offset + match.length;
 
-        // The JS engine embedded in Adobe products needs `match` returned in
+        // The JS engine embedded in Adobe tours needs `match` returned in
         // order to produce the correct `offset` value.
         return match;
       });
@@ -30686,7 +30686,7 @@ if (token) {
      * @category Math
      * @param {number} multiplier The first number in a multiplication.
      * @param {number} multiplicand The second number in a multiplication.
-     * @returns {number} Returns the product.
+     * @returns {number} Returns the tour.
      * @example
      *
      * _.multiply(6, 4);
@@ -37145,14 +37145,14 @@ var config = ({
   silent: false,
 
   /**
-   * Show production mode tip message on boot?
+   * Show tourion mode tip message on boot?
    */
-  productionTip: "development" !== 'production',
+  tourionTip: "development" !== 'tourion',
 
   /**
    * Whether to enable devtools
    */
-  devtools: "development" !== 'production',
+  devtools: "development" !== 'tourion',
 
   /**
    * Whether to record perf
@@ -38132,7 +38132,7 @@ strats.computed = function (
   vm,
   key
 ) {
-  if (childVal && "development" !== 'production') {
+  if (childVal && "development" !== 'tourion') {
     assertObjectType(key, childVal, vm);
   }
   if (!parentVal) { return childVal }
@@ -45804,12 +45804,12 @@ if (inBrowser) {
         );
       }
     }
-    if (config.productionTip !== false &&
+    if (config.tourionTip !== false &&
       typeof console !== 'undefined'
     ) {
       console[console.info ? 'info' : 'log'](
         "You are running Vue in development mode.\n" +
-        "Make sure to turn on production mode when deploying for production.\n" +
+        "Make sure to turn on tourion mode when deploying for tourion.\n" +
         "See more tips at https://vuejs.org/guide/deployment.html"
       );
     }
@@ -48654,7 +48654,7 @@ Vue.prototype.$mount = function (
       }
 
       var ref = compileToFunctions(template, {
-        outputSourceRange: "development" !== 'production',
+        outputSourceRange: "development" !== 'tourion',
         shouldDecodeNewlines: shouldDecodeNewlines,
         shouldDecodeNewlinesForHref: shouldDecodeNewlinesForHref,
         delimiters: options.delimiters,

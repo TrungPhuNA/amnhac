@@ -4,7 +4,7 @@ namespace Modules\Admin\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Contact;
-use App\Models\Product;
+use App\Models\tour;
 use App\Models\Rating;
 use App\Models\Transaction;
 use App\User;
@@ -22,7 +22,7 @@ class AdminController extends Controller
 	{
 		$contacts = Contact::limit(10)->get();
 		$countUser = User::count();
-		$countProduct = Product::count();
+		$counttour = tour::count();
 		$countArticle = Article::count();
 
 		
@@ -83,7 +83,7 @@ class AdminController extends Controller
 			'transactionNews' => $transactionNews,
 			'countRating'     => $countRating ??  null,
 			'countUser'       => $countUser,
-			'countProduct'    => $countProduct,
+			'counttour'    => $counttour,
 			'countArticle'    => $countArticle,
 		];
 		

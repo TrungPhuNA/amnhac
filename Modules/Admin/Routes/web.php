@@ -41,26 +41,16 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
         Route::get('delete/{id}','AdminSupplierController@delete')->name('admin.get.delete.supplier');
     });
 	
-	Route::group(['prefix' => 'product'], function(){
-		Route::get('/','AdminProductController@index')->name('admin.get.list.product');
-		Route::get('/create','AdminProductController@create')->name('admin.get.create.product');
-		Route::post('/create','AdminProductController@store');
-		Route::get('/update/{id}','AdminProductController@edit')->name('admin.get.edit.product');
-		Route::post('/update/{id}','AdminProductController@update');
-		Route::get('delete/{id}','AdminProductController@delete')->name('admin.get.delete.product');
-		Route::get('delete-image/{id}','AdminProductController@deleteImage')->name('admin.get.delete_image.product');
-		Route::get('/{action}/{id}','AdminProductController@action')->name('admin.get.action.product');
-	});
+	Route::group(['prefix' => 'tour'], function(){
+		Route::get('/','AdminToursController@index')->name('admin.get.list.tour');
+		Route::get('/create','AdminToursController@create')->name('admin.get.create.tour');
+		Route::post('/create','AdminToursController@store');
+		Route::get('/update/{id}','AdminToursController@edit')->name('admin.get.edit.tour');
+		Route::post('/update/{id}','AdminToursController@update');
+        Route::get('/delete/{id}','AdminToursController@destroy')->name('admin.get.delete.tour');
+        Route::get('/action/{id}','AdminTransactionController@action')->name('admin.get.action.tour');
 
-    Route::group(['prefix' => 'tour'], function(){
-        Route::get('/','AdminTourController@index')->name('admin.get.list.tour');
-        Route::get('/create','AdminTourController@create')->name('admin.get.create.tour');
-        Route::post('/create','AdminTourController@store');
-        Route::get('/update/{id}','AdminTourController@edit')->name('admin.get.edit.tour');
-        Route::post('/update/{id}','AdminTourController@update');
-        Route::get('delete/{id}','AdminTourController@delete')->name('admin.get.delete.tour');
-        Route::get('delete-image/{id}','AdminTourController@deleteImage')->name('admin.get.delete_image.tour');
-        Route::get('/{action}/{id}','AdminTourController@action')->name('admin.get.action.tour');
+
     });
 
 	// menu bai viet
@@ -91,7 +81,7 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
 	//kho hang
 	
 	Route::group(['prefix' => 'warehouse'],function(){
-		Route::get('/','AdminWarehouseController@getWarehouseProduct')->name('admin.get.warehouse.list');
+		Route::get('/','AdminWarehouseController@getWarehousetour')->name('admin.get.warehouse.list');
 	});
 	
 	// ql don hang
