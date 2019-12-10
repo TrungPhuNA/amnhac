@@ -27,12 +27,12 @@
                          @endif
                     </select>
                 </div>
-                <button type="submit"  class="btn btn-default"><i class="fa fa-search"></i></button>
+                <button type="submit"  class="btn btn-default"><span class="glyphicon glyphicon-search"></button>
             </form>
         </div>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><span class="glyphicon glyphicon-ok"></span></a></h2>
+        <h2>Quản lý tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>

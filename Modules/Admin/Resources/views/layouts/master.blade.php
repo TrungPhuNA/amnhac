@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
-    @yield('hreff')
+    @yield('href')
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     {{--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">--}}
     <!-- Custom styles for this template -->
@@ -47,6 +47,7 @@
                     <a href="{{ route('admin.home') }}">Trang Tổng Quan</a>
                 </li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Danh mục</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.singer-bands' ? 'active' : '' }}"><a href="{{ route('admin.get.list.singer-bands') }}">Nhóm nhạc và ca sĩ</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Tours</a></li>
 {{--                <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Sản phẩm</a></li>--}}
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}"><a href="{{ route('admin.get.list.menu') }}">Menu bài viết</a></li>

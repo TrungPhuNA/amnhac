@@ -32,4 +32,8 @@ class Tour extends Model
     {
         return $this->belongsTo(Category::class,'t_category_id');
     }
+    public function singerBand()
+    {
+        return $this->belongsTo(SingerBand::class,'t_singer_band_id');
+    }
 }

@@ -81,8 +81,6 @@ class AdminToursController extends Controller
             $tour->t_hot            = $requestTours->t_hot;
         }
 
-
-
         if ( $requestTours->hasFile('t_banner'))
         {
             $file = upload_image('t_banner');

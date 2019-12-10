@@ -31,6 +31,16 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
 		Route::get('/{action}/{id}','AdminCategoryController@action')->name('admin.get.action.category');
 	});
 
+    Route::group(['prefix' => 'singer-bands'], function(){
+    	Route::get('/','AdminSingerBandController@index')->name('admin.get.list.singer-bands');
+		Route::get('/create','AdminSingerBandController@create')->name('admin.get.create.singer-bands');
+		Route::post('/create','AdminSingerBandController@store');
+		Route::get('/update/{id}','AdminSingerBandController@edit')->name('admin.get.edit.singer-bands');
+		Route::post('/update/{id}','AdminSingerBandController@update');
+
+		Route::get('/delete/{id}','AdminSingerBandController@destroy')->name('admin.get.delete.singer-bands');
+	});
+
     Route::group(['prefix' => 'supplier'], function(){
         Route::get('/','AdminSupplierController@index')->name('admin.get.list.supplier');
         Route::get('/create','AdminSupplierController@create')->name('admin.get.create.supplier');

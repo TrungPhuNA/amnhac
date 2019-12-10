@@ -124,12 +124,13 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
-                    @if($errors->has('t_time_start'))
-                        <span class="error-text">
+
+                </div>
+                @if($errors->has('t_time_start'))
+                    <span class="error-text">
                         {{$errors->first('t_time_start')}}
                     </span>
-                    @endif
-                </div>
+                @endif
             </div>
 {{--            <div class="form-group">--}}
 {{--                <label for="name">% Khuyến mãi:</label>--}}
@@ -141,9 +142,9 @@
                 <input type="number" placeholder="10" class="form-control" name="t_number" value="{{ old('t_number',isset($tour->t_number) ? $tour->t_number  : '0') }}">
             </div>
 
-            <div class="form-group">
-                <img  id="out_img" src="{{ asset('images/no_image.jpg') }}" alt="" style="width: 100%;height: 300px">
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <img  id="out_img" src="{{ asset('images/no_image.jpg') }}" alt="" style="width: 100%;height: 300px">--}}
+{{--            </div>--}}
 
             <div class="form-group">
                 <label for="name">Avatar:</label>
