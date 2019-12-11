@@ -8,24 +8,40 @@ class Tour extends Model
 {
     const STATUS_PUBLIC = 1;
     const STATUS_PRIVATE = 0;
-
-
+    const HOT_DEFAULT = 0;
+    const HOT_SUCCESS = 1;
     protected $guarded = [''];
-
     protected $status = [
-        1 => [
+        self::STATUS_PUBLIC => [
             'name' => 'Public',
-            'class' => 'label-danger'
+            'class' => 'label label-default'
         ],
-        0 => [
+        self::STATUS_PRIVATE => [
             'name' => 'Private',
-            'class' => 'label-default'
+            'class' => 'label label-danger'
         ]
     ];
 
+
+    protected $hot = [
+        self::HOT_DEFAULT => [
+            'class' => 'label label-default',
+            'name'  => 'Default'
+        ],
+        self::HOT_SUCCESS => [
+            'class' => 'label label-success',
+            'name'  => 'Hot'
+        ]
+    ];
+
+    public function getHot()
+    {
+        return array_get($this->hot, $this->t_hot,'[N\A]');
+    }
+
     public function getStatus()
     {
-        return array_get($this->status,$this->pro_active,'[N\A]');
+        return array_get($this->status,$this->t_status,'[N\A]');
     }
 
     public function category()

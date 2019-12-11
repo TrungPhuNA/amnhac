@@ -66,7 +66,7 @@ if (!function_exists('pare_url_file')) {
 	{
 		if (!$image)
 		{
-			return'/images/no-image.jpg';
+			return'/images/no-image.png';
 		}
 		
 		$explode = explode('__', $image);
