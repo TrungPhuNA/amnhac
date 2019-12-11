@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablesProvinces extends Migration
+class CreateContactTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateTablesProvinces extends Migration
      */
     public function up()
     {
-        Schema::create('provinces', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('english_name')->nullable();
-            $table->string('level')->nullable();
+            $table->string('c_name')->nullable();
+            $table->string('c_email')->nullable();
+            $table->string('c_title')->nullable();
+            $table->text('c_content')->nullable();
+            $table->tinyInteger('c_status')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateTablesProvinces extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provinces');
+        Schema::dropIfExists('contacts');
     }
 }

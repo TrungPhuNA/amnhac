@@ -11,18 +11,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        $this->call([
-//            ProvincesTableSeeder::class,
-//        ]);
-        \DB::table('admins')->insert([
-            'name' => 'TrungPhuNA',
-            'email' => 'phupt.admin94@gmail.com',
-            'password' => bcrypt('123456789')
+        $this->call([
+            ProvincesTableSeeder::class,
         ]);
-        \DB::table('admins')->insert([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('abcd1234')
-        ]);
+        try{
+
+			\DB::table('admins')->insert([
+				'name' => 'TrungPhuNA',
+				'email' => 'phupt.admin94@gmail.com',
+				'password' => bcrypt('123456789')
+			]);
+			\DB::table('admins')->insert([
+				'name' => 'Admin',
+				'email' => 'admin@gmail.com',
+				'password' => bcrypt('abcd1234')
+			]);
+		}catch (\Exception $exception){
+
+		}
     }
 }
