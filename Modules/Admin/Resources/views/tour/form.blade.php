@@ -109,10 +109,10 @@
 {{--            </div>--}}
             <div class="form-group">
                 <label for="pro_price">Giá sản phẩm:</label>
-                <input type="number" placeholder="Giá sản phẩm" class="form-control" value="{{ old('pro_price',isset($tour->pro_price) ? $tour->pro_price  : '') }}" name="pro_price">
-                @if($errors->has('pro_price'))
+                <input type="number" placeholder="Giá sản phẩm" class="form-control" value="{{ old('t_price',isset($tour->t_price) ? $tour->t_price  : '') }}" name="t_price">
+                @if($errors->has('t_price'))
                     <span class="error-text">
-                        {{$errors->first('pro_price')}}
+                        {{$errors->first('t_price')}}
                     </span>
                 @endif
             </div>
@@ -139,7 +139,13 @@
 
             <div class="form-group">
                 <label for="name">Số lượng vé:</label>
-                <input type="number" placeholder="10" class="form-control" name="t_number" value="{{ old('t_number',isset($tour->t_number) ? $tour->t_number  : '0') }}">
+                <input type="number" placeholder="10" class="form-control" name="t_count_ticket"
+                       value="{{ old('t_count_ticket',isset($tour->t_count_ticket) ? $tour->t_count_ticket  : '0') }}">
+                @if($errors->has('t_count_ticket'))
+                    <span class="error-text">
+                        {{$errors->first('t_count_ticket')}}
+                    </span>
+                @endif
             </div>
 
 {{--            <div class="form-group">--}}

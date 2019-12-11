@@ -42,6 +42,8 @@
                     <th>Avatar</th>
                     <th>Trạng thái</th>
                     <th>Địa chỉ</th>
+                    <th>Số lượng vé</th>
+                    <th>Giá vé</th>
                     <th>Nổi bật</th>
                     <th>Thao tác</th>
                 </tr>
@@ -54,12 +56,21 @@
                             <td>{{ $tour->t_title }}</td>
                             <td>{{ $tour->category->c_name }}</td>
                             <td>
-                                <img src="{{ pare_url_file($tour->t_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;">
+                                <img src="{{ pare_url_file($tour->t_avatar) }}" alt="" class="img img-responsive"
+                                     style="width: 80px;height: 80px;">
                             </td>
-                            <td>{{ $tour->t_status }}</td>
-                            <td>{{ $tour->t_address }}</td>
                             <td>
-                              {{ $tour->t_hot }}
+                                <a href="" class="{{ $tour->getStatus($tour->t_status)['class'] }}">
+                                    {{ $tour->getStatus($tour->t_status)['name'] }}
+                                </a>
+                            </td>
+                            <td>{{ $tour->t_address }}</td>
+                            <td>{{ $tour->t_count_ticket }}</td>
+                            <td>{{ $tour->t_price }}</td>
+                            <td>
+                                <a href="" class="{{ $tour->getHot($tour->t_hot)['class'] }}">
+                                    {{ $tour->getHot($tour->t_hot)['name'] }}
+                                </a>
                             </td>
 
 

@@ -473,6 +473,7 @@ class ComposerStaticInit78d2adaf76df0c1fd6415e0a0be57ae6
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\PageStatic' => __DIR__ . '/../..' . '/app/Models/PageStatic.php',
         'App\\Models\\PriceTour' => __DIR__ . '/../..' . '/app/Models/PriceTour.php',
+        'App\\Models\\Province' => __DIR__ . '/../..' . '/app/Models/Province.php',
         'App\\Models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
         'App\\Models\\Supplier' => __DIR__ . '/../..' . '/app/Models/Supplier.php',
         'App\\Models\\Tour' => __DIR__ . '/../..' . '/app/Models/Tour.php',

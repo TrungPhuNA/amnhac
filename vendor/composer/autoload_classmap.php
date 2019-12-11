@@ -51,6 +51,7 @@ return array(
     'App\\Models\\Order' => $baseDir . '/app/Models/Order.php',
     'App\\Models\\PageStatic' => $baseDir . '/app/Models/PageStatic.php',
     'App\\Models\\PriceTour' => $baseDir . '/app/Models/PriceTour.php',
+    'App\\Models\\Province' => $baseDir . '/app/Models/Province.php',
     'App\\Models\\Rating' => $baseDir . '/app/Models/Rating.php',
     'App\\Models\\Supplier' => $baseDir . '/app/Models/Supplier.php',
     'App\\Models\\Tour' => $baseDir . '/app/Models/Tour.php',
