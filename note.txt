@@ -1,2 +1,1 @@
--  API GOOGLE sheets
-    + https://developers.google.com/sheets/api/quickstart/php
+- Login Admin : http://amnhac.previewcode.net/authenticate/login

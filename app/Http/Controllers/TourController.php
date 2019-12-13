@@ -13,6 +13,7 @@ class TourController extends Controller
     public function getDetailTour($url)
     {
         $tourDetail = DB::table('tours')->where('t_slug', $url)->first();
+        if (!$tourDetail) abort('404');
         $viewData = [
             'tourDetail' => $tourDetail,
         ];
