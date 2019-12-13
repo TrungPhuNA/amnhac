@@ -73,9 +73,8 @@ class AdminToursController extends Controller
     public function insertOrUpdate($requestTours,$id='')
     {
         $tour = new Tour();
-
         if ($id) $tour = Tour::find($id);
-
+//        dd($requestTours->all());
         $tour->t_title              = $requestTours->t_title;
         $tour->t_slug               = str_slug($requestTours->t_title);
         $tour->t_category_id        = $requestTours->t_category_id;
@@ -87,7 +86,6 @@ class AdminToursController extends Controller
         $tour->t_count_ticket       = $requestTours->t_count_ticket;
         $tour->t_price              = $requestTours->t_price;
         $tour->t_singer_band_id     = $requestTours->t_singer_band_id;
-//        dd($requestTours->t_time_start);
         if(isset($requestTours->t_hot)) {
             $tour->t_hot            = $requestTours->t_hot;
         }
@@ -109,10 +107,7 @@ class AdminToursController extends Controller
                 $tour->t_avatar = $file['name'];
             }
         }
-            $tour->save();
-
-//        if ($tour->id && $requesttour->hasFile('album')) {
-//            $this->uploadAlbumImage($requesttour->file('album'), $id);
+		$tour->save();
     }
 
     /**

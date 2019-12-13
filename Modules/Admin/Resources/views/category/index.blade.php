@@ -8,7 +8,7 @@
         </ol>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý danh mục <a href="{{ route('admin.get.create.category') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
+        <h2>Quản lý danh mục <a href="{{ route('admin.get.create.category') }}" class="pull-right"><i class="glyphicon glyphicon-plus"></i></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>

@@ -55,8 +55,8 @@
                          <tr>
                             <td>{{ $tour->id }}</td>
                             <td>{{ $tour->t_title }}</td>
-                            <td>{{ $tour->category->c_name }}</td>
-                            <td>{{ $tour->singerBand->name }}</td>
+                            <td>{{ $tour->category->c_name ?? "[N\A]" }}</td>
+                            <td>{{ $tour->singerBand->name ?? "[N\A]" }}</td>
                             <td>
                                 <img src="{{ pare_url_file($tour->t_avatar) }}" alt="" class="img img-responsive"
                                      style="width: 80px;height: 80px;">

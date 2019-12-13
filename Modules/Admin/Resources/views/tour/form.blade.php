@@ -95,7 +95,8 @@
                     @if(isset($singerBands))
                         @foreach($singerBands as $singerBand)
                             <option value="{{ $singerBand->id }}"
-                                    {{ old('t_singer_band_id',isset($tour->t_singer_band_id) ? $tour->t_singer_band_id : '') == $singerBand->id ? "selected='selected'" : "" }}>
+                                    {{ old('t_singer_band_id',isset($tour->t_singer_band_id) ? $tour->t_singer_band_id : '') == $singerBand->id ?
+                                    "selected='selected'" : "" }}>
                                 {{ $singerBand->name }}
                             </option>
                         @endforeach
@@ -108,7 +109,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="pro_price">Giá sản phẩm:</label>
+                <label for="pro_price">Giá vé:</label>
                 <input type="number" placeholder="Giá sản phẩm" class="form-control" value="{{ old('t_price',isset($tour->t_price) ? $tour->t_price  : '') }}" name="t_price">
                 @if($errors->has('t_price'))
                     <span class="error-text">

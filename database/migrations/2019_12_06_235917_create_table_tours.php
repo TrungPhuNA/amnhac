@@ -26,7 +26,7 @@ class CreateTableTours extends Migration
             $table->string('t_city');
             $table->tinyInteger('t_status')->default(1);
             $table->integer('t_category_id');
-            $table->dateTime('t_time_start');
+            $table->char('t_time_start',100);
             $table->timestamps();
         });
     }
