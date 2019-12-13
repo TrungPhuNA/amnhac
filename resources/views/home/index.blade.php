@@ -28,18 +28,18 @@
 					<div class="container section-container">
 
 						<div id="home-event-container" data-opm="hot">
-							@for( $i = 1 ; $i <= 2 ; $i ++)
+							@foreach($tourHot as $tour)
 								<div class="col-sm-6 left padding-left-right-0-m">
 								<div class="card">
-									<div class="card-cover relcomative lazyload-hot-event" data-src="{{ asset('images/demo/1.png') }}" style="background-image: url({{ asset('images/demo/1.jpg') }});">
-										<a data-opm="0" href="{{ route('get.detail.article',['hi',2]) }}" class="cover-img w-100 event-item-link" data-event-id="77908"></a>
+									<div class="card-cover relcomative lazyload-hot-event" data-src="{{ pare_url_file($tour->t_avatar) }}" style="background-image: url({{ pare_url_file($tour->t_avatar) }});">
+										<a data-opm="0" href="{{ route('get.detail.tour',['url'=>$tour->t_slug]) }}" class="cover-img w-100 event-item-link" data-event-id="77908"></a>
 									</div>
 									<div class="card-body relative">
 										<div class="padding-10">
 											<div class="table w-100 margin-bottom-0">
 												<div class="table-cell event-title">
 													<a data-opm="0" href="" title="SGO48 Koisuru Xmas Party" class="event-item-link" data-event-id="77908">
-														Sư kiện Hạ Long Bay 2019
+														{{ $tour->t_title }}
 													</a>
 												</div>
 												<div class="table-cell card-right-block">
@@ -48,16 +48,16 @@
 											<div class="table w-100 margin-bottom-0">
 												<div class="table-cell">
 													<div class="event-price w-100">
-														<span class="color-6">Từ</span> <strong> 200,000 VNĐ</strong>
+														<span class="color-6">Từ</span> <strong>{{ $tour->t_price }} VNĐ</strong>
 													</div>
 													<div class="event-tags w-100">
                                                             <span class="tag-venues">
-                                                            <span class="tag-venue smooth-trans label-default uppercase">Hạ Long</span>
+                                                            <span class="tag-venue smooth-trans label-default uppercase">{{ $tour->category->c_name }}</span>
                                                             </span>
-														<div class="tag-kinds inline-block">
-															<span class="ello-th color-c"></span>
-															<a data-opm="0" href="" class="tag-kind">Tour diễn</a>
-														</div>
+{{--														<div class="tag-kinds inline-block">--}}
+{{--															<span class="ello-th color-c"></span>--}}
+{{--															<a data-opm="0" href="" class="tag-kind">Tour diễn</a>--}}
+{{--														</div>--}}
 													</div>
 												</div>
 											</div>
@@ -65,14 +65,15 @@
 										<div class="event-date">
 											<div class="relative">
 												<div class="date-month">
-													Tháng 10
+													{{ $tour->t_time_start[0] }}
+
 												</div>
 												<div class="date-detail">
 													<div class="date-num color-6">
-														7
+														{{ (explode(' ', $tour->t_time_start))[1] }}
 													</div>
 													<div class="date-day">
-														Chủ nhật
+														{{ (explode(' ', $tour->t_time_start))[2] }}
 													</div>
 												</div>
 											</div>
@@ -80,13 +81,11 @@
 									</div>
 								</div>
 							</div>
-							@endfor
+							@endforeach
 						</div>
-
 					</div>
 				</section>
 			</section>
-{{--			{{ dump(get_data_user('web')) }}--}}
 			<section class="clearfix" data-opm="reco">
 				<section class="hot-events bg-white clearfix">
 					<div class="section-header text-center font-bold">
@@ -97,7 +96,7 @@
 							<div data-slider="hotevents" id="owl-hot-events" class="owl-hot-events owl-carousel owl-theme" style="opacity: 1; display: block;">
 								<div class="owl-wrapper-outer">
 									<div class="owl-wrapper" style="width: 5446px; left: 0px; display: block; transition: all 400ms ease 0s; transform: translate3d(-1167px, 0px, 0px);">
-										@for ($i =1 ; $i <= 10 ; $i ++)
+										@foreach($tourNews as $tour)
 										<div class="owl-item" style="width: 389px;">
 											<div class="item">
 												<div class="card">
@@ -109,7 +108,7 @@
 														<div class="padding-10">
 															<div class="table w-100 margin-bottom-0">
 																<div class="table-cell event-title">
-																	<a data-opm="0" href="/" title="Lưu diễn Thành Phố Hồ Chí Minh">
+																	<a data-opm="0" href="/" title="{{ $tour }}">
 																		Lưu diễn Thành Phố Hồ Chí Minh
 																	</a>
 																</div>
@@ -119,7 +118,7 @@
 												</div>
 											</div>
 										</div>
-										@endfor
+										@endforeach
 									</div>
 								</div>
 								<div class="owl-controls clickable">

@@ -40,7 +40,7 @@ Route::get('danh-muc/{slug}-{id}','CategoryController@getListtour')->name('get.l
 Route::get('san-pham','CategoryController@getListtour')->name('get.tour.list');
 Route::get('san-pham/{slug}-{id}','tourDetailController@tourDetail')->name('get.detail.tour');
 
-
+Route::get('tour/{slug}','TourController@getDetailTour')->name('get.detail.tour');
 // bai viet
 Route::get('bai-viet','ArticleController@getListArticle')->name('get.list.article');
 Route::get('bai-viet/p-{slug}','ArticleController@getListArticleByMenu')->name('get.list.article.menu');

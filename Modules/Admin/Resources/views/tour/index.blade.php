@@ -39,6 +39,7 @@
                     <th>#</th>
                     <th>Tên tours</th>
                     <th>Category</th>
+                    <th>Nhóm nhạc</th>
                     <th>Avatar</th>
                     <th>Trạng thái</th>
                     <th>Địa chỉ</th>
@@ -55,6 +56,7 @@
                             <td>{{ $tour->id }}</td>
                             <td>{{ $tour->t_title }}</td>
                             <td>{{ $tour->category->c_name }}</td>
+                            <td>{{ $tour->singerBand->name }}</td>
                             <td>
                                 <img src="{{ pare_url_file($tour->t_avatar) }}" alt="" class="img img-responsive"
                                      style="width: 80px;height: 80px;">
@@ -66,7 +68,7 @@
                             </td>
                             <td>{{ $tour->t_address }}</td>
                             <td>{{ $tour->t_count_ticket }}</td>
-                            <td>{{ $tour->t_price }}</td>
+                            <td>{{ $tour->t_price }} đ</td>
                             <td>
                                 <a href="" class="{{ $tour->getHot($tour->t_hot)['class'] }}">
                                     {{ $tour->getHot($tour->t_hot)['name'] }}

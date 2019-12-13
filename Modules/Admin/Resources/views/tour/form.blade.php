@@ -88,25 +88,25 @@
                     </span>
                 @endif
             </div>
-{{--            <div class="form-group">--}}
-{{--                <label for="name">Nhà cung cấp:</label>--}}
-{{--                <select name="s_supplier_id" id="" class="form-control">--}}
-{{--                    <option value="">--Chọn nhà cung cấp--</option>--}}
-{{--                    @if(isset($suppliers))--}}
-{{--                        @foreach($suppliers as $supplier)--}}
-{{--                            <option value="{{ $supplier->id }}"--}}
-{{--                                    {{ old('s_supplier_id',isset($tour->s_supplier_id) ? $tour->s_supplier_id : '') == $supplier->id ? "selected='selected'" : "" }}>--}}
-{{--                                {{ $supplier->s_name }}--}}
-{{--                            </option>--}}
-{{--                        @endforeach--}}
-{{--                    @endif--}}
-{{--                </select>--}}
-{{--                @if($errors->has('s_supplier_id'))--}}
-{{--                    <span class="error-text">--}}
-{{--                        {{$errors->first('s_supplier_id')}}--}}
-{{--                    </span>--}}
-{{--                @endif--}}
-{{--            </div>--}}
+            <div class="form-group">
+                <label for="name">Nhóm nhạc hoặc ca sĩ:</label>
+                <select name="t_singer_band_id" id="" class="form-control">
+                    <option value="">--Chọn nhóm nhạc --</option>
+                    @if(isset($singerBands))
+                        @foreach($singerBands as $singerBand)
+                            <option value="{{ $singerBand->id }}"
+                                    {{ old('t_singer_band_id',isset($tour->t_singer_band_id) ? $tour->t_singer_band_id : '') == $singerBand->id ? "selected='selected'" : "" }}>
+                                {{ $singerBand->name }}
+                            </option>
+                        @endforeach
+                    @endif
+                </select>
+                @if($errors->has('t_singer_band_id'))
+                    <span class="error-text">
+                        {{$errors->first('t_singer_band_id')}}
+                    </span>
+                @endif
+            </div>
             <div class="form-group">
                 <label for="pro_price">Giá sản phẩm:</label>
                 <input type="number" placeholder="Giá sản phẩm" class="form-control" value="{{ old('t_price',isset($tour->t_price) ? $tour->t_price  : '') }}" name="t_price">

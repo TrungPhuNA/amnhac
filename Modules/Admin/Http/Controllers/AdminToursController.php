@@ -3,6 +3,7 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SingerBand;
 use App\Models\Tour;
 use App\Models\Province;
 use App\Http\Requests\RequestTour;
@@ -14,23 +15,30 @@ class AdminToursController extends Controller
 {
     public function index(Request $request)
     {
-        $tours =  Tour::with('category:id,c_name');
+        $tours =  Tour::with('category:id,c_name')->with('singerBand:id,name');
 
         if ($request->name)  $tours->where('category.c_name','like','%'.$request->name.'%');
         if ($request->cate)  $tours->where('category.id',$request->cate) ;
 
         $tours = $tours->orderByDesc('id')->paginate(10);
-
+//        dd($tours);
         $categories = $this->getCategories();
+        $singerBands = $this->getSingerBands();
         $viewData = [
             'tours' => $tours,
-            'categories' => $categories
+            'categories' => $categories,
+            'singerBands' => $singerBands
         ];
         return view('admin::tour.index', $viewData);
     }
     public function getCategories()
     {
         return Category::all();
+    }
+
+    public function getSingerBands()
+    {
+        return SingerBand::all();
     }
     public function orderByDesc($column)
     {
@@ -45,9 +53,9 @@ class AdminToursController extends Controller
     {
         $categories = $this->getCategories();
         $cities = $this->getCity();
-//        $suppliers  = $this->getSupplier();
+        $singerBands = $this->getSingerBands();
 
-        return view('admin::tour.create',compact('categories','cities'));
+        return view('admin::tour.create',compact('categories','cities','singerBands'));
     }
 
     /**
@@ -76,6 +84,9 @@ class AdminToursController extends Controller
         $tour->t_content            = $requestTours->t_content;
         $tour->t_city               = $requestTours->t_city;
         $tour->t_time_start         = $requestTours->t_time_start;
+        $tour->t_count_ticket       = $requestTours->t_count_ticket;
+        $tour->t_price              = $requestTours->t_price;
+        $tour->t_singer_band_id     = $requestTours->t_singer_band_id;
 //        dd($requestTours->t_time_start);
         if(isset($requestTours->t_hot)) {
             $tour->t_hot            = $requestTours->t_hot;
@@ -128,10 +139,12 @@ class AdminToursController extends Controller
         $tour = Tour::find($id);
         $categories = $this->getCategories();
         $cities = $this->getCity();
+        $singerBands = $this->getSingerBands();
         $viewUpdate = [
             'tour'       => $tour,
             'categories' => $categories,
             'cities'     => $cities,
+            'singerBands'     => $singerBands,
         ];
         return view('admin::tour.update', $viewUpdate);
     }
