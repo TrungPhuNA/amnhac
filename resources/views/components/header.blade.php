@@ -12,13 +12,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-8 col-lg-8 col-md-10 col-sm-10">
+				<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10">
 					<div class="menu-area">
 						<div class="limit-box">
 							<nav class="main-menu">
 								<ul class="menu-area-main">
 									<li class="active"> <a href="/">Trang Chủ</a> </li>
 									<li> <a href="{{ route('get.list.article') }}">Tin tức</a> </li>
+									@if (\Cart::instance('cart')->count())
+										<li>
+											<a href="{{ route('get.form.pay') }}">Xác nhận thanh toán</a>
+										</li>
+									@endif
 									@if (get_data_user('web'))
 										<li> <a href="">Xin Chào : {{ get_data_user('web','name') }}</a> </li>
 										<li> <a href="">Đăng xuất</a> </li>
@@ -32,12 +37,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-					<form class="search">
-						<input class="form-control" type="text" placeholder="Search">
-						<button><img src="{{ asset('images/search_icon.png') }}"></button>
-					</form>
-				</div>
+{{--				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">--}}
+{{--					<form class="search">--}}
+{{--						<input class="form-control" type="text" placeholder="Search">--}}
+{{--						<button><img src="{{ asset('images/search_icon.png') }}"></button>--}}
+{{--					</form>--}}
+{{--				</div>--}}
 			</div>
 		</div>
 		<!-- end header inner -->

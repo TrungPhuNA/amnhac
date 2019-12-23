@@ -48,7 +48,7 @@ Route::get('bai-viet/{slug}-{id}','ArticleController@getDetailArticle')->name('g
 
 Route::prefix('shopping')->group(function () {
     Route::get('/gio-hang.html','ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
-	Route::get('/add/{id}','ShoppingCartController@addtour')->name('add.shopping.cart');
+	Route::get('/add/{id}','ShoppingCartController@addShoppingCart')->name('add.shopping.cart');
 	Route::get('/delete/{id}','ShoppingCartController@deletetourItem')->name('delete.shopping.cart');
 	Route::get('/update/{id}','ShoppingCartController@updateShoppingCart')->name('updateShoppingCart');
 });

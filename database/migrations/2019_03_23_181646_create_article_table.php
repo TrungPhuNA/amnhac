@@ -21,6 +21,7 @@ class CreateArticleTable extends Migration
             $table->longText('a_content')->nullable();
             $table->tinyInteger('a_active')->index()->default(1);
             $table->integer('a_author_id')->index()->default(0);
+            $table->integer('a_category_id')->index()->default(0);
 			$table->string('a_description_seo')->nullable();
 			$table->string('a_title_seo')->nullable();
 			$table->string('a_avatar')->nullable();

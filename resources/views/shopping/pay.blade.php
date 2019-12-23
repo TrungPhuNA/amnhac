@@ -1,89 +1,49 @@
 @extends('layouts.master')
 @section('content')
-    
-    <div class="main-contact-area" style="margin-top: 40px">
-        <div class="container wrapper">
-            <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="">
-                    @csrf
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-                        <!--REVIEW ORDER-->
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Danh sách sản phẩm <div class="pull-right"><small><a class="afix-1" href="{{ route('get.list.shopping.cart') }}">Cập nhật</a></small></div>
-                            </div>
-                            <div class="panel-body">
-                                @foreach($tours as $tour)
-                                <div class="form-group">
-                                    <div class="col-sm-3 col-xs-3">
-                                        <img class="img-responsive" style="width: 100px;height: 70px" src="{{ pare_url_file($tour->options->avatar) }}" />
-                                    </div>
-                                    <div class="col-sm-6 col-xs-6">
-                                        <div class="col-xs-12">{{ $tour->name }}</div>
-                                        <div class="col-xs-12"><small>Số lượng x <span>{{ $tour->qty }}</span></small></div>
-                                    </div>
-                                    <div class="col-sm-3 col-xs-3 text-right">
-                                        <h6>{{ number_format($tour->price,0,',','.') }} <span>VNĐ</span></h6>
-                                    </div>
-                                </div>
-                                <div class="form-group"><hr /></div>
-                                @endforeach
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <strong>Tổng Tiền</strong>
-                                        <div class="pull-right"><span>{{ \Cart::subtotal() }}</span> VNĐ</div>
-                                    </div>
-                                </div>
-                                <div class="form-group"><hr /></div>
-                            </div>
-                        </div>
-                        <!--REVIEW ORDER END-->
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                        <!--SHIPPING METHOD-->
-                        <div class="panel panel-info">
-                            <div class="panel-heading">Thông tin thanh toán</div>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <div class="col-md-12"><strong>Địa chỉ:</strong></div>
-                                    <div class="col-md-12">
-                                        <input type="text" name="address" class="form-control" value="" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12"><strong>Email:</strong></div>
-                                    <div class="col-md-12">
-                                        <input type="text" disabled="" name="email" class="form-control" value="{{ get_data_user('web','email') }}" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12"><strong>Số điện thoại:</strong></div>
-                                    <div class="col-md-12">
-                                        <input type="text" disabled="" name="phone" class="form-control" value="{{ get_data_user('web','phone') }}" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12"><strong>Ghi chú:</strong></div>
-                                    <div class="col-md-12">
-                                        <textarea name="note" id="" cols="30" rows="4" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-success">Xác nhận thông tin</button>
-{{--                                        <a href="{{ route('get.form.pay_online') }}" class="btn btn-success">Thanh toán qua PAY</a>--}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--SHIPPING METHOD END-->
-                    </div>
-
-                </form>
+    <div class="container">
+        <h1>Thông tin vé bạn đã đặt nhưng chưa xác nhận</h1>
+        <table class="table table-hover">
+            <tr>
+                <td>STT</td>
+                <td>Tên Tour</td>
+                <td>Số Vé</td>
+                <td>Số Tiền</td>
+                <td>Thành tiền</td>
+                <td>Thao tác</td>
+            </tr>
+            @foreach($tours as $key => $tour)
+                <tr>
+                    <th>{{ ($key ++) }}</th>
+                    <th>{{ $tour->name }}</th>
+                    <th>{{ $tour->qty }}</th>
+                    <th>{{ number_format($tour->price,0,',','.') }} VNĐ</th>
+                    <th>{{ number_format($tour->price * $tour->qty,0,',','.') }} VNĐ</th>
+                    <th>
+                        <a href=""><i class="fa fa-trash-o"></i></a>
+                    </th>
+                </tr>
+            @endforeach
+        </table>
+        <h1>Thông tin xác nhận</h1>
+        <form action="" style="margin-bottom: 100px" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="email">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter email" name="name" value="{{ get_data_user('web','name') }}">
             </div>
-            <div class="row cart-footer">
-
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email" name="email" value="{{ get_data_user('web','email') }}">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="email">Phone:</label>
+                <input type="number" class="form-control" placeholder="Enter email" name="phone" value="{{ get_data_user('web','phone') }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Address: <span style="color: red">(*)</span></label>
+                <input type="text" class="form-control" placeholder="Địa chỉ nhận vé" name="address" value="" required>
+            </div>
+            <button type="submit" style="border: 1px solid;" class="btn btn-default send">Xác nhận</button>
+        </form>
     </div>
 @stop

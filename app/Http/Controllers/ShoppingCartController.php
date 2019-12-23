@@ -15,43 +15,28 @@ class ShoppingCartController extends FrontendController
 	private  $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
 	private  $vnp_Returnurl = "http://laravel56.abc/gio-hang/thanh-toan-pay";
 
-	/**
-	 * @param Request $request
-	 * @param $id
-	 * thêm giỏ hàng
-	 */
-    public function addtour(Request $request,$id)
+	public function addShoppingCart(Request $request, $id)
 	{
-	    $tour = tour::select('pro_name','id','pro_price','pro_sale','pro_avatar','pro_number')->find($id);
-
-	    if (!$tour) return redirect('/');
-
-	    $price = $tour->pro_price;
-	    if ($tour->pro_sale)
+		$tour = Tour::find($id);
+		if (!$tour) return redirect('/');
+		$qty = $request->qty;
+		if ($tour->t_count_ticket == 0 || $tour->t_count_ticket < $qty)
 		{
-			$price =  $price * (100 - $tour->pro_sale)/ 100;
+			return redirect()->back()->with('warning','Tour diễn đã hết vé');
 		}
-
-		if ($tour->pro_number == 0 )
-		{
-			return redirect()->back()->with('warning','Sản phẩm đã hết hàng');
-		}
-
-		$qty = $request->qty ? $request->qty :  1;
 
 		\Cart::instance('cart')->add([
 			'id'      => $id,
-			'name'    => $tour->pro_name,
+			'name'    => $tour->t_title,
 			'qty'     => $qty,
-			'price'   => $price,
+			'price'   => $tour->t_price,
 			'options' => [
-				'avatar' => $tour->pro_avatar,
-				'sale'   => $tour->pro_sale,
-				'price_old' => $tour->pro_price
+				'avatar' => $tour->t_avatar
 			],
 		]);
 
-		return redirect()->back()->with('success','Mua hàng thành công');
+		return redirect()->back()->with('success','Đăng ký vé thành công, mời bạn xác nhận thông tin thanh toán');
+
 	}
 
 	public function deletetourItem($key)
@@ -88,7 +73,7 @@ class ShoppingCartController extends FrontendController
 		$transactionId = 	Transaction::insertGetId([
 			'tr_user_id' => get_data_user('web'),
 			'tr_total'   =>  (int)$totalMoney,
-			'tr_note'    => $request->note,
+//			'tr_note'    => $request->note,
 			'tr_address' => $request->address,
 			'tr_phone'   => $request->phone,
 			'created_at' => Carbon::now(),
@@ -101,21 +86,19 @@ class ShoppingCartController extends FrontendController
 			foreach ($tours as $tour)
 			{
 				Order::insert([
-					'or_transaction_id'	  => $transactionId,
-					'or_tour_id'         => $tour->id,
-					'or_user_id'           => get_data_user('web'),
-					'or_qty'                => $tour->qty,
-					'or_price'              => $tour->options->price_old,
-					'or_sale'               => $tour->options->sale,
-                    'created_at'            => Carbon::now(),
-                    'updated_at'            => Carbon::now(),
+					'or_transaction_id' => $transactionId,
+					'or_tour_id'        => $tour->id,
+					'or_qty'            => $tour->qty,
+					'created_at'        => Carbon::now(),
+					'updated_at'        => Carbon::now(),
 				]);
 			}
 		}
 
 		\Cart::instance('cart')->destroy();
+		return redirect()->to('/');
 
-		return redirect()->route('get.invoice',$transactionId);
+//		return redirect()->route('get.invoice',$transactionId);
 	}
 
 	/**

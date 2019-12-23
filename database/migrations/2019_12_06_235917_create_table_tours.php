@@ -18,7 +18,7 @@ class CreateTableTours extends Migration
             $table->string('t_title')->unique();
             $table->string('t_slug');
             $table->string('t_description');
-            $table->string('t_content');
+            $table->text('t_content');
             $table->string('t_address');
             $table->string('t_avatar')->nullable();
             $table->string('t_banner')->nullable();

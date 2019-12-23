@@ -54,29 +54,46 @@
 	</div>
 	<!-- end music-box  -->
 
-{{--	<div class="container-fluid">--}}
-{{--		<div class="row">--}}
-{{--			<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">--}}
-{{--				<div class="img-box">--}}
-{{--					<figure><img src="{{ asset('images/musicbg.jpg') }}" alt="img" /></figure>--}}
-{{--				</div>--}}
-{{--			</div>--}}
-{{--			<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">--}}
-{{--				<div class="text-box">--}}
-{{--					<div class="box">--}}
-{{--						<i><img src="{{ asset('images/5.png') }}"/></i>--}}
-{{--						<h3>1 1 1 1</h3>--}}
-{{--						<p>It is a long established fact that a reader will be distracted by the readable--}}
-{{--							<br> content of a page when looking at its layout. The point of using Lorem </p>--}}
-{{--						<a href="index.html#">Read More</a>--}}
-{{--					</div>--}}
-{{--				</div>--}}
-{{--			</div>--}}
-{{--		</div>--}}
-{{--	</div>--}}
-
 	<!-- Download -->
-	<div id="screenshot" class="Lastestnews">
+	<div id="screenshot" class="Lastestnews" style="margin-bottom: 20px">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="titlepage">
+						<h2>Sự kiện nổi bật</h2>
+						<span>Các sự kiện sắp tới sẽ thu hút và mang đến cho các bạn trải nghiệm thú vị nhất</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				@foreach($tourHot as $hot)
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+						<div class="news-box">
+							<figure>
+								<a href="{{ route('get.detail.tour', str_slug($hot->t_title)) }}"
+								   title="{{ $hot->t_title }}">
+									<img src="{{ asset(pare_url_file($hot->t_avatar)) }}" alt="img" />
+								</a>
+							</figure>
+							<h3>
+								<a href="{{ route('get.detail.tour', str_slug($hot->t_title)) }}" title="{{ $hot->t_title }}">
+									{{ $hot->t_title }}
+								</a>
+							</h3>
+							@php
+								$time = explode(' ',$hot->t_time_start);
+							@endphp
+							<span> {{ $time[0] ?? "[N\A]" }}</span><span>{{ $time[1] ?? '' }} - {{ $time[2] ?? "[N\A]" }}</span>
+							<p>{{ $hot->t_description }}</p>
+						</div>
+					</div>
+				@endforeach
+			</div>
+		</div>
+	</div>
+	<!-- end Download -->
+	<!-- Download -->
+	<div id="screenshot" class="Lastestnews" style="margin-bottom: 20px">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">

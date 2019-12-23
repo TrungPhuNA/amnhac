@@ -16,7 +16,7 @@
 								</ul>
 							</div>
 							<div>
-								<form action="" style="display: flex">
+								<form action="{{ route('add.shopping.cart', $tourDetail->id) }}" method="GET" style="display: flex">
 									<input type="number" style="width: 200px;margin: 0;margin-right: 10px" class="form-control" name="qty" value="1">
 									<button type="submit" class="btn btn-success">Đặt vé</button>
 								</form>

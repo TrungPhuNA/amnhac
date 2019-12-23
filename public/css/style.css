@@ -152,7 +152,6 @@ img {
 }
 
 .form-control:focus {
-    border-color: #ffffff !important;
     box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
 }
 
@@ -265,6 +264,9 @@ button {
 .small_main_heading h2 strong {
     color: #38c8a8;
     font-weight: 600;
+}
+label {
+    margin-bottom: 0 !important;
 }
 
 .main_bt {
@@ -1611,13 +1613,10 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
     padding: 7px 35px 7px 15px;
 }
 
-.form-control {
-    margin-top: 10px;
-}
 
-.form-control:focus {
-    box-shadow: inherit;
-}
+/*.form-control:focus {*/
+/*    box-shadow: inherit;*/
+/*}*/
 
 .search button {
     position: absolute;
@@ -1782,7 +1781,7 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
 
 /** Lastestnews **/
 .Lastestnews {
-    padding: 90px 0px;
+    padding: 20px 0px;
     background: #fff;
 }
 
@@ -1838,6 +1837,7 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
 .Lastestnews .news-box span {
     color: #e61414;
     margin-left: 20px;
+    margin-bottom: 15px;
 }
 
 .Lastestnews .news-box p {

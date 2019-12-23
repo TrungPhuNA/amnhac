@@ -25,7 +25,7 @@ class HomeController extends FrontendController
         ->where([
 		   't_hot' => Tour::HOT_SUCCESS,
 		   't_status' => Tour::STATUS_PUBLIC
-		])->limit(8)->get();
+		])->limit(6)->get();
 
 
 		// san pham moi
