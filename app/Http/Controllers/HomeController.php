@@ -36,19 +36,16 @@ class HomeController extends FrontendController
             ])->limit(3)
             ->orderByDesc('id')
             ->get();
-//		$articleNews = Article::orderBy('id','DESC')->limit(6)->get();
-//
-//		$categoriesHome = Category::with('tours')
-//				->where('c_home',Category::HOME)
-//				->where('c_active',Category::STATUS_PUBLIC)
-//				->limit(3)
-//				->get();
-//
-		$tourSuggest = [];
+
+        // Bài viêt mới
+		$articles = Article::orderByDesc('id')
+			->limit(3)
+			->get();
 
 		$viewData = [
 			'tourHot'     => $tourHot,
-            'tourNews'    => $tourNews
+            'tourNews'    => $tourNews,
+			'articles'    => $articles
 		];
 		
         return view('home.index',$viewData);

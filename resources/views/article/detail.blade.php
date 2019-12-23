@@ -9,22 +9,16 @@
     <div class="main-contact-area">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <div class="article_content" style="margin-bottom: 20px">
                         <h1>{{ $articleDetail->a_name }}</h1>
                         <p style="font-weight: 500;color: #333">{{ $articleDetail->a_description }}</p>
                         <div>
-                             {!! $articleDetail->a_content !!}
+                            {!! $articleDetail->a_content !!}
                         </div>
                     </div>
                     <h4>Bài viết khác</h4>
-                    @include('components.article')
-                </div>
-                <div class="col-sm-3">
-                    <h5>Bài viết nổi bật</h5>
-                    <div class="list_article_hot">
-                        @include('components.article_hot')
-                    </div>
+                    @include('article._inc_articles',['articles' => $articles])
                 </div>
             </div>
         </div>

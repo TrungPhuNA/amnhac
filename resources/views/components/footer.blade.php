@@ -1,117 +1,101 @@
-<footer class="footer fwrapper">
-	<section class="ft-body clearfix">
-		<div class="col-lg-12">
+<!--  footer -->
+<footr id="footer_with_contact">
+	<div class="footer">
+		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-md-3 fbody-block">
-					<div class="fbody-head">Hotline hỗ trợ</div>
-					<div class="fbody-content">
-						<ul class="our-links">
-							<li class="ft-link-desc">
-								<span class="ello-phone"></span>
-								Hồ Chí Minh: <a class="ft-hotline" href="tel:+842873007998">Thứ 2 - Thứ 6 (8:30 - 18:30)</a>
-								<br>
-								<strong style="font-size: 16px;" class="tkb-color">0986420994</strong>
-								<br>
-								<strong style="font-size: 16px;" class="tkb-color">0986420994</strong>
-							</li>
-							<li class="ft-link-desc">
-								<span class="ello-phone"></span>
-								Hà Nội: <a class="ft-hotline" href="tel:+0986420994">Thứ 2 - Thứ 6 (9:30 - 18:30)</a>
-								<br>
-								<strong style="font-size: 16px;" class="tkb-color">0986420994</strong>
-							</li>
-						</ul>
-					</div>
-					<br>
-					<div class="fbody-head">Email hỗ trợ</div>
-					<div class="ft-link-desc"><span class="ello-mail-alt"></span> support@ticketbox.vn</div>
-				</div>
-				<div class="col-sm-6 col-md-3 fbody-block">
-					<div class="fbody-head"> <a class="light" href="/how-do-we-help">Chúng tôi giúp gì được cho bạn?</a></div>
-					<div class="ft-link-desc">Dễ dàng - Tiện lợi - Bảo mật cao</div>
-					<br>
-					<div class="fbody-head">Văn phòng Ticketbox</div>
-					<div class="fbody-content">
-						<div class="ft-link-desc"><span class="ello-location"></span>Quỳnh Ngọc Quỳnh Lưu Nghệ An</div>
-					</div>
-					<br>
-					<div class="fbody-head">Trung tâm hỗ trợ và chăm sóc khách hàng</div>
-					<div class="fbody-content">
-						<div class="ft-link-desc"><span class="ello-location"></span>TP. Hồ Chí Minh: 52 Út Tịch, Phường 4, Quận Tân Bình</div>
-					</div>
-					<div class="fbody-content">
-						<div class="ft-link-desc"><span class="ello-location"></span>Hà Nội: Phòng 608, Lầu 6, Cao ốc 142 Lê Duẩn, phường Khâm Thiên, Quận Đống Đa</div>
-					</div>
-					<br>
-				</div>
-				<div class="visible-sm-block" style="clear:both"></div>
-				<div class="col-sm-6 col-md-3 fbody-block">
-					<div class="fbody-head"> <a class="light" href="/booking-instruction">Hướng dẫn mua vé</a></div>
-					<div class="ft-link-desc">Chỉ với vài thao tác đơn giản</div>
-					<br>
-					<div class="fbody-head">Về công ty chúng tôi</div>
-					<div class="fbody-content">
-						<ul class="our-links our-links-custom">
-							<li>
-								<a class="light ft-link-desc" href="/about-us" target="_blank" title="Thông tin về TicketBox">Thông tin về chúng tôi</a>
-							</li>
-							<li>
-								<a class="light ft-link-desc" href="/event-landscape-vn" target="_blank" title="Ticketbox Event Landscape">Event Landscape</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 fbody-block">
-					<div class="loader"></div>
-					<div class="fbody-head"> <a class="light" href="/help-center">FAQ</a></div>
-					<div class="ft-link-desc">Câu hỏi thường gặp</div>
-					<br>
-					<div class="fbody-head">Đăng ký nhận email</div>
-					<form name="frmSubscribe" class="fbody-content" novalidate="novalidate">
-						<div data-err="alerter" class="dl-er-message hide">
-							<div class="alert alert-info" role="alert">
-								<span data-err="message">Start time must be less than end time</span>
-							</div>
-						</div>
-						<div class="btn-subscribe rounded input-group overflow-hidden">
-							<div class="i-email input-group-addon"><span class="ello-mail-alt"></span></div>
-							<div class="relative form-control subscribe-input">
-								<input class="color-9" required="true" type="email" name="email" placeholder="Email của bạn" tabindex="200" aria-required="true">
-							</div>
-							<div data-style="zoom-out" class="i-go ladda-button smooth-trans input-group-addon btn-submit-subscriber" tabindex="201"><span class="ladda-label">
-                                            <button type="submit" class="ello-paper-plane"></button>
-                                            </span><span class="ladda-spinner"></span>
-							</div>
-						</div>
-					</form>
-					<br>
-				</div>
-			</div>
-			<div style="width: 100%;height: 1px;background-color: rgba(255,255,255,0.05);margin-bottom: 30px;"></div>
-		</div>
-	</section>
-	<section class="ft-footer clearfix">
-		<div class="col-sm-6 ftft-block ftft-tkb">
-			<div class="table valign-top margin-bottom-0">
-				<div class="ft-img">
-					<img src="{{ asset('images/logo.png') }}">
-				</div>
-				<div class="ftft-left">
-					Đồ án tốt nghiệp CNTT
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 ftft-block ftft-license">
-			<div class="table valign-top margin-bottom-0">
-				<div class="ftft-right hidden-xs float-none">
-					TrungPhuNa
-					<br>
-					0986420994
-				</div>
-				<div class="ftft-left ftft-certification float-none">
+				<div class="col-lg-3 col-md-6 col-sm-12 width">
+					<div class="address">
+						<h3>Contact Us</h3>
+						<ul class="locarion_icon">
+							<li><img src="{{ asset('icon/1.png') }}" alt="icon" />104 New York , USA</li>
+							<li><img src="{{ asset('icon/2.png') }}" alt="icon" />Phone : ( +71 5896547 )</li>
+							<li><img src="{{ asset('icon/3.png') }}" alt="icon" />Email : demo@email.com</li>
 
+						</ul>
+
+						<ul class="contant_icon">
+							<li><img src="{{ asset('icon/fb.png') }}" alt="icon" /></li>
+							<li><img src="{{ asset('icon/tw.png') }}" alt="icon" /></li>
+							<li><img src="{{ asset('icon/lin(2).png') }}" alt="icon" /></li>
+							<li><img src="{{ asset('icon/instagram.png') }}" alt="icon" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 width">
+					<div class="address">
+						<h3>Get In Touch</h3>
+						<form>
+							<div class="row">
+								<div class="col-sm-12">
+									<input class="contactus" placeholder="Name" type="text" name="Name">
+								</div>
+								<div class="col-sm-12">
+									<input class="contactus" placeholder="Phone" type="text" name="Email">
+								</div>
+								<div class="col-sm-12">
+									<input class="contactus" placeholder="Email" type="text" name="Email">
+								</div>
+								<div class="col-sm-12">
+									<textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+								</div>
+								<div class="col-sm-12">
+									<button class="send">Send</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 width">
+					<div class="address">
+						<h3>New Music </h3>
+						<div class="row">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+								<figure><img src="{{ asset('images/music1.jpg') }}" /></figure>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+								<figure><img src="{{ asset('images/music2.jpg') }}" /></figure>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+								<figure><img src="{{ asset('images/music3.jpg') }}" /></figure>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+								<figure><img src="{{ asset('images/music4.jpg') }}" /></figure>
+							</div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-</footer>
+		<div class="copyright">
+			<p>© 2019 All Rights Reserved. <a href="/">Free html Templates</a></p>
+		</div>
+	</div>
+</footr>
+<!-- end footer -->
+<!-- Javascript files-->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+<script src="{{ asset('js/plugin.js') }}"></script>
+<!-- sidebar -->
+<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			openEffect: "none",
+			closeEffect: "none"
+		});
+
+		$(".zoom").hover(function() {
+
+			$(this).addClass('transition');
+		}, function() {
+
+			$(this).removeClass('transition');
+		});
+	});
+</script>

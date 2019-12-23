@@ -1,16 +1,17 @@
 @extends('layouts.master')
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9">
-                <h1 style="margin-top: 15px;font-size: 20px">Danh sách bài viết</h1>
-                @include('components.article')
-            </div>
-            <div class="col-sm-3">
-                <h4 style="margin-top: 15px">Bài viết nổi bật</h4>
-                <div class="list_article_hot">
-                    @include('components.article_hot')
+    <div class="Lastestnews blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h1>Tin tức</h1>
+                        <span>It is a long established fact that a reader will be distracted by the readable <br>content of a page when looking at its layout. The point of using Lorem </span>
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                @include('article._inc_articles',['articles' => $articles])
             </div>
         </div>
     </div>

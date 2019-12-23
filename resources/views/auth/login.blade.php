@@ -1,23 +1,20 @@
 @extends('layouts.master')
 @section('title_page','Đăng nhập')
 @section('content')
-    <!-- BREADCRUMB -->
-    <div id="breadcrumb" class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="breadcrumb-tree">
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Đăng ký</a></li>
-                    </ul>
-                </div>
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb-tree">
+                    <li style="display: inline-block"><a href="#">Trang chủ</a></li>
+                    <li style="display: inline-block"><a href="#">Đăng nhập</a></li>
+                </ul>
             </div>
-            <!-- /row -->
         </div>
-        <!-- /container -->
+        <!-- /row -->
     </div>
+    <!-- /container -->
     <div class="row">
         <div class="col-sm-12" >
             <div style="max-width: 500px;margin: 0 auto;padding-bottom: 100px">
