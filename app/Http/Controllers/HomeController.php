@@ -33,7 +33,7 @@ class HomeController extends FrontendController
             ->with('singerBand:id,name')
             ->where([
                 't_status' => tour::STATUS_PUBLIC
-            ])->limit(3)
+            ])->limit(6)
             ->orderByDesc('id')
             ->get();
 
