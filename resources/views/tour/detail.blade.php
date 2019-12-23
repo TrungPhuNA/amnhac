@@ -4,20 +4,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="blogtitlepage">
+					<div class="blogtitlepage" style="border-bottom: 1px solid #f2f2f2;padding-bottom: 10px;">
 						<h2>{{ $tourDetail->t_title }}</h2>
-						<p class="desc">{{ $tourDetail->t_description }}</p>
-						<ul>
-							<li><i class="fa fa-map-o"></i> <span>{{ $tourDetail->t_address }}</span></li>
-							<li><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{{ $tourDetail->t_time_start }}</span></li>
-							<li><i class="fa fa-check" aria-hidden="true"></i> <span class="label-success label">Còn vé</span></li>
-							<li>
+						<div style="display: flex">
+							<div style="flex: 0 0 40%">
+								<p class="desc" >{{ $tourDetail->t_description }}</p>
+								<ul>
+									<li><i class="fa fa-map-o"></i> <span>{{ $tourDetail->t_address }}</span></li>
+									<li><i class="fa fa-clock-o" aria-hidden="true"></i> <span>{{ $tourDetail->t_time_start }}</span></li>
+									<li><i class="fa fa-check" aria-hidden="true"></i> <span class="label-success label">Còn vé</span></li>
+								</ul>
+							</div>
+							<div>
 								<form action="" style="display: flex">
 									<input type="number" style="width: 200px;margin: 0;margin-right: 10px" class="form-control" name="qty" value="1">
 									<button type="submit" class="btn btn-success">Đặt vé</button>
 								</form>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
