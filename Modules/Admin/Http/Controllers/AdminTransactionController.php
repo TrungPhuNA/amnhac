@@ -52,7 +52,7 @@ class AdminTransactionController extends Controller
 	{
 //		 if ($request->ajax())
 //		 {
-		 	$orders = Order::with('tour:id,pro_name,pro_avatar,pro_warranty')
+		 	$orders = Order::with('tour:id,t_title,t_slug')
 				->where('or_transaction_id',$id)->get();
 
 		 	$html = view('admin::components.order',compact('orders'))->render();
@@ -81,8 +81,7 @@ class AdminTransactionController extends Controller
 			foreach ($orders as $order)
 			{
 				$tour = tour::find($order->or_tour_id);
-				$tour->pro_number = $tour->pro_number - $tour->or_qty;
-				$tour->pro_pay ++;
+				$tour->t_count_ticket = $tour->t_count_ticket - $order->or_qty;
 				$tour->save();
 			}
 		}

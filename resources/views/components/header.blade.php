@@ -31,18 +31,14 @@
 										<li> <a href="{{ route('get.register') }}" title="Đăng ký">Đăng ký</a> </li>
 										<li> <a href="{{ route('get.login') }}" title="Đăng nhập">Đăng nhập</a> </li>
 									@endif
-
+									<li>
+										<a href="">{{ \Cart::count() }} Tour</a>
+									</li>
 								</ul>
 							</nav>
 						</div>
 					</div>
 				</div>
-{{--				<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">--}}
-{{--					<form class="search">--}}
-{{--						<input class="form-control" type="text" placeholder="Search">--}}
-{{--						<button><img src="{{ asset('images/search_icon.png') }}"></button>--}}
-{{--					</form>--}}
-{{--				</div>--}}
 			</div>
 		</div>
 		<!-- end header inner -->

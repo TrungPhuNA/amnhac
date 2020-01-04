@@ -1,6 +1,6 @@
 @extends('admin::layouts.master')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">--}}
     <div class="page-header">
         <ol class="breadcrumb">
             <li><a href="#">Trang chủ</a></li>
@@ -62,15 +62,12 @@
                              @endif
                          </td>
                          <td>
-                             @if ($transaction->tr_type == \App\Models\Transaction::TYPE_CART)
-                                 <span class="label-primary label">Thường</span>
-                             @else
-                                 <span class="label-success label">Online</span>
-                             @endif
+							 <span class="label-primary label">Thanh toán trực tiếp</span>
                          </td>
                          <td>
-                             <a class="btn_customer_action" href="{{ route('admin.get.delete.order',$transaction->id) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
-                             <a class="btn_customer_action js_order_item" data-id="{{ $transaction->id }}" href="{{ route('admin.get.view.order',$transaction->id) }}"><i class="fas fa-eye"></i> </a>
+                             <a class="btn_customer_action" href="{{ route('admin.get.delete.order',$transaction->id) }}"><i class="fa fa-trash"></i> Xoá</a>
+                             <a class="btn_customer_action js_order_item" data-id="{{ $transaction->id }}" href="{{ route('admin.get.view.order',$transaction->id) }}">
+								 <i class="fa fa-eye"></i> Xem </a>
                          </td>
                      </tr>
                  @endforeach
@@ -102,8 +99,8 @@
     </div>
 @stop
 @section('script')
-    <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('js/daterangepicker.js') }}"></script>
+{{--    <script src="{{ asset('js/moment.min.js') }}"></script>--}}
+{{--    <script src="{{ asset('js/daterangepicker.js') }}"></script>--}}
     <script>
         $(function(){
         	$(".js_order_item").click(function(event){
@@ -125,23 +122,23 @@
 				});
             });
         })
-		$(function () {
-
-			$('input[name="dates"]').daterangepicker({
-				autoUpdateInput: false,
-				locale: {
-					cancelLabel: 'Clear'
-				}
-			});
-
-			$('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
-				$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-			});
-
-			$('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
-				$(this).val('');
-			});
-
-		})
+		// $(function () {
+		//
+		// 	$('input[name="dates"]').daterangepicker({
+		// 		autoUpdateInput: false,
+		// 		locale: {
+		// 			cancelLabel: 'Clear'
+		// 		}
+		// 	});
+		//
+		// 	$('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+		// 		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+		// 	});
+		//
+		// 	$('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+		// 		$(this).val('');
+		// 	});
+		//
+		// })
     </script>
 @stop

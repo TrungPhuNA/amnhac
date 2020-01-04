@@ -89,6 +89,7 @@ class ShoppingCartController extends FrontendController
 					'or_transaction_id' => $transactionId,
 					'or_tour_id'        => $tour->id,
 					'or_qty'            => $tour->qty,
+					'or_price'          => $tour->price,
 					'created_at'        => Carbon::now(),
 					'updated_at'        => Carbon::now(),
 				]);
@@ -162,7 +163,7 @@ class ShoppingCartController extends FrontendController
 					'or_transaction_id'	 => $transactionId,
 					'or_tour_id'         => $tour->id,
 					'or_qty'                => $tour->qty,
-					'or_price'              => $tour->options->price_old,
+					'or_price'              => $tour->price,
 					'or_sale'               => $tour->options->sale,
 				]);
 			}

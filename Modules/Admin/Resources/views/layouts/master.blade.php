@@ -7,16 +7,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/dashboard/">
-    <title> Admin System</title>
+    <title> Admin</title>
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="{{ asset('theme_admin/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     @yield('href')
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    {{--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">--}}
-    <!-- Custom styles for this template -->
     <link href="{{ asset('theme_admin/css/dashboard.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -49,11 +45,9 @@
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Danh mục</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.singer-bands' ? 'active' : '' }}"><a href="{{ route('admin.get.list.singer-bands') }}">Nhóm nhạc và ca sĩ</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Tours</a></li>
-{{--                <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Sản phẩm</a></li>--}}
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}"><a href="{{ route('admin.get.list.menu') }}">Menu bài viết</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : '' }}"><a href="{{ route('admin.get.list.article') }}">Tin tức</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Đơn hàng</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.warehouse.list' ? 'active' : '' }}"><a href="{{ route('admin.get.warehouse.list') }}">Kho</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Quản lý đặt vé</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">Thành Viên</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : '' }}"><a href="{{ route('admin.get.list.contact') }}">Liên hệ</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.page_static' ? 'active' : '' }}"><a href="{{ route('admin.get.list.page_static') }}">Page tĩnh</a></li>

@@ -6,7 +6,6 @@
             <th style="width: 30%">Tên sản phẩm</th>
             <th>Hình ảnh</th>
             <th>Giá</th>
-            <th>Trạn Thái</th>
             <th>Thành tiền</th>
             <th>Thao tác</th>
         </tr>
@@ -16,28 +15,11 @@
         @foreach($orders as  $key => $order)
             <tr>
                 <td>#{{ $i }}</td>
-                <td><a href="{{ route('get.detail.tour',[str_slug($order->tour->pro_name),$order->or_tour_id]) }}" target="_blank">{{ isset($order->tour->pro_name) ? $order->tour->pro_name : '' }}</a></td>
+                <td><a href="{{ route('get.detail.tour',[str_slug($order->tour->t_title),$order->or_tour_id]) }}" target="_blank">{{ isset($order->tour->t_title) ? $order->tour->t_title : '' }}</a></td>
                 <td>
-                    <img style="width: 80px;height: 60px" src="{{ isset($order->tour->pro_avatar) ? pare_url_file($order->tour->pro_avatar) : ''}}" alt="">
+                    <img style="width: 80px;height: 60px" src="{{ isset($order->tour->t_avatar) ? pare_url_file($order->tour->t_avatar) : ''}}" alt="">
                 </td>
                 <td>{{ number_format($order->or_price,0,',','.') }}đ x {{ $order->or_qty }}</td>
-                <td>
-                    @php
-                        $dateAfter = $order->created_at->addDays($order->tour->pro_warranty);
-                    @endphp
-
-                    @php
-                        $difference = strtotime($dateAfter) - strtotime(Carbon\Carbon::now());
-                        $difference_in_minutes = $difference / 60;
-                    @endphp
-
-                    @if ($difference_in_minutes > 0 )
-
-                        <span class="label-info label">Bảo hành đến : {{ $dateAfter }}</span><br>
-                    @else
-                        <span class="label-danger label"> Hết hạn</span><br>
-                    @endif
-                </td>
                 <td>{{ number_format($order->or_price * $order->or_qty,0,',','.') }} đ</td>
                 <td>
                     <a href=""><i class="fa fa-trash-o"></i> Delete</a>
