@@ -25,8 +25,13 @@
 										</li>
 									@endif
 									@if (get_data_user('web'))
-										<li> <a href="">Xin Chào : {{ get_data_user('web','name') }}</a> </li>
-										<li> <a href="">Đăng xuất</a> </li>
+										<li>
+											<a href="">Xin Chào : {{ get_data_user('web','name') }}</a>
+											<ul>
+												<li><a href="{{ route('get.transaction.history') }}">Danh sách vé</a></li>
+												<li> <a href="{{ route('get.logout.user') }}" title="Đăng xuất">Đăng xuất</a> </li>
+											</ul>
+										</li>
 									@else
 										<li> <a href="{{ route('get.register') }}" title="Đăng ký">Đăng ký</a> </li>
 										<li> <a href="{{ route('get.login') }}" title="Đăng nhập">Đăng nhập</a> </li>

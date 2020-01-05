@@ -418,7 +418,7 @@ nav.main-menu {
     margin-left: 0;
 }
 
-.menu-area-main li:hover a, .menu-area-main li:focus a {
+.menu-area-main >ul li:hover a, .menu-area-main > ul li:focus a {
     color: #fff;
 }
 
@@ -1069,9 +1069,11 @@ nav.main-menu {
 }
 
 .main-menu ul > li > ul > li {
-    margin: 0px;
+    margin-top: 0;
     position: relative;
     display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #dedede;
 }
 
 .main-menu ul > li > ul > li:hover > ul {
@@ -1094,9 +1096,14 @@ nav.main-menu {
 }
 
 .main-menu ul > li {
-    position: inherit;
+    position: relative;
     display: inline-block;
     vertical-align: middle;
+}
+.main-menu ul > li ul {
+    position: absolute;
+    margin: 0 !important;
+    top: 30px;
 }
 
 .main-menu ul > li:nth-child (6) {

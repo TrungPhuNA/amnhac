@@ -86,6 +86,7 @@ Route::group(['prefix' => 'user','middleware' => 'CheckLoginUser'],function(){
 	Route::post('/password','UserController@saveUpdatePassword');
 
 	Route::get('giao-dich','UserController@getTransaction')->name('get.transaction.history');
+	Route::get('giao-dich/delete/{id}','UserController@deleteItemTransaction')->name('get.transaction.history.delete');
 	Route::get('/san-pham-yeu-thich','UserController@gettourWishlist')->name('user.list.tour_wishlist');
 	Route::get('/san-pham-ban-chay','UserController@gettourPay')->name('user.list.tour');
 });

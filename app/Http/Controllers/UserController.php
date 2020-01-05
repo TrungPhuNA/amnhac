@@ -92,4 +92,15 @@ class UserController extends FrontendController
 
         return view('user.transaction_history', $viewData);
     }
+
+    public function deleteItemTransaction(Request $request, $id)
+	{
+		$transaction = Transaction::find($id);
+		if ($transaction && $transaction->tr_status != 1) {
+			\DB::table('orders')->where('or_transaction_id', $id)->delete();
+			$transaction->delete();
+		}
+
+		return redirect()->back()->with('success', 'Huỷ bỏ vé thành công');
+	}
 }

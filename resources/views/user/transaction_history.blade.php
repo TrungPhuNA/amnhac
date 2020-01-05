@@ -1,5 +1,39 @@
 @extends('layouts.master')
 @section('content')
+    <style>
+        .label-primary {
+            background-color: #337ab7;
+            color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .label-default {
+            background-color: #777;
+            color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .label-danger {
+            background-color: #d9534f;
+            color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .label-success {
+            background-color: #5cb85c;
+            color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
     <div class="our-tour-area new-tour">
         <div class="container">
             <div class="area-title">
@@ -13,7 +47,7 @@
                     <th>Tổng Tiền</th>
                     <th>Trạng thái</th>
                     <th style="width: 15%">PT Thanh toán</th>
-{{--                    <th>Thao tác</th>--}}
+                    <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,10 +69,16 @@
                             @endif
                         </td>
                         <td>
+
                             @if ($transaction->tr_type == \App\Models\Transaction::TYPE_CART)
                                 <span class="label-primary label">Thường</span>
                             @else
                                 <span class="label-success label">Online</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if ($transaction->tr_status !== 1)
+                                <a href="{{ route('get.transaction.history.delete', $transaction->id) }}" class="label-danger label">Huỷ bỏ</a>
                             @endif
                         </td>
                     </tr>
