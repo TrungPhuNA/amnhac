@@ -24,11 +24,11 @@ class RequestMenu extends FormRequest
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'm_name.required' => 'Trường này không được để trống',
-            'm_name.unique'   => 'Tên menu đã tồn tại',
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'm_name.required' => 'Trường này không được để trống',
+    //         'm_name.unique'   => 'Tên menu đã tồn tại',
+    //     ];
+    // }
 }

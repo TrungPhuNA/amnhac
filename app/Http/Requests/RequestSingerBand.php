@@ -30,15 +30,15 @@ class RequestSingerBand extends FormRequest
         ];
     }
     
-    public function messages()
-	{
-		return [
-			'name.required' => 'Trường này không được để trống',
-			'name.unique'   => 'Tên danh mục đã tồn tại',
-			'name_member.unique'   => 'Trường này không được để trống',
-			'description.unique'   => 'Trường này không được để trống',
-			// 'icon.required' => 'Trường này không được để trống'
-		];
-	}
+ //    public function messages()
+	// {
+	// 	return [
+	// 		'name.required' => 'Trường này không được để trống',
+	// 		'name.unique'   => 'Tên danh mục đã tồn tại',
+	// 		'name_member.unique'   => 'Trường này không được để trống',
+	// 		'description.unique'   => 'Trường này không được để trống',
+	// 		// 'icon.required' => 'Trường này không được để trống'
+	// 	];
+	// }
 	
 }

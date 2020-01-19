@@ -25,13 +25,13 @@ class RequestSupplier extends FormRequest
         ];
     }
 
-    public function messages()
-    {
-        return [
-            's_name.required'  => 'Trường này không được để trống',
-            's_email.required' => 'Trường này không được để trống',
-            's_phone.required' => 'Trường này không được để trống',
-            's_email.unique'   => 'Email đã tồn tại'
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         's_name.required'  => 'Trường này không được để trống',
+    //         's_email.required' => 'Trường này không được để trống',
+    //         's_phone.required' => 'Trường này không được để trống',
+    //         's_email.unique'   => 'Email đã tồn tại'
+    //     ];
+    // }
 }

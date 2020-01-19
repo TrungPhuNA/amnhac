@@ -3,9 +3,9 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="{{ route('admin.home') }}">Trang chủ</a></li>
-            <li><a href="{{ route('admin.get.list.category') }}" title="Danh mục">Danh mục</a></li>
-            <li class="active">Cập nhật</li>
+            <li><a href="{{ route('admin.home') }}">Home</a></li>
+            <li><a href="{{ route('admin.get.list.category') }}" title="Category">Category</a></li>
+            <li class="active">Update</li>
         </ol>
     </div>
     <div class="">

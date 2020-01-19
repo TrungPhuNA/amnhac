@@ -29,13 +29,13 @@ class RequestCategory extends FormRequest
         ];
     }
     
-    public function messages()
-	{
-		return [
-			'name.required' => 'Trường này không được để trống',
-			'name.unique'   => 'Tên danh mục đã tồn tại',
-			// 'icon.required' => 'Trường này không được để trống'
-		];
-	}
+ //    public function messages()
+	// {
+	// 	return [
+	// 		'name.required' => 'Trường này không được để trống',
+	// 		'name.unique'   => 'Tên danh mục đã tồn tại',
+	// 		// 'icon.required' => 'Trường này không được để trống'
+	// 	];
+	// }
 	
 }

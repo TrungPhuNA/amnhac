@@ -7,9 +7,7 @@
 			<div class="container">
 
 				<div class="text-bg relative">
-					<h1>Âm nhạc<br><span class="Perfect">Âm nhạc hoàn hảo</span><br>Chào mừng đến với âm nhạc</h1>
-{{--					<p>Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felis lacinia nec et est--}}
-{{--						<br> aptent taciti sociosqu ad litora torquent per conubia nostra</p>--}}
+					<h1>Music<br><span class="Perfect">Perfect music</span><br>Welcome to the music</h1>
 				</div>
 
 			</div>
@@ -24,29 +22,29 @@
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 					<div class="for-box">
 						<i><img src="{{ asset('icon/icon1.png') }}" alt="icon"/></i>
-						<h3>Sự kiện hấp dẫn</h3>
-						<p>Các sự kiện được diễn ra hấp dẫn, sôi nổi</p>
+						<h3>Attractive event</h3>
+						<p>The events are exciting and exciting</p>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 					<div class="for-box">
 						<i><img src="{{ asset('icon/icon2.png') }}" alt="icon"/></i>
-						<h3>Hội tụ anh hào</h3>
-						<p>Quy tụ nhiều anh hào khắp cả nước</p>
+						<h3>Convergence brother</h3>
+						<p>Gathering many heroes all over the country</p>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 					<div class="for-box">
 						<i><img src="{{ asset('icon/icon3.png') }}" alt="icon"/></i>
-						<h3>Đa dạng về thể loại ca nhạc</h3>
-						<p>Rất nhiều dòng nhạc được phát sóng</p>
+						<h3>Diverse music genres</h3>
+						<p>A lot of music is broadcast</p>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 					<div class="for-box">
 						<i><img src="{{ asset('icon/icon4.png') }}" alt="icon"/></i>
-						<h3>Giá rẻ</h3>
-						<p>Chi phí vé rẻ, phù hợp mọi lứa tuổi</p>
+						<h3>Cheap</h3>
+						<p>Cheap ticket costs, suitable for all ages</p>
 					</div>
 				</div>
 			</div>
@@ -60,8 +58,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="titlepage">
-						<h2>Sự kiện nổi bật</h2>
-						<span>Các sự kiện sắp tới sẽ thu hút và mang đến cho các bạn trải nghiệm thú vị nhất</span>
+						<h2>Big event</h2>
+						<span>Upcoming events will attract and bring you the most interesting experience</span>
 					</div>
 				</div>
 			</div>
@@ -98,8 +96,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="titlepage">
-						<h2>Sự kiện mới nhất</h2>
-						<span>Các sự kiện sắp tới sẽ thu hút và mang đến cho các bạn trải nghiệm thú vị nhất</span>
+						<h2>Latest Event</h2>
+						<span>Upcoming events will attract and bring you the most interesting experience</span>
 					</div>
 				</div>
 			</div>
@@ -137,8 +135,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="titlepage">
-						<h2>Tin tức / Sự kiện</h2>
-						<span>Tổng hợp các tour / sự kiện mới nhất hiện nay<br></span>
+						<h2>News / Events</h2>
+						<span>Summary of the latest tours / events today<br></span>
 					</div>
 				</div>
 			</div>

@@ -17,24 +17,24 @@
 						<div class="limit-box">
 							<nav class="main-menu">
 								<ul class="menu-area-main">
-									<li class="active"> <a href="/">Trang Chủ</a> </li>
-									<li> <a href="{{ route('get.list.article') }}">Tin tức</a> </li>
+									<li class="active"> <a href="/">Home</a> </li>
+									<li> <a href="{{ route('get.list.article') }}">Post</a> </li>
 									@if (\Cart::instance('cart')->count())
 										<li>
-											<a href="{{ route('get.form.pay') }}">Xác nhận thanh toán</a>
+											<a href="{{ route('get.form.pay') }}">Payment confirmation</a>
 										</li>
 									@endif
 									@if (get_data_user('web'))
 										<li>
 											<a href="">Xin Chào : {{ get_data_user('web','name') }}</a>
 											<ul>
-												<li><a href="{{ route('get.transaction.history') }}">Danh sách vé</a></li>
-												<li> <a href="{{ route('get.logout.user') }}" title="Đăng xuất">Đăng xuất</a> </li>
+												<li><a href="{{ route('get.transaction.history') }}">Ticket list</a></li>
+												<li> <a href="{{ route('get.logout.user') }}" title="Logout">Logout</a> </li>
 											</ul>
 										</li>
 									@else
-										<li> <a href="{{ route('get.register') }}" title="Đăng ký">Đăng ký</a> </li>
-										<li> <a href="{{ route('get.login') }}" title="Đăng nhập">Đăng nhập</a> </li>
+										<li> <a href="{{ route('get.register') }}" title="Register">Register</a> </li>
+										<li> <a href="{{ route('get.login') }}" title=""></a> </li>
 									@endif
 									<li>
 										<a href="">{{ \Cart::count() }} Tour</a>

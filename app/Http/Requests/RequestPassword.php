@@ -25,13 +25,13 @@ class RequestPassword extends FormRequest
 		];
 	}
 	
-	public function messages()
-	{
-		return [
-			'password_old.required'     => 'Trường này không được để trống',
-			'password.required'         => 'Trường này không được để trống',
-			'password_comfirm.required' => 'Trường này không được để trống',
-			'password_comfirm.same'      => 'Mật khẩu xác nhận không đúng',
-		];
-	}
+	// public function messages()
+	// {
+	// 	return [
+	// 		'password_old.required'     => 'Trường này không được để trống',
+	// 		'password.required'         => 'Trường này không được để trống',
+	// 		'password_comfirm.required' => 'Trường này không được để trống',
+	// 		'password_comfirm.same'      => 'Mật khẩu xác nhận không đúng',
+	// 	];
+	// }
 }

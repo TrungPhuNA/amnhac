@@ -2,21 +2,21 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Danh mục</a></li>
-            <li class="active">Danh sách</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Category</a></li>
+            <li class="active">List</li>
         </ol>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý danh mục <a href="{{ route('admin.get.create.category') }}" class="pull-right"><i class="glyphicon glyphicon-plus"></i></a></h2>
+        <h2>Category <a href="{{ route('admin.get.create.category') }}" class="pull-right"><i class="glyphicon glyphicon-plus"></i></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tên danh mục</th>
-                    <th>Trang chủ</th>
-                    <th>Trạng thái</th>
-                    <th>Thao tác</th>
+                    <th>Name</th>
+                    <th>Home</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

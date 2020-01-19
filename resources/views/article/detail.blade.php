@@ -17,7 +17,7 @@
                             {!! $articleDetail->a_content !!}
                         </div>
                     </div>
-                    <h4>Bài viết khác</h4>
+                    <h4>Article suggest</h4>
                     @include('article._inc_articles',['articles' => $articles])
                 </div>
             </div>

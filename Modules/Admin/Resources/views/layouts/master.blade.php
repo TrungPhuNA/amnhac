@@ -25,12 +25,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Xin chào {{ get_data_user('admins','name') }}</a>
+            <a class="navbar-brand" href="/">Hello {{ get_data_user('admins','name') }}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"></a></li>
-                <li><a href="{{ route('admin.logout') }}">Đăng xuất</a></li>
+                <li><a href="{{ route('admin.logout') }}">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -40,17 +40,17 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="{{ \Request::route()->getName() == 'admin.home' ? 'active' : '' }}">
-                    <a href="{{ route('admin.home') }}">Trang Tổng Quan</a>
+                    <a href="{{ route('admin.home') }}">Dashboard</a>
                 </li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Danh mục</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.singer-bands' ? 'active' : '' }}"><a href="{{ route('admin.get.list.singer-bands') }}">Nhóm nhạc và ca sĩ</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}"><a href="{{ route('admin.get.list.category') }}">Category</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.singer-bands' ? 'active' : '' }}"><a href="{{ route('admin.get.list.singer-bands') }}">Music group and singer</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.tour' ? 'active' : '' }}"><a href="{{ route('admin.get.list.tour') }}">Tours</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}"><a href="{{ route('admin.get.list.menu') }}">Menu bài viết</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : '' }}"><a href="{{ route('admin.get.list.article') }}">Tin tức</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Quản lý đặt vé</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">Thành Viên</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : '' }}"><a href="{{ route('admin.get.list.contact') }}">Liên hệ</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.page_static' ? 'active' : '' }}"><a href="{{ route('admin.get.list.page_static') }}">Page tĩnh</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}"><a href="{{ route('admin.get.list.menu') }}">Meun Post</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : '' }}"><a href="{{ route('admin.get.list.article') }}">Post</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Ticket management</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">User</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : '' }}"><a href="{{ route('admin.get.list.contact') }}">Contact</a></li>
+                <li class="{{ \Request::route()->getName() == 'admin.get.list.page_static' ? 'active' : '' }}"><a href="{{ route('admin.get.list.page_static') }}">Page Static</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

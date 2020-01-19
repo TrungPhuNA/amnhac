@@ -13,6 +13,7 @@ class ArticleController extends FrontendController
 		parent::__construct();
 	}
 	
+    // danh sach bai viet
     public function getListArticle()
 	{
 		$articles = Article::orderBy('id','DESC')->simplePaginate(5);
@@ -31,6 +32,7 @@ class ArticleController extends FrontendController
         return view('article.index',compact('articles','articleHot'));
     }
 
+    // chi tiet bai viet
 	public function getDetailArticle(Request $request)
 	{
 		$arrayUrl = (preg_split("/(-)/i",$request->segment(2)));

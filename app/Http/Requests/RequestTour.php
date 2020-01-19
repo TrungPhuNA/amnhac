@@ -28,16 +28,16 @@ class RequestTour extends FormRequest
         ];
     }
 
-    public function messages()
-    {
-        return [
-            't_title.required'          => 'Trường này không được để trống',
-            't_title.unique'            => 'Tên sản phẩm đã tồn tại',
-            't_categories.required'     => 'Trường này không được để trống',
-            't_city.required'           => 'Trường này không được để trống',
-            't_time_start.required'     => 'Trường này không được để trống',
-//            's_supplier_id.required'   => 'Trường này không được để trống',
-            't_content.required'        => 'Trường này không được để trống',
-        ];
-    }
+//     public function messages()
+//     {
+//         return [
+//             't_title.required'          => 'Trường này không được để trống',
+//             't_title.unique'            => 'Tên sản phẩm đã tồn tại',
+//             't_categories.required'     => 'Trường này không được để trống',
+//             't_city.required'           => 'Trường này không được để trống',
+//             't_time_start.required'     => 'Trường này không được để trống',
+// //            's_supplier_id.required'   => 'Trường này không được để trống',
+//             't_content.required'        => 'Trường này không được để trống',
+//         ];
+//     }
 }

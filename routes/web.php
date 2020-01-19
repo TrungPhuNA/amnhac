@@ -33,6 +33,8 @@ Route::group(['namespace' => 'Auth'],function(){
 	Route::post('/password/reset','ForgotPasswordController@saveResetPassword');
 });
 
+
+// home
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('search','SearchController@index')->name("get.search");
