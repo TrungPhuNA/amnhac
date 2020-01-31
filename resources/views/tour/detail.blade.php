@@ -12,7 +12,7 @@
 								<ul>
 									<li><i style="width: 30px" class="fa fa-map-o"></i> <span>{{ $tourDetail->t_address }}</span></li>
 									<li><i style="width: 30px" class="fa fa-clock-o" aria-hidden="true"></i> <span>{{ $tourDetail->t_time_start }}</span></li>
-									<li><i style="width: 30px" class="fa fa-check" aria-hidden="true"></i> <span class="label-success label">Còn vé</span></li>
+									<li><i style="width: 30px" class="fa fa-check" aria-hidden="true"></i> <span class="label-success label">Tickets left</span></li>
 								</ul>
 							</div>
 							<div>

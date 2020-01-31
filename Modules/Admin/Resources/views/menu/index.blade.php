@@ -3,19 +3,19 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Menu bài viết</a></li>
-            <li class="active">Danh sách</li>
+            <li><a href="#">Menu</a></li>
+            <li class="active">Index</li>
         </ol>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý Menu bài viết <a href="{{ route('admin.get.create.menu') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
+        <h2>Article <a href="{{ route('admin.get.create.menu') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tên menu</th>
+                    <th>Menu</th>
                     <th>Slug</th>
-                    <th>Thao tác</th>
+                    <th>ACtion</th>
                 </tr>
             </thead>
             <tbody>

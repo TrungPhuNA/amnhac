@@ -3,8 +3,8 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="form-group">
-                <label for="pro_name">Tên Tours:</label>
-                <input type="text" class="form-control" placeholder="Tên sản phẩm" value="{{ old('t_title',isset($tour->t_title) ? $tour->t_title  : '') }}" name="t_title">
+                <label for="pro_name">Name Tours:</label>
+                <input type="text" class="form-control" placeholder="Name" value="{{ old('t_title',isset($tour->t_title) ? $tour->t_title  : '') }}" name="t_title">
                 @if($errors->has('t_title'))
                     <span class="error-text">
                         {{$errors->first('t_title')}}
@@ -12,8 +12,8 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="name">Mô tả:</label>
-                <textarea name="t_description" class="form-control" id="" cols="30" rows="3" placeholder="Mô tả ngắn sản phẩm">{{ old('t_description',isset($tour->t_description) ? $tour->t_description : '') }}</textarea>
+                <label for="name">Description:</label>
+                <textarea name="t_description" class="form-control" id="" cols="30" rows="3" placeholder="Description">{{ old('t_description',isset($tour->t_description) ? $tour->t_description : '') }}</textarea>
                 @if($errors->has('t_description'))
                     <span class="error-text">
                         {{$errors->first('t_description')}}
@@ -29,8 +29,8 @@
 
             </div>
             <div class="form-group">
-                <label for="name">Nội dung:</label>
-                <textarea name="t_content" class="form-control" id="t_content" cols="30" rows="3" placeholder="Nội dung">
+                <label for="name">Content:</label>
+                <textarea name="t_content" class="form-control" id="t_content" cols="30" rows="3" placeholder="Content">
                     {{ old('t_content',isset($tour->t_content) ? $tour->t_content : '') }}
                 </textarea>
                 @if($errors->has('t_content'))
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label for="name">Categories:</label>
                 <select name="t_category_id" id="" class="form-control">
-                    <option value="">--Chọn loại sản phẩm--</option>
+                    <option value="">--Click--</option>
                     @if(isset($categories))
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ old('t_category_id',isset($tour->t_category_id) ? $tour->t_category_id : '') == $category->id ? "selected='selected'" : "" }}>{{ $category->c_name }}</option>
@@ -59,9 +59,9 @@
             </div>
 
             <div class="form-group">
-                <label for="name">Thành phố:</label>
+                <label for="name">City:</label>
                 <select name="t_city" id="t_city" class="form-control">
-                    <option value="">--Chọn thành phố--</option>
+                    <option value="">--Click City--</option>
                     @if(isset($cities))
                         @foreach($cities as $city)
                             <option value="{{ $city->id }}" {{ old('t_city',isset($tour->t_city) ? $tour->t_city : '') == $city->id ? "selected='selected'" : "" }}>{{ $city->name }}</option>
@@ -75,8 +75,8 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="name">Địa chỉ:</label>
-                <textarea name="t_address" class="form-control" id="" cols="30" rows="3" placeholder="Địa chỉ...">{{ old('t_address',isset($tour->t_address) ? $tour->t_address : '') }}</textarea>
+                <label for="name">Address:</label>
+                <textarea name="t_address" class="form-control" id="" cols="30" rows="3" placeholder="Address...">{{ old('t_address',isset($tour->t_address) ? $tour->t_address : '') }}</textarea>
                 @if($errors->has('t_address'))
                     <span class="error-text">
                         {{$errors->first('t_address')}}
@@ -89,9 +89,9 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="name">Nhóm nhạc hoặc ca sĩ:</label>
+                <label for="name">Music group or singer:</label>
                 <select name="t_singer_band_id" id="" class="form-control">
-                    <option value="">--Chọn nhóm nhạc --</option>
+                    <option value="">--Click Music group or singer --</option>
                     @if(isset($singerBands))
                         @foreach($singerBands as $singerBand)
                             <option value="{{ $singerBand->id }}"
@@ -109,8 +109,8 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="pro_price">Giá vé:</label>
-                <input type="number" placeholder="Giá sản phẩm" class="form-control" value="{{ old('t_price',isset($tour->t_price) ? $tour->t_price  : '') }}" name="t_price">
+                <label for="pro_price">Price:</label>
+                <input type="number" placeholder="Price" class="form-control" value="{{ old('t_price',isset($tour->t_price) ? $tour->t_price  : '') }}" name="t_price">
                 @if($errors->has('t_price'))
                     <span class="error-text">
                         {{$errors->first('t_price')}}
@@ -118,7 +118,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="name">Thời gian diễn ra:</label>
+                <label for="name">Time:</label>
 
                 <div class='input-group date' id="time_start">
                     <input type='text' name="t_time_start" class="form-control" value="{{ old('t_time_start',isset($tour->t_time_start) ? $tour->t_time_start  : '') }}" />
@@ -139,7 +139,7 @@
 {{--            </div>--}}
 
             <div class="form-group">
-                <label for="name">Số lượng vé:</label>
+                <label for="name">Number:</label>
                 <input type="number" placeholder="10" class="form-control" name="t_count_ticket"
                        value="{{ old('t_count_ticket',isset($tour->t_count_ticket) ? $tour->t_count_ticket  : '0') }}">
                 @if($errors->has('t_count_ticket'))
@@ -162,12 +162,12 @@
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <label><input type="checkbox" name="t_hot" value="1">  Nổi bật </label>
+                    <label><input type="checkbox" name="t_hot" value="1">  Hot </label>
                 </div>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-success">Lưu thông tin</button>
+    <button type="submit" class="btn btn-success">Save info</button>
 </form>
 
 @section('script')

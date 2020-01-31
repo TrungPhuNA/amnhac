@@ -49,19 +49,19 @@ class AdminController extends Controller
 		
 		$dataMoney = [
 			[
-				"name" => "Doanh thu ngày",
+				"name" => "Day revenue",
 				"y"    => (int)$moneyDay
 			],
 			[
-				"name" => "Doanh thu tuần",
+				"name" => "Weekly revenue",
 				"y"    => (int)$moneyWeed
 			],
 			[
-				"name" => "Doanh thu tháng",
+				"name" => "Monthly revenue",
 				"y"    => (int)$moneyMonth
 			],
 			[
-				"name" => "Doanh thu năm",
+				"name" => "Year revenue",
 				"y"    => (int)$moneyYear
 			]
 		];

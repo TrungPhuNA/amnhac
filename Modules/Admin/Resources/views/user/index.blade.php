@@ -2,21 +2,21 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Thành viên</a></li>
-            <li class="active">Danh sách</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">User</a></li>
+            <li class="active">Index</li>
         </ol>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý thành viên</h2>
+        <h2>User</h2>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
-                <th>Tên hiển thị </th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Thao Tác</th>
+                <th>action</th>
             </tr>
             </thead>
             <tbody>

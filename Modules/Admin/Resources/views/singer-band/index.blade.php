@@ -2,23 +2,23 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Danh mục</a></li>
-            <li class="active">Danh sách nhóm nhạc và ca sĩ</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">singer bands</a></li>
+            <li class="active">Index</li>
         </ol>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý danh sách nhóm nhạc và ca sĩ <a href="{{ route('admin.get.create.singer-bands') }}" class="pull-right"><i class="glyphicon glyphicon-plus"></i></a></h2>
+        <h2>Management list of groups and singers <a href="{{ route('admin.get.create.singer-bands') }}" class="pull-right"><i class="glyphicon glyphicon-plus"></i></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th> Tên </th>
+                    <th> Name </th>
                     <th>Type</th>
-                    <th>Tên thành viên</th>
+                    <th>Name user</th>
                     <th>Avatar</th>
-                    <th>Mô tả</th>
-                    <th>Thao tác</th>
+                    <th>Description</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

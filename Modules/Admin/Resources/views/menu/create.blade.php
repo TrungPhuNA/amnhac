@@ -2,9 +2,9 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="{{ route('admin.home') }}">Trang chủ</a></li>
+            <li><a href="{{ route('admin.home') }}">Home</a></li>
             <li><a href="{{ route('admin.get.list.menu') }}" title="Danh mục">Menu</a></li>
-            <li class="active">Thêm mới</li>
+            <li class="active">Add</li>
         </ol>
     </div>
     <div class="">

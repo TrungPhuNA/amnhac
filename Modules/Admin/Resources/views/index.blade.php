@@ -5,23 +5,19 @@
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/drilldown.js"></script>
     
-    <h1 class="page-header">Tổng quan</h1>
+    <h1 class="page-header">Dashboard</h1>
     <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countUser }} thành viên</h4>
+            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countUser }} User</h4>
         </div>
         <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $counttour }} sản phẩm</h4>
+            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $counttour }} Tour</h4>
         </div>
         <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countArticle }} bài viết </h4>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countRating }} Đánh giá</h4>
+            <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);margin: 0;color: white">{{ $countArticle }} Article </h4>
         </div>
     </div>
     <div class="row">
@@ -30,15 +26,15 @@
             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
         <div class="col-sm-8">
-            <h2>Danh sách đơn hàng mới</h2>
+            <h2>New order list</h2>
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tên Khách Hàng</th>
-                    <th>Số điện thoại</th>
-                    <th>Tổng Tiền</th>
-                    <th>Trạng thái</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
                     <th>Time</th>
                 </tr>
                 </thead>
@@ -67,16 +63,16 @@
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <h2 class="sub-header">Danh sách liên hệ mới nhất</h2>
+            <h2 class="sub-header">New contact list</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Tiêu đề</th>
-                        <th>Họ tên</th>
-                        <th>Nội dung</th>
-                        <th>Trạng thái</th>
+                        <th>Title</th>
+                        <th>Name</th>
+                        <th>Content</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -89,9 +85,9 @@
                                 <td>{{ $contact->c_content }}</td>
                                 <td>
                                     @if ( $contact->c_status == 1)
-                                        <span class="label label-success">Đã xử lý</span>
+                                        <span class="label label-success">Success</span>
                                     @else
-                                        <span class="label label-default">Chưa xử lý</span>
+                                        <span class="label label-default">Process</span>
                                     @endif
                                 </td>
                             </tr>
@@ -100,31 +96,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <h2 class="sub-header">Danh sách đánh giá mới nhất</h2>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Tên TV </th>
-                    <th>Sản phẩm </th>
-                    <th>Rating</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if (isset($ratings))
-                    @foreach($ratings as $rating)
-                        <tr>
-                            <td>{{ $rating->id }}</td>
-                            <td>{{ isset($rating->user->name) ? $rating->user->name : '[N\A]' }}</td>
-                            <td><a href="">{{ isset($rating->tour->pro_name) ? $rating->tour->pro_name : '[N\A]' }}</a></td>
-                            <td>{{ $rating->ra_number }}</td>
-                        </tr>
-                    @endforeach
-                @endif
-                </tbody>
-            </table>
         </div>
     </div>
 @stop
@@ -143,14 +114,14 @@
 				type: 'column'
 			},
 			title: {
-				text: 'Biểu đồ doanh thu ngày và tháng '
+				text: 'Daily and monthly sales chart'
 			},
 			xAxis: {
 				type: 'category'
 			},
 			yAxis: {
 				title: {
-					text: 'Mức độ'
+					text: 'Level'
 				}
 
 			},

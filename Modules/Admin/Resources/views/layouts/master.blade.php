@@ -50,21 +50,21 @@
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : '' }}"><a href="{{ route('admin.get.list.transaction') }}">Ticket management</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : '' }}"><a href="{{ route('admin.get.list.user') }}">User</a></li>
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : '' }}"><a href="{{ route('admin.get.list.contact') }}">Contact</a></li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.page_static' ? 'active' : '' }}"><a href="{{ route('admin.get.list.page_static') }}">Page Static</a></li>
+            
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             @if (\Session::has('success'))
                 <div class="alert alert-success alert-dismissible" style="position: fixed;right: 20px">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Thành công! </strong> {{ \Session::get('success') }}
+                    <strong>Success! </strong> {{ \Session::get('success') }}
                 </div>
             @endif
 
             @if (\Session::has('danger'))
                 <div class="alert alert-danger alert-dismissible" style="position: fixed;right: 20px">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Thất bại! </strong> {{ \Session::get('danger') }}
+                    <strong>Error! </strong> {{ \Session::get('danger') }}
                 </div>
             @endif
 

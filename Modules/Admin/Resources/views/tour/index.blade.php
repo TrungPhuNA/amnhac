@@ -5,21 +5,21 @@
     </style>
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Tours</a></li>
-            <li class="active">Danh sách</li>
+            <li class="active">Index</li>
         </ol>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <form class="form-inline" action="" style="margin-bottom: 20px">
                 <div class="form-group">
-                    <input type="text" class="form-control"  placeholder="Tên tours ..." name="name" value="{{ \Request::get('name') }}">
+                    <input type="text" class="form-control"  placeholder="name tours ..." name="name" value="{{ \Request::get('name') }}">
                 </div>
 
                 <div class="form-group">
                     <select name="cate" id="" class="form-control">
-                        <option value="">Danh mục</option>
+                        <option value="">Category</option>
                          @if (isset($categories))
                              @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ \Request::get('cate') == $category->id ? "selected='selected'" : "" }}>{{ $category->c_name }}</option>
@@ -32,21 +32,21 @@
         </div>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a></h2>
+        <h2>Manage tours <a href="{{ route('admin.get.create.tour') }}" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tên tours</th>
+                    <th>Name</th>
                     <th>Category</th>
-                    <th>Nhóm nhạc</th>
+                    <th>Band</th>
                     <th>Avatar</th>
-                    <th>Trạng thái</th>
-                    <th>Địa chỉ</th>
-                    <th>Số lượng vé</th>
-                    <th>Giá vé</th>
-                    <th>Nổi bật</th>
-                    <th>Thao tác</th>
+                    <th>Active</th>
+                    <th>Address</th>
+                    <th>Number of tickets</th>
+                    <th>Price</th>
+                    <th>Hot</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -77,8 +77,8 @@
 
 
                              <td>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.tour',$tour->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.tour',$tour->id) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.tour',$tour->id) }}"><i class="fas fa-pen" ></i> Update</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.tour',$tour->id) }}"><i class="fas fa-trash-alt"></i> Delete</a>
                              </td>
                          </tr>
                      @endforeach

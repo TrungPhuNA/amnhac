@@ -2,16 +2,16 @@
 @section('content')
     <div class="page-header">
         <ol class="breadcrumb">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Bài viết</a></li>
-            <li class="active">Danh sách</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Article</a></li>
+            <li class="active">Index</li>
         </ol>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <form class="form-inline" action="" style="margin-bottom: 20px">
                 <div class="form-group">
-                    <input type="text" class="form-control"  placeholder="Tên bài viết ..." name="name" value="{{ \Request::get('name') }}">
+                    <input type="text" class="form-control"  placeholder="Name ..." name="name" value="{{ \Request::get('name') }}">
                 </div>
 
                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -19,18 +19,18 @@
         </div>
     </div>
     <div class="table-responsive">
-        <h2>Quản lý bài viết <a href="{{ route('admin.get.create.article') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
+        <h2>Article <a href="{{ route('admin.get.create.article') }}" class="pull-right"><i class="fas fa-plus-circle"></i></a></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th width="20%">Tên bài viết</th>
-                    <th style="width: 100px">Hình Ảnh</th>
-                    <th style="width: 300px">Mô tả</th>
-                    <th>Nổi bật</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
-                    <th>Thao tác</th>
+                    <th width="20%">Name</th>
+                    <th style="width: 100px">Avatar</th>
+                    <th style="width: 300px">Description</th>
+                    <th>Hot</th>
+                    <th>Active</th>
+                    <th>Created</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,8 +56,8 @@
                                  {{ $article->created_at }}
                              </td>
                              <td>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.article',$article->id) }}"><i class="fas fa-pen" ></i> Cập nhật</a>
-                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.article',$article->id) }}"><i class="fas fa-trash-alt"></i> Xoá</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.edit.article',$article->id) }}"><i class="fas fa-pen" ></i> Update</a>
+                                 <a class="btn_customer_action" href="{{ route('admin.get.delete.article',$article->id) }}"><i class="fas fa-trash-alt"></i> Delete</a>
                              </td>
                          </tr>
                      @endforeach
