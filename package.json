@@ -28,7 +28,7 @@
         "bootstrap-sweetalert": "^1.0.1",
         "dom-to-image": "^2.6.0",
         "fotorama": "^4.6.4",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "jquery-confirm": "^3.3.4",
         "jquery-modal": "^0.9.2",
         "jquery-validation": "^1.19.1",
